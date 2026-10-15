@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Yayına alınırken: Allow: / ve Sitemap: https://ALANADI/sitemap.xml

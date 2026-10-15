@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 72" role="img" aria-label="eXtreme EX amblemi">
+ <defs>
+  <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+   <stop offset="0" stop-color="#FFF1C2"/>
+   <stop offset=".38" stop-color="#E9C46A"/>
+   <stop offset=".55" stop-color="#B8862B"/>
+   <stop offset=".78" stop-color="#E7BE5E"/>
+   <stop offset="1" stop-color="#8A6118"/>
+  </linearGradient>
+  <linearGradient id="s" x1="0" y1="0" x2="1" y2="0">
+   <stop offset="0" stop-color="#8A6118" stop-opacity="0"/>
+   <stop offset=".35" stop-color="#E9C46A"/>
+   <stop offset=".7" stop-color="#FFF1C2"/>
+   <stop offset="1" stop-color="#B8862B" stop-opacity=".2"/>
+  </linearGradient>
+ </defs>
+ <!-- swoosh -->
+ <path d="M6 50C10 22 50 4 96 6c22 1 32 9 30 18-1-6-12-12-30-12C56 12 22 28 12 50Z" fill="url(#s)"/>
+ <g transform="translate(16 14) skewX(-16)" fill="url(#g)" stroke="#5A3E0C" stroke-width=".8" stroke-linejoin="round">
+  <!-- E -->
+  <path d="M10 0H52L49 10H22L21 19H45L42 29H20L19 38H47L44 48H4Z"/>
+  <!-- X -->
+  <path d="M52 0H67L76 16L89 0H106L84 24L98 48H82L72 31L58 48H41L64 23Z"/>
+ </g>
+</svg>

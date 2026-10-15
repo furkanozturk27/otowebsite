@@ -1,0 +1,455 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Ergin Ticari Araç · Örnek site · otowebsite.com.tr</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0"><title>Ergin Ticari Araç</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#e6e4de; --surf:#f3f2ee; --surf2:#dcd9d1; --ink:#131313; --mute:#5e5c56; --line:#c6c2b8; --y:#f5c400; --y-ink:#131313;
+  --ek-o:#f3f2ee; --ek-l:#f5c400; --ek-b:#e2742c; --ek-d:#c72f3a; --ek-line:#131313; --ek-glass:#9d9a92;
+  --disp:"Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body:"Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:clamp(16px,3vw,32px)}
+.demo-bar{background:var(--y);color:var(--y-ink);font-size:12px;font-weight:700;text-align:center;padding:7px 16px}
+.hz{height:14px;background:repeating-linear-gradient(-45deg,var(--ink) 0 14px,var(--y) 14px 28px)}
+header{background:var(--ink);color:var(--surf);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+header .wrap{display:flex;align-items:stretch;justify-content:space-between;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:0;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
+.logo b{background:var(--y);color:var(--y-ink);padding:4px 10px;margin-right:8px}
+.logo span{color:var(--surf)}
+nav.main{display:flex;gap:26px;align-items:center;font-family:var(--disp);font-weight:700;font-size:17px;text-transform:uppercase;letter-spacing:.04em}
+nav.main a{text-decoration:none;color:#b9b6ae}
+nav.main a:hover{color:var(--y)}
+.call{display:flex;align-items:center;font-family:var(--mono);font-weight:600;font-size:14px;color:var(--y)}
+@media (max-width:820px){nav.main{display:none}}
+@media (max-width:440px){.call{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--ink);background:var(--ink);color:var(--y);font:800 18px var(--disp);text-transform:uppercase;letter-spacing:.04em;padding:11px 20px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--y);color:var(--ink)}
+.btn.y{background:var(--y);color:var(--ink)}
+.btn.y:hover{background:var(--ink);color:var(--y)}
+.btn.o{background:transparent;color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+/* HERO */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;padding-block:clamp(28px,5vw,64px) 0}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+.kicker{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+h1{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(56px,9vw,132px);line-height:.84;letter-spacing:-.01em;margin:12px 0 18px}
+h1 span{display:inline-block;background:var(--y);padding:0 .08em}
+.hero p{font-size:18px;max-width:42ch;margin:0 0 22px;color:#2d2c29}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.platform{position:relative;padding-top:78px}
+.platform .car{position:relative;z-index:1;margin-bottom:-4%}
+.platform::after{content:"";display:block;height:34px;background:var(--y);border-top:3px solid var(--ink)}
+.plate{position:absolute;right:0;top:0;background:var(--surf);border:2px solid var(--ink);padding:8px 12px;font-family:var(--mono);font-size:12px;line-height:1.35}
+.plate b{display:block;font-family:var(--disp);font-size:28px;line-height:1}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:2px solid var(--ink);background:var(--surf)}
+.facts div{padding:16px clamp(12px,2vw,22px);border-right:2px solid var(--ink)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--disp);font-weight:800;font-size:30px;text-transform:uppercase;line-height:1}
+.facts span{font-size:13px;color:var(--mute)}
+@media (max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:2px solid var(--ink)}}
+
+/* FINDER */
+section{padding-block:clamp(40px,6vw,72px)}
+h2{overflow-wrap:anywhere;font-family:var(--disp);font-weight:800;font-size:clamp(36px,5vw,64px);text-transform:uppercase;line-height:.9;margin:0;text-wrap:balance}
+.finder{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:0;border:2px solid var(--ink);background:var(--y)}
+@media (max-width:860px){.finder{grid-template-columns:minmax(0,1fr)}}
+.finder .l{padding:clamp(18px,3vw,30px);border-right:2px solid var(--ink)}
+@media (max-width:860px){.finder .l{border-right:0;border-bottom:2px solid var(--ink)}}
+.finder .l p{margin:10px 0 0;font-weight:500}
+.finder .r{padding:clamp(18px,3vw,30px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:end}
+@media (max-width:620px){.finder .r{grid-template-columns:minmax(0,1fr)}}
+.finder label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12px;font-weight:600;text-transform:uppercase}
+.finder output{font-family:var(--disp);font-weight:800;font-size:34px;line-height:1;text-transform:none}
+input[type=range]{accent-color:var(--ink);width:100%}
+.finder .res{grid-column:1/-1;font-weight:600;border-top:2px solid var(--ink);padding-top:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* LIST */
+.lh{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--ink)}
+.tabs button{background:var(--surf);border:0;border-right:2px solid var(--ink);font:700 16px var(--disp);text-transform:uppercase;letter-spacing:.03em;padding:9px 14px;cursor:pointer;color:var(--ink)}
+.tabs button:last-child{border-right:0}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--y)}
+.tabs button sup{font-family:var(--mono);font-size:10px;margin-left:3px}
+.rows{border:2px solid var(--ink);background:var(--surf)}
+.row{display:grid;grid-template-columns:200px minmax(0,2.2fr) repeat(4,minmax(0,1fr)) minmax(0,1.3fr);align-items:center;gap:16px;padding:12px 18px 12px 12px;border-bottom:1px solid var(--line);cursor:pointer;background:transparent;width:100%;text-align:left;font:inherit;color:inherit;border-left:0;border-right:0;border-top:0}
+.row:last-child{border-bottom:0}
+.row:hover{background:#ebe9e3}
+.row.fit{box-shadow:inset 6px 0 0 var(--y)}
+.row.dim{opacity:.5}
+.row .pic{background:linear-gradient(180deg,transparent 60%,var(--surf2));aspect-ratio:16/7}
+.row .pic svg,.row .pic img{width:100%;height:100%;object-fit:cover}
+.row h3{margin:0;font-family:var(--disp);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1.05}
+.row h3 small{display:block;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--mute);text-transform:none;margin-top:4px}
+.cell{font-family:var(--mono);font-size:14px;font-weight:600}
+.cell small{display:block;font-size:10px;color:var(--mute);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.price{font-family:var(--disp);font-weight:800;font-size:26px;text-align:right;line-height:1;white-space:nowrap}
+.price small{display:block;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--mute);margin-top:4px}
+.thead{display:grid;grid-template-columns:200px minmax(0,2.2fr) repeat(4,minmax(0,1fr)) minmax(0,1.3fr);gap:16px;padding:10px 18px 10px 12px;background:var(--ink);color:#b9b6ae;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.thead span:last-child{text-align:right}
+@media (max-width:980px){
+  .thead{display:none}
+  .row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px 14px;padding:14px}
+  .row .pic{grid-column:1/-1}
+  .row h3{grid-column:1/-1}
+  .price{grid-column:1/-1;text-align:left;border-top:1px dashed var(--line);padding-top:10px}
+}
+.nores{padding:28px;text-align:center;font-weight:600}
+
+/* FLEET */
+.fleet{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border:2px solid var(--ink);background:var(--ink);color:var(--surf)}
+@media (max-width:860px){.fleet{grid-template-columns:minmax(0,1fr)}}
+.fleet .l{padding:clamp(20px,3vw,34px)}
+.fleet h2 span{color:var(--y)}
+.fleet ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.fleet li{display:flex;gap:10px;font-weight:500}
+.fleet li::before{content:"";flex:none;width:12px;height:12px;background:var(--y);margin-top:5px}
+.fleet form{background:var(--surf);color:var(--ink);padding:clamp(18px,3vw,30px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media (max-width:520px){.fleet form{grid-template-columns:minmax(0,1fr)}}
+.fleet label{display:flex;flex-direction:column;gap:5px;font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase}
+.fleet .full{grid-column:1/-1}
+input,select{font:500 15px var(--body);color:var(--ink);background:#fff;border:2px solid var(--ink);padding:10px 12px;border-radius:0;width:100%;min-width:0}
+input[type=range]{border:0;padding:0;background:transparent}
+.done{grid-column:1/-1;background:var(--y);padding:12px;font-weight:600;border:2px solid var(--ink)}
+
+footer{background:var(--ink);color:#b9b6ae;padding-block:34px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+footer b{color:var(--y);font-family:var(--disp);font-size:18px;text-transform:uppercase}
+@media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(19,19,19,.72);overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;padding:clamp(12px,4vw,40px) 12px}
+.sheet{background:var(--surf);border:3px solid var(--ink);width:100%;max-width:1000px;position:relative;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.sheet .x{position:absolute;top:0;right:0;width:46px;height:46px;background:var(--ink);color:var(--y);border:0;font-size:22px;cursor:pointer;z-index:2}
+.sheet .top{background:var(--bg);padding:30px 8% 0;border-bottom:3px solid var(--ink);position:relative}
+.sheet .top::after{content:"";display:block;height:14px;background:repeating-linear-gradient(-45deg,var(--ink) 0 10px,var(--y) 10px 20px);margin-inline:-9%}
+.sheet .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:26px;padding:22px clamp(16px,3vw,30px) 28px}
+@media (max-width:780px){.sheet .cols{grid-template-columns:minmax(0,1fr)}}
+.sheet h3{font-family:var(--disp);font-weight:800;font-size:clamp(30px,4vw,44px);text-transform:uppercase;line-height:.95;margin:6px 0 8px}
+.specgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid var(--ink);margin:16px 0}
+.specgrid div{padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.specgrid div:nth-child(3n){border-right:0}
+.specgrid div:nth-last-child(-n+3){border-bottom:0}
+.specgrid small{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--mute)}
+.specgrid b{font-family:var(--mono);font-size:15px}
+@media (max-width:460px){.specgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.specgrid div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}}
+.ek{display:grid;grid-template-columns:110px 1fr;gap:16px;border:2px solid var(--ink);padding:14px;background:#fff}
+.ek-svg{width:100%;height:auto}
+.ek h4{margin:0 0 6px;font-family:var(--disp);font-size:20px;text-transform:uppercase}
+.ek-list{list-style:none;margin:0;padding:0;font-size:13px}
+.ek-list li{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed var(--line)}
+.ek-list li span{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--mute)}
+.ek-dot{width:11px;height:11px;display:inline-block;flex:none;border:1px solid var(--ink)}
+.ek-o{background:var(--ek-o)}.ek-l{background:var(--ek-l)}.ek-b{background:var(--ek-b)}.ek-d{background:var(--ek-d)}
+.ek-clean{margin:0;font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;font-size:11px;font-family:var(--mono)}
+.legend span{display:flex;align-items:center;gap:4px}
+.tr{margin-top:10px;font-family:var(--mono);font-size:13px;font-weight:600}
+.wa-prev{margin-top:12px;border:2px dashed var(--ink);background:#fff;padding:12px;font-size:14px}
+.wa-prev small{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="demo-bar">Bu site <a href="/" id="vitrinLink">otowebsite.com.tr</a> tarafından hazırlanmış bir demodur. İşletme adı, fiyatlar ve ilanlar örnektir.</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><b>Ergin</b><span>Ticari Araç</span></a>
+    <nav class="main" aria-label="Ana menü"><a href="#bul">Araç bul</a><a href="#stok">Stok</a><a href="#filo">Filo satış</a><a href="#iletisim">İletişim</a></nav>
+    <div class="call">0224 000 00 00</div>
+  </div>
+</header>
+<div class="hz"></div>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="kicker">Bursa · Nilüfer · 2009'dan beri ticari araç</div>
+        <h1>İşini<br>taşıyan<br><span>araçlar.</span></h1>
+        <p>Panelvan, kamyonet, pick-up ve minibüs. Her aracın hacmi, taşıma kapasitesi ve ekspertizi listede yazılı. Faturalı satış ve filo alımında toplu fiyat.</p>
+        <div class="ctas"><a class="btn" href="#bul">Yüküne göre araç bul</a><a class="btn o" href="#filo">Filo teklifi al</a></div>
+      </div>
+      <div class="platform">
+        <div class="plate" id="heroPlate"></div>
+        <div class="car" id="heroCar"></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div><b id="fCount"></b><span>araç stokta, hepsi ekspertizli</span></div>
+      <div><b>Faturalı</b><span>şirketlere faturalı satış</span></div>
+      <div><b>Filo</b><span>3+ araçta toplu fiyat</span></div>
+      <div><b>Takas</b><span>ticari ↔ ticari, aynı gün değerleme</span></div>
+    </div>
+  </div>
+
+  <section id="bul">
+    <div class="wrap">
+      <div class="finder">
+        <div class="l"><h2>Yüküne göre araç bul</h2><p>Günlük ne kadar taşıdığını gir. Uyan araçlar stok listesinde sarı çizgiyle işaretlenir.</p></div>
+        <div class="r">
+          <label>Yük hacmi (m³)<output id="oVol"></output><input type="range" id="vol" min="0" max="15" step="0.5" value="0"></label>
+          <label>Taşıma kapasitesi (kg)<output id="oKg"></output><input type="range" id="kg" min="0" max="1600" step="50" value="0"></label>
+          <label>Koltuk (sürücü dahil)<output id="oSeat"></output><input type="range" id="seat" min="2" max="18" step="1" value="2"></label>
+          <div class="res"><span id="fitTxt"></span><a class="btn" href="#stok">Listeye git</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stok" style="padding-top:0">
+    <div class="wrap">
+      <div class="lh"><h2>Stok listesi</h2><div class="tabs" id="tabs" role="group" aria-label="Kategori"></div></div>
+      <div class="rows">
+        <div class="thead"><span>Araç</span><span>Model</span><span>Yıl / km</span><span>Hacim</span><span>Kapasite</span><span>Koltuk</span><span>Fiyat</span></div>
+        <div id="rows"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="filo" style="padding-top:0">
+    <div class="wrap">
+      <div class="fleet">
+        <div class="l"><h2>Filo mu kuruyorsun? <span>Toplu fiyat alalım.</span></h2>
+          <ul><li>3 ve üzeri araçta araç başı indirim</li><li>Tüm araçlar tek seferde ekspertizden geçer</li><li>Faturalı satış, noter ve plaka işlemleri bizden</li><li>Eski filonu takasa al, farkı öde</li></ul></div>
+        <form id="fForm" novalidate>
+          <label>Firma adı<input id="fFirm" value="Yeşil Lojistik Ltd."></label>
+          <label>Yetkili<input id="fName" autocomplete="name" value="Burak Demir"></label>
+          <label>Araç tipi<select id="fType"><option>Panelvan</option><option>Hafif ticari</option><option>Pick-up</option><option>Minibüs</option><option>Karışık</option></select></label>
+          <label>Adet<input id="fQty" type="number" min="2" max="50" value="4"></label>
+          <label class="full">Telefon<input id="fPhone" inputmode="tel" autocomplete="tel" value="0533 000 00 00"></label>
+          <div class="full"><button class="btn" type="submit" style="width:100%">Filo teklifi iste</button></div>
+          <div class="done" id="fDone" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="iletisim">
+  <div class="wrap">
+    <div><b>Ergin Ticari Araç</b><br>Nilüfer Oto Galericiler Çarşısı No: 00<br>Nilüfer / Bursa</div>
+    <div><b>Telefon</b><br>0224 000 00 00<br>WhatsApp: 0533 000 00 00</div>
+    <div><b>Saatler</b><br>Pzt–Cmt 08:30–19:00<br><span style="font-size:12px">Demo site · otowebsite.com.tr</span></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="sheet" id="sheet"></div></div>
+
+<script>document.documentElement.lang="tr";</script>
+<script>/* ===== Vitrin ortak araçlar: araç çizimi, ekspertiz şeması, biçimlendirme ===== */
+const V = (() => {
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  function shade(hex, amt) {
+    const n = parseInt(hex.slice(1), 16);
+    let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    if (amt >= 0) { r += (255 - r) * amt; g += (255 - g) * amt; b += (255 - b) * amt; }
+    else { r *= 1 + amt; g *= 1 + amt; b *= 1 + amt; }
+    return '#' + [r, g, b].map(x => clamp(Math.round(x), 0, 255).toString(16).padStart(2, '0')).join('');
+  }
+  // Yan profil gövde tanımları (ön taraf sağda). w: [arka tekerlek x, ön tekerlek x], wy: tekerlek merkezi y
+  const BODIES = {
+    sedan: { w: [95, 310], wy: 128, wr: 22,
+      body: 'M28,126 L26,108 Q27,96 38,92 L92,86 Q112,70 138,60 Q175,52 218,55 Q246,58 282,82 L346,90 Q370,94 374,108 L372,126 L337,126 A27,27 0 0 0 283,126 L122,126 A27,27 0 0 0 68,126 Z',
+      glass: 'M104,86 Q124,70 142,63 Q176,57 214,59 Q238,62 266,84 Z', pillars: [188], line: 'M40,104 Q200,98 366,104',
+      head: 'M352,94 L370,99 L368,104 L350,101 Z', tail: 'M28,98 L40,95 L40,103 L27,105 Z' },
+    hatch: { w: [105, 300], wy: 128, wr: 22,
+      body: 'M36,126 L34,104 Q36,90 46,86 Q54,66 70,58 Q110,52 200,54 Q232,58 268,82 L336,90 Q360,94 364,108 L362,126 L327,126 A27,27 0 0 0 273,126 L132,126 A27,27 0 0 0 78,126 Z',
+      glass: 'M70,82 Q80,64 96,60 Q140,56 196,58 Q226,62 254,82 Z', pillars: [168], line: 'M46,104 Q200,98 356,104',
+      head: 'M342,94 L360,99 L358,104 L340,101 Z', tail: 'M36,90 L48,88 L46,100 L35,102 Z' },
+    suv: { w: [96, 310], wy: 124, wr: 24,
+      body: 'M24,122 L22,92 Q24,74 38,70 Q50,50 70,46 Q150,40 222,44 Q250,48 282,72 L346,80 Q370,84 374,100 L374,122 L338,122 A28,28 0 0 0 282,122 L124,122 A28,28 0 0 0 68,122 Z',
+      glass: 'M54,68 Q64,52 80,50 Q150,46 218,48 Q244,52 270,72 Z', pillars: [132, 200], line: 'M30,98 Q200,92 368,98',
+      head: 'M350,84 L370,89 L369,95 L348,92 Z', tail: 'M22,76 L36,73 L36,86 L22,88 Z' },
+    coupe: { w: [95, 311], wy: 126, wr: 22,
+      body: 'M30,124 L28,110 Q30,98 42,95 L80,92 Q120,64 160,58 Q200,54 228,60 Q256,66 290,86 L350,94 Q372,98 376,110 L374,124 L338,124 A27,27 0 0 0 284,124 L122,124 A27,27 0 0 0 68,124 Z',
+      glass: 'M104,90 Q134,68 162,63 Q198,60 222,64 Q244,70 270,86 Z', pillars: [], line: 'M42,106 Q200,100 368,106',
+      head: 'M354,98 L372,103 L370,108 L352,105 Z', tail: 'M30,100 L44,98 L44,105 L29,107 Z' },
+    van: { w: [85, 319], wy: 128, wr: 22,
+      body: 'M20,126 L18,40 Q18,30 30,30 L270,30 Q286,30 296,44 L330,82 L368,94 Q380,98 380,112 L380,126 L346,126 A27,27 0 0 0 292,126 L112,126 A27,27 0 0 0 58,126 Z',
+      glass: 'M274,40 Q284,40 292,50 L318,82 L274,82 Z', pillars: [], line: 'M20,100 L376,100',
+      head: 'M364,96 L378,101 L378,107 L362,104 Z', tail: 'M18,44 L26,44 L26,70 L18,70 Z', extra: 'M262,36 L262,122' },
+    pickup: { w: [101, 319], wy: 126, wr: 24,
+      body: 'M22,124 L20,84 L166,84 L168,50 Q170,42 180,42 L250,42 Q262,42 272,54 L296,80 L356,88 Q378,92 380,106 L380,124 L346,124 A28,28 0 0 0 290,124 L130,124 A28,28 0 0 0 72,124 Z',
+      glass: 'M178,50 L248,50 Q256,50 264,58 L284,80 L178,80 Z', pillars: [226], line: 'M22,100 L374,100',
+      head: 'M360,92 L378,97 L378,103 L358,100 Z', tail: 'M20,88 L28,88 L28,100 L20,100 Z', extra: 'M166,84 L166,122' },
+    mpv: { w: [91, 317], wy: 128, wr: 22,
+      body: 'M24,126 L22,48 Q22,36 36,36 L236,36 Q256,36 270,54 L300,86 L358,94 Q376,98 378,110 L378,126 L344,126 A27,27 0 0 0 290,126 L118,126 A27,27 0 0 0 64,126 Z',
+      glass: 'M40,46 L232,46 Q248,46 258,58 L282,84 L40,84 Z', pillars: [120, 196], line: 'M24,102 L372,102',
+      head: 'M354,96 L376,101 L376,107 L352,104 Z', tail: 'M22,52 L30,52 L30,78 L22,78 Z' }
+  };
+  let uid = 0;
+  function wheel(cx, cy, r, rim) {
+    let s = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#0b0c0e"/>`;
+    s += `<circle cx="${cx}" cy="${cy}" r="${r * 0.66}" fill="${rim}"/>`;
+    for (let i = 0; i < 5; i++) {
+      const a = (i * 72 - 90) * Math.PI / 180;
+      s += `<line x1="${cx}" y1="${cy}" x2="${(cx + Math.cos(a) * r * 0.62).toFixed(1)}" y2="${(cy + Math.sin(a) * r * 0.62).toFixed(1)}" stroke="#1a1c20" stroke-width="${(r * 0.16).toFixed(1)}" stroke-linecap="round"/>`;
+    }
+    s += `<circle cx="${cx}" cy="${cy}" r="${r * 0.18}" fill="#2a2d33"/>`;
+    return s;
+  }
+  // opts: {type, color, glass, rim, floor:'dark'|'light', flip}
+  function car(o) {
+    const b = BODIES[o.type] || BODIES.sedan, id = 'c' + (++uid), c = o.color || '#7a8190';
+    const dark = o.floor === 'dark';
+    const glassTop = o.glass || (dark ? '#3a4452' : '#2c3440');
+    const tf = o.flip ? 'transform="translate(400,0) scale(-1,1)"' : '';
+    let s = `<svg viewBox="0 0 400 165" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${o.label || 'Araç'}" preserveAspectRatio="xMidYMid meet">`;
+    s += `<defs><linearGradient id="${id}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(c, .38)}"/><stop offset=".42" stop-color="${c}"/><stop offset="1" stop-color="${shade(c, -.5)}"/></linearGradient>`;
+    s += `<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${shade(glassTop, .25)}"/><stop offset=".55" stop-color="${glassTop}"/><stop offset="1" stop-color="${shade(glassTop, -.55)}"/></linearGradient>`;
+    s += `<radialGradient id="${id}s" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity="${dark ? .75 : .38}"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>`;
+    s += `<linearGradient id="${id}r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9dde3"/><stop offset="1" stop-color="#6d737c"/></linearGradient></defs>`;
+    s += `<ellipse cx="200" cy="151" rx="190" ry="9" fill="url(#${id}s)"/>`;
+    s += `<g ${tf}>`;
+    s += `<path d="${b.body}" fill="url(#${id}b)"/>`;
+    s += `<path d="${b.line}" fill="none" stroke="${shade(c, .55)}" stroke-opacity=".45" stroke-width="1.2"/>`;
+    if (b.extra) s += `<path d="${b.extra}" stroke="${shade(c, -.45)}" stroke-width="1.4" fill="none"/>`;
+    s += `<path d="${b.glass}" fill="url(#${id}g)"/>`;
+    b.pillars.forEach(x => { s += `<rect x="${x - 3}" y="30" width="6" height="60" fill="${shade(c, -.35)}" clip-path="none" style="clip-path:path('${b.glass}')"/>`; });
+    s += `<path d="${b.head}" fill="#f4f1e6" opacity=".95"/><path d="${b.tail}" fill="#c3202c" opacity=".92"/>`;
+    s += wheel(b.w[0], b.wy, b.wr, `url(#${id}r)`) + wheel(b.w[1], b.wy, b.wr, `url(#${id}r)`);
+    s += `</g></svg>`;
+    return s;
+  }
+  // Ekspertiz (üstten görünüm). parts: {parcaKodu: 'o'|'l'|'b'|'d'}
+  const PARTS = [
+    ['on_tampon', 'Ön tampon', 'M44,22 Q100,8 156,22 L160,44 L40,44 Z'],
+    ['kaput', 'Motor kaputu', 'M56,48 L144,48 L148,116 L52,116 Z'],
+    ['sol_on_camurluk', 'Sol ön çamurluk', 'M36,48 L50,48 L48,128 L32,128 Q30,80 36,48 Z'],
+    ['sag_on_camurluk', 'Sağ ön çamurluk', 'M150,48 L164,48 Q170,80 168,128 L152,128 Z'],
+    ['sol_on_kapi', 'Sol ön kapı', 'M32,132 L50,132 L50,206 L30,206 Z'],
+    ['sag_on_kapi', 'Sağ ön kapı', 'M150,132 L168,132 L170,206 L150,206 Z'],
+    ['sol_arka_kapi', 'Sol arka kapı', 'M30,210 L50,210 L50,280 L31,280 Z'],
+    ['sag_arka_kapi', 'Sağ arka kapı', 'M150,210 L170,210 L169,280 L150,280 Z'],
+    ['tavan', 'Tavan', 'M58,162 L142,162 L142,272 L58,272 Z'],
+    ['sol_arka_camurluk', 'Sol arka çamurluk', 'M31,284 L50,284 L50,346 L36,346 Q30,320 31,284 Z'],
+    ['sag_arka_camurluk', 'Sağ arka çamurluk', 'M150,284 L169,284 Q170,320 164,346 L150,346 Z'],
+    ['bagaj', 'Bagaj kapağı', 'M54,302 L146,302 L146,346 L54,346 Z'],
+    ['arka_tampon', 'Arka tampon', 'M40,350 L160,350 L156,370 Q100,382 44,370 Z']
+  ];
+  const STATUS = { o: 'Orijinal', l: 'Lokal boyalı', b: 'Boyalı', d: 'Değişen' };
+  function ekspertiz(parts, pal) {
+    pal = Object.assign({ o: 'var(--ek-o)', l: 'var(--ek-l)', b: 'var(--ek-b)', d: 'var(--ek-d)', line: 'var(--ek-line)', glass: 'var(--ek-glass)' }, pal || {});
+    let s = `<svg viewBox="0 0 200 390" class="ek-svg" role="img" aria-label="Boya ve değişen parça şeması">`;
+    s += `<path d="M100,8 Q164,10 170,60 L172,330 Q168,384 100,384 Q32,384 28,330 L30,60 Q36,10 100,8 Z" fill="none" stroke="${pal.line}" stroke-width="1.5"/>`;
+    s += `<path d="M56,120 L144,120 L140,158 L60,158 Z" fill="${pal.glass}"/><path d="M60,276 L140,276 L144,298 L56,298 Z" fill="${pal.glass}"/>`;
+    PARTS.forEach(([k, name, d]) => {
+      const st = parts[k] || 'o';
+      s += `<path d="${d}" fill="${pal[st]}" stroke="${pal.line}" stroke-width="1"><title>${name}: ${STATUS[st]}</title></path>`;
+    });
+    s += `</svg>`;
+    return s;
+  }
+  function ekList(parts) {
+    const changed = PARTS.filter(([k]) => parts[k] && parts[k] !== 'o');
+    if (!changed.length) return '<p class="ek-clean">Tüm parçalar orijinal.</p>';
+    return '<ul class="ek-list">' + changed.map(([k, n]) => `<li><i class="ek-dot ek-${parts[k]}"></i>${n}<span>${STATUS[parts[k]]}</span></li>`).join('') + '</ul>';
+  }
+  const tl = n => new Intl.NumberFormat('tr-TR').format(Math.round(n)) + ' TL';
+  const km = n => new Intl.NumberFormat('tr-TR').format(n) + ' km';
+  function monthly(principal, ratePct, months) { // aylık faiz %
+    const r = ratePct / 100; if (!r) return principal / months;
+    return principal * r / (1 - Math.pow(1 + r, -months));
+  }
+  function waText(galeri, c) {
+    return `Merhaba ${galeri}, web sitenizdeki ${c.no} numaralı ${c.year} ${c.make} ${c.model} (${tl(c.price)}) hakkında bilgi almak istiyorum. Araç hâlâ satışta mı?`;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m])); }
+  return { car, ekspertiz, ekList, tl, km, monthly, waText, esc, shade, STATUS };
+})();
+</script>
+<script>
+const GALERI='Ergin Ticari';
+/* cat: hafif | panelvan | pickup | minibus. vol: m³, load: kg. Gerçek fotoğraf için img:'foto.jpg' ekleyin. */
+const CARS=[
+ {no:'E-310',make:'Ford',model:'Transit 350 L L3H2 2.0 EcoBlue',year:2022,km:118000,fuel:'Dizel',gear:'Manuel',hp:170,type:'van',cat:'panelvan',hex:'#f1f1ee',color:'Beyaz',vol:11.2,load:1350,seats:3,price:1890000,tramer:0,parts:{sag_arka_kapi:'l'},invoice:true},
+ {no:'E-306',make:'Fiat',model:'Doblo Cargo Maxi 1.6 Multijet',year:2021,km:96000,fuel:'Dizel',gear:'Manuel',hp:105,type:'mpv',cat:'hafif',hex:'#eeeeea',color:'Beyaz',vol:4.2,load:1000,seats:2,price:865000,tramer:11200,parts:{on_tampon:'b'},invoice:false},
+ {no:'E-304',make:'Renault',model:'Master 2.3 dCi L3H2',year:2021,km:142000,fuel:'Dizel',gear:'Manuel',hp:150,type:'van',cat:'panelvan',hex:'#e9e9e5',color:'Beyaz',vol:13,load:1500,seats:3,price:1650000,tramer:0,parts:{},invoice:true},
+ {no:'E-301',make:'Toyota',model:'Hilux 2.4 D-4D 4x4 Adventure',year:2022,km:88000,fuel:'Dizel',gear:'Otomatik',hp:150,type:'pickup',cat:'pickup',hex:'#4b5159',color:'Antrasit',vol:0,load:1000,seats:5,price:2250000,tramer:0,parts:{},invoice:false},
+ {no:'E-299',make:'Ford',model:'Ranger 2.0 EcoBlue Wildtrak 4x4',year:2023,km:41000,fuel:'Dizel',gear:'Otomatik',hp:205,type:'pickup',cat:'pickup',hex:'#c46a1d',color:'Turuncu',vol:0,load:1050,seats:5,price:2790000,tramer:0,parts:{},invoice:true},
+ {no:'E-297',make:'Volkswagen',model:'Caddy Cargo 2.0 TDI',year:2022,km:67000,fuel:'Dizel',gear:'Manuel',hp:122,type:'mpv',cat:'hafif',hex:'#b8bcc1',color:'Gümüş',vol:3.3,load:700,seats:2,price:1050000,tramer:0,parts:{},invoice:true},
+ {no:'E-294',make:'Mercedes-Benz',model:'Sprinter 316 CDI Uzun',year:2020,km:176000,fuel:'Dizel',gear:'Manuel',hp:163,type:'van',cat:'panelvan',hex:'#f3f3f0',color:'Beyaz',vol:14,load:1400,seats:3,price:2150000,tramer:38400,parts:{sol_on_camurluk:'d',sol_on_kapi:'b',kaput:'b'},invoice:true},
+ {no:'E-290',make:'Ford',model:'Transit Custom 320 L',year:2021,km:104000,fuel:'Dizel',gear:'Manuel',hp:130,type:'van',cat:'panelvan',hex:'#1f3552',color:'Lacivert',vol:6,load:1100,seats:3,price:1320000,tramer:0,parts:{},invoice:false},
+ {no:'E-287',make:'Fiat',model:'Ducato Maxi 2.3 Multijet',year:2021,km:150000,fuel:'Dizel',gear:'Manuel',hp:140,type:'van',cat:'panelvan',hex:'#ececE8',color:'Beyaz',vol:15,load:1600,seats:3,price:1590000,tramer:9600,parts:{arka_tampon:'b'},invoice:false},
+ {no:'E-283',make:'Ford',model:'Transit 17+1 Minibüs',year:2020,km:210000,fuel:'Dizel',gear:'Manuel',hp:155,type:'mpv',cat:'minibus',hex:'#f0efeb',color:'Beyaz',vol:0,load:0,seats:18,price:1750000,tramer:0,parts:{sag_on_kapi:'l'},invoice:true}
+];
+const CATS=[['','Hepsi'],['hafif','Hafif ticari'],['panelvan','Panelvan'],['pickup','Pick-up'],['minibus','Minibüs']];
+const $=s=>document.querySelector(s);
+const pic=c=>c.img?`<img src="${c.img}" alt="${V.esc(c.make+' '+c.model)}">`:V.car({type:c.type,color:c.hex,floor:'light',label:c.make+' '+c.model});
+const fmt=n=>new Intl.NumberFormat('tr-TR').format(n);
+
+/* hero */
+const hero=CARS[0];$('#heroCar').innerHTML=pic(hero);
+$('#heroPlate').innerHTML=`<b>${hero.vol.toLocaleString('tr-TR')} m³</b>${fmt(hero.load)} kg · ${hero.make} Transit<br>İlan ${hero.no}`;
+$('#fCount').textContent=CARS.length+' araç';
+
+/* finder */
+const need={vol:0,kg:0,seat:2};const active=()=>need.vol>0||need.kg>0||need.seat>2;
+function fits(c){return c.vol>=need.vol&&c.load>=need.kg&&c.seats>=need.seat}
+function readNeed(){need.vol=+$('#vol').value;need.kg=+$('#kg').value;need.seat=+$('#seat').value;
+ $('#oVol').textContent=need.vol?need.vol.toLocaleString('tr-TR')+' m³':'Fark etmez';$('#oKg').textContent=need.kg?fmt(need.kg)+' kg':'Fark etmez';$('#oSeat').textContent=need.seat+' kişi';
+ const n=CARS.filter(fits).length;$('#fitTxt').textContent=!active()?'Kaydırıcıları oynat, uyan araçlar işaretlensin.':n?`${n} araç ihtiyacını karşılıyor.`:'Stokta uyan araç yok. Talebini bırak, gelen ilk aracı sana ayıralım.';render()}
+['vol','kg','seat'].forEach(id=>$('#'+id).addEventListener('input',readNeed));
+
+/* list */
+let cat='';
+$('#tabs').innerHTML=CATS.map(([k,l])=>`<button type="button" data-c="${k}" aria-pressed="${k===cat}">${l}<sup>${k?CARS.filter(c=>c.cat===k).length:CARS.length}</sup></button>`).join('');
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.c;[...$('#tabs').children].forEach(x=>x.setAttribute('aria-pressed',x===b));render()};
+function render(){
+ const L=CARS.filter(c=>!cat||c.cat===cat).sort((a,b)=>fits(b)-fits(a));
+ $('#rows').innerHTML=L.length?L.map(c=>`<button class="row ${active()?(fits(c)?'fit':'dim'):''}" data-no="${c.no}" aria-label="${V.esc(c.make+' '+c.model)} detayları">
+   <div class="pic">${pic(c)}</div>
+   <h3>${V.esc(c.make)} ${V.esc(c.model)}<small>İlan ${c.no} · ${c.fuel} · ${c.gear}${c.invoice?' · Faturalı':''}</small></h3>
+   <div class="cell"><small>Yıl / km</small>${c.year} · ${fmt(Math.round(c.km/1000))} bin</div>
+   <div class="cell"><small>Hacim</small>${c.vol?c.vol.toLocaleString('tr-TR')+' m³':'—'}</div>
+   <div class="cell"><small>Kapasite</small>${c.load?fmt(c.load)+' kg':'—'}</div>
+   <div class="cell"><small>Koltuk</small>${c.seats}</div>
+   <div class="price">${V.tl(c.price)}<small>${c.tramer?'Tramer '+V.tl(c.tramer):'Tramer yok'}</small></div>
+  </button>`).join(''):'<div class="nores">Bu kategoride stok yok.</div>';
+}
+$('#rows').onclick=e=>{const r=e.target.closest('.row');if(r)openCar(r.dataset.no)};
+readNeed();
+
+/* modal */
+let lastF=null;
+function openCar(no){const c=CARS.find(x=>x.no===no);lastF=document.activeElement;
+ $('#sheet').innerHTML=`<button class="x" id="mX" aria-label="Kapat">×</button><div class="top">${pic(c)}</div>
+ <div class="cols"><div>
+  <div class="kicker">İlan ${c.no}${c.invoice?' · Faturalı satış':''}</div>
+  <h3 id="mTitle">${V.esc(c.make)} ${V.esc(c.model)}</h3>
+  <div class="price" style="text-align:left;font-size:36px">${V.tl(c.price)}</div>
+  <div class="specgrid">
+   <div><small>Yıl</small><b>${c.year}</b></div><div><small>Kilometre</small><b>${fmt(c.km)}</b></div><div><small>Motor</small><b>${c.hp} hp</b></div>
+   <div><small>Yük hacmi</small><b>${c.vol?c.vol.toLocaleString('tr-TR')+' m³':'—'}</b></div><div><small>Kapasite</small><b>${c.load?fmt(c.load)+' kg':'—'}</b></div><div><small>Koltuk</small><b>${c.seats}</b></div>
+  </div>
+  <div class="acts"><button class="btn y" id="mWa">WhatsApp'tan sor</button><a class="btn o" href="#filo" id="mFleet">Filoya ekle</a></div>
+  <div class="wa-prev" id="mPrev" hidden><small>Hazır mesaj (demo)</small>${V.esc(V.waText(GALERI,c))}</div>
+ </div><div>
+  <div class="ek">${V.ekspertiz(c.parts)}<div><h4>Boya / değişen</h4>${V.ekList(c.parts)}
+   <div class="legend"><span><i class="ek-dot ek-o"></i>Orijinal</span><span><i class="ek-dot ek-l"></i>Lokal</span><span><i class="ek-dot ek-b"></i>Boyalı</span><span><i class="ek-dot ek-d"></i>Değişen</span></div>
+   <div class="tr">Tramer: ${c.tramer?V.tl(c.tramer):'Kayıt yok'}</div></div></div>
+  <p style="font-size:13px;color:var(--mute)">Ticari araçta asıl önemli olan mekanik: debriyaj, şanzıman ve turbo kontrolü ekspertiz raporunda ayrıca yer alır.</p>
+ </div></div>`;
+ $('#modal').hidden=false;document.body.style.overflow='hidden';$('#mX').focus();
+ $('#mX').onclick=close;$('#mWa').onclick=()=>{$('#mPrev').hidden=false};
+ $('#mFleet').onclick=()=>{$('#fType').value={hafif:'Hafif ticari',panelvan:'Panelvan',pickup:'Pick-up',minibus:'Minibüs'}[c.cat];close()};
+}
+function close(){$('#modal').hidden=true;document.body.style.overflow='';lastF&&lastF.focus()}
+$('#modal').onclick=e=>{if(e.target.id==='modal')close()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#modal').hidden)close()});
+
+/* fleet */
+$('#fForm').onsubmit=e=>{e.preventDefault();const d=$('#fDone');d.hidden=false;
+ if(!$('#fFirm').value.trim()||!$('#fPhone').value.trim()){d.textContent='Teklif için firma adı ve telefon gerekli.';return}
+ d.textContent=`Demo: ${$('#fFirm').value} için ${$('#fQty').value} adet ${$('#fType').value.toLowerCase()} teklif talebi alındı. Gerçek sitede talep galeriye anında WhatsApp bildirimi olarak düşer.`};
+</script>
+</body></html>

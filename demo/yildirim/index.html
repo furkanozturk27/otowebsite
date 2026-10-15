@@ -1,0 +1,503 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Yıldırım Oto Konya · Örnek site · otowebsite.com.tr</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0"><title>Yıldırım Oto Konya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#eef1f4; --surf:#ffffff; --surf2:#f6f8fa; --ink:#0f1a2a; --mute:#5a6576; --line:#dbe1e8;
+  --acc:#0e7a4b; --acc-ink:#ffffff; --acc-soft:#dff2e8; --hot:#ffd23f; --hot-ink:#2a2200; --floor:#e6eaef;
+  --ek-o:#e8ecf0; --ek-l:#f2c14e; --ek-b:#ec8a3c; --ek-d:#d63a4b; --ek-line:#9aa4b2; --ek-glass:#c7d0da;
+  --disp:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#0c1117; --surf:#141b24; --surf2:#19222d; --ink:#e8edf3; --mute:#98a3b3; --line:#26303c;
+  --acc:#3ccf8a; --acc-ink:#04140c; --acc-soft:#123325; --hot:#ffd23f; --hot-ink:#2a2200; --floor:#1a232e;
+  --ek-o:#243040; --ek-line:#4a5668; --ek-glass:#0f151c;}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0c1117; --surf:#141b24; --surf2:#19222d; --ink:#e8edf3; --mute:#98a3b3; --line:#26303c;
+  --acc:#3ccf8a; --acc-ink:#04140c; --acc-soft:#123325; --hot:#ffd23f; --hot-ink:#2a2200; --floor:#1a232e;
+  --ek-o:#243040; --ek-line:#4a5668; --ek-glass:#0f151c;}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;font-variant-numeric:tabular-nums}
+a{color:inherit}
+.wrap{max-width:1260px;margin:0 auto;padding-inline:clamp(16px,3.5vw,36px)}
+.demo-bar{background:var(--ink);color:var(--bg);font-size:12px;font-weight:600;text-align:center;padding:7px 16px}
+.demo-bar a{color:var(--hot)}
+header{background:var(--surf);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo .mk{width:36px;height:36px;border-radius:9px;background:var(--acc);display:grid;place-items:center}
+.logo b{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.02em;line-height:1}
+.logo small{display:block;font-size:11px;color:var(--mute);font-weight:600;letter-spacing:.04em}
+nav.main{display:flex;gap:22px;font-weight:600;font-size:14px}
+nav.main a{text-decoration:none;color:var(--mute)}
+nav.main a:hover{color:var(--ink)}
+.tel{font-weight:700;font-size:15px;white-space:nowrap}
+.tel span{display:block;font-size:11px;color:var(--mute);font-weight:600}
+@media (max-width:820px){nav.main{display:none}}
+@media (max-width:460px){.tel{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;background:var(--acc);color:var(--acc-ink);font:700 15px var(--body);padding:13px 20px;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.sec{background:var(--surf2);color:var(--ink);border:1px solid var(--line)}
+.btn.wa{background:#1fa855;color:#fff}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+/* HERO */
+.hero{padding-block:clamp(28px,5vw,56px) 0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.live{display:inline-flex;align-items:center;gap:8px;background:var(--acc-soft);color:var(--acc);font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--acc);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(38px,5.6vw,72px);line-height:.98;letter-spacing:-.035em;margin:16px 0 14px;text-wrap:balance}
+h1 mark{background:var(--hot);color:var(--hot-ink);padding:0 .12em;border-radius:.12em}
+.hero p{color:var(--mute);font-size:17px;max-width:46ch;margin:0 0 22px}
+.search{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;box-shadow:0 20px 40px -24px rgba(15,26,42,.25)}
+.search label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--mute)}
+.search select,.search input[type=range]{width:100%}
+select,input,textarea{max-width:100%;min-width:0;font:500 15px var(--body);color:var(--ink);background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+input[type=range]{padding:0;accent-color:var(--acc);background:transparent;border:0;height:28px}
+.search .budget{grid-column:1/3}
+.search .budget output{font-weight:800;color:var(--ink);font-size:15px}
+.search .go{align-self:end}
+@media (max-width:560px){.search{grid-template-columns:1fr 1fr}.search .budget{grid-column:1/-1}.search .go{grid-column:1/-1}}
+.hero-art{position:relative;min-height:260px}
+.hero-art .c{position:absolute;width:78%}
+.hero-art .c1{right:0;top:0;opacity:.55;transform:scale(.8);transform-origin:right top}
+.hero-art .c2{left:0;top:26%}
+.hero-art .c3{right:2%;bottom:0;width:62%}
+.hero-art .tag{position:absolute;left:4%;top:4%;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 12px 24px -16px rgba(0,0,0,.4)}
+.hero-art .tag b{display:block;font-family:var(--disp);font-size:24px;line-height:1.1}
+@media (max-width:900px){.hero-art{min-height:220px}}
+.trust{display:flex;flex-wrap:wrap;gap:10px 28px;padding-block:26px;margin-top:24px;border-top:1px solid var(--line);font-weight:600;font-size:14px;color:var(--mute)}
+.trust b{color:var(--ink)}
+
+/* LIST */
+section{padding-block:clamp(40px,6vw,72px)}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.03em;line-height:1.05;margin:0;text-wrap:balance}
+.sub{color:var(--mute);margin:6px 0 0}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{border:1px solid var(--line);background:var(--surf);color:var(--ink);font:600 13px var(--body);padding:8px 14px;border-radius:99px;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.active-f{font-size:13px;color:var(--mute);margin-bottom:14px}
+.active-f button{background:none;border:0;color:var(--acc);font:700 13px var(--body);cursor:pointer;padding:0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(15,26,42,.45)}
+.card .pic{position:relative;aspect-ratio:16/9;background:linear-gradient(180deg,var(--surf2),var(--floor));display:grid;place-items:center;padding:6px 14px}
+.card .pic svg,.card .pic img{width:100%;height:100%;object-fit:cover}
+.card .tags{position:absolute;left:10px;top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.t{font-size:11px;font-weight:800;padding:4px 8px;border-radius:7px;background:var(--surf);color:var(--ink);border:1px solid var(--line)}
+.t.new{background:var(--hot);color:var(--hot-ink);border-color:transparent}
+.t.ok{background:var(--acc-soft);color:var(--acc);border-color:transparent}
+.card .in{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{margin:0;font-size:17px;font-weight:700;line-height:1.25}
+.card h3 small{display:block;color:var(--mute);font-weight:500;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12px;font-weight:600;background:var(--surf2);border:1px solid var(--line);border-radius:7px;padding:3px 8px;color:var(--mute)}
+.pr{display:flex;justify-content:space-between;align-items:end;gap:8px;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.pr b{white-space:nowrap;font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:-.02em}
+.pr small{white-space:nowrap;font-size:12px;color:var(--mute);text-align:right;line-height:1.3}
+.pr small b{font-family:var(--body);font-size:13px;color:var(--acc);font-weight:800;letter-spacing:0}
+.none{grid-column:1/-1;background:var(--surf);border:1px dashed var(--line);border-radius:18px;padding:32px;text-align:center;color:var(--mute)}
+
+/* CREDIT */
+.credit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+@media (max-width:860px){.credit{grid-template-columns:minmax(0,1fr)}}
+.panel{min-width:0;background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,28px)}
+.panel.dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fg{display:grid;gap:16px}
+.fg>*{min-width:0}
+.fg label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:13px;color:var(--mute)}
+.fg .lv{display:flex;justify-content:space-between;color:var(--ink);font-size:14px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.res .big{font-family:var(--disp);font-weight:800;font-size:clamp(40px,6vw,64px);letter-spacing:-.03em;line-height:1;margin:6px 0 18px}
+.res dl{display:grid;grid-template-columns:1fr auto;gap:8px 16px;margin:0 0 20px;font-size:14px}
+.res dt{opacity:.7}.res dd{margin:0;font-weight:700;text-align:right}
+.fine{font-size:12px;opacity:.65;margin:14px 0 0}
+
+/* TRADE */
+.trade{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(18px,4vw,40px);align-items:start}
+@media (max-width:860px){.trade{grid-template-columns:minmax(0,1fr)}}
+.steps{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+.steps li{display:flex;gap:12px;align-items:flex-start}
+.steps li b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--acc-soft);color:var(--acc);display:grid;place-items:center;font-size:14px}
+.form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.form label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--mute)}
+.form .full{grid-column:1/-1}
+@media (max-width:520px){.form{grid-template-columns:minmax(0,1fr)}}
+.done{grid-column:1/-1;background:var(--acc-soft);color:var(--acc);border-radius:12px;padding:14px;font-weight:600}
+
+footer{background:var(--surf);border-top:1px solid var(--line);padding-block:36px;font-size:14px;color:var(--mute)}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
+footer b{color:var(--ink)}
+@media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(8,14,22,.6);backdrop-filter:blur(4px);overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;padding:clamp(12px,4vw,40px) 12px}
+.sheet{background:var(--surf);border-radius:24px;width:100%;max-width:980px;overflow:hidden;position:relative;animation:up .3s ease-out}
+@keyframes up{from{transform:translateY(20px);opacity:0}}
+.sheet .x{position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surf);color:var(--ink);font-size:20px;cursor:pointer;z-index:2}
+.sheet .top{background:linear-gradient(180deg,var(--surf2),var(--floor));padding:34px 8% 14px}
+.sheet .cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;padding:24px clamp(16px,3vw,32px) 30px}
+@media (max-width:780px){.sheet .cols{grid-template-columns:1fr}}
+.sheet h3{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;margin:4px 0 4px;line-height:1.1}
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0}
+.spec div{background:var(--surf2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.spec small{display:block;font-size:11px;color:var(--mute);font-weight:700}
+.spec b{font-size:14px}
+@media (max-width:460px){.spec{grid-template-columns:1fr 1fr}}
+.ek{display:grid;grid-template-columns:110px 1fr;gap:16px;background:var(--surf2);border:1px solid var(--line);border-radius:16px;padding:14px}
+.ek-svg{width:100%;height:auto}
+.ek h4{margin:0 0 6px;font-size:14px}
+.ek-list{list-style:none;margin:0;padding:0;font-size:13px}
+.ek-list li{display:flex;align-items:center;gap:8px;padding:4px 0}
+.ek-list li span{margin-left:auto;color:var(--mute);font-size:12px;font-weight:600}
+.ek-dot{width:11px;height:11px;border-radius:3px;display:inline-block;flex:none}
+.ek-o{background:var(--ek-o);border:1px solid var(--ek-line)}.ek-l{background:var(--ek-l)}.ek-b{background:var(--ek-b)}.ek-d{background:var(--ek-d)}
+.ek-clean{margin:0;color:var(--acc);font-weight:700;font-size:13px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:10px;font-size:11px;color:var(--mute);font-weight:600}
+.legend span{display:flex;align-items:center;gap:4px}
+.tr{margin-top:10px;font-size:13px;font-weight:700}
+.mini{margin-top:14px;background:var(--acc-soft);border-radius:14px;padding:12px 14px;font-size:14px}
+.mini b{color:var(--acc)}
+.wa-prev{margin-top:12px;background:#e7f7ec;color:#0f3d22;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:14px}
+.wa-prev small{display:block;font-weight:800;font-size:11px;margin-bottom:4px;color:#1fa855}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="demo-bar">Bu site <a href="/" id="vitrinLink">otowebsite.com.tr</a> tarafından hazırlanmış bir demodur. İşletme adı, fiyatlar ve ilanlar örnektir.</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><span class="mk" aria-hidden="true"><svg width="18" height="22" viewBox="0 0 18 22"><path d="M11 0 L1 13 H8 L6 22 L17 8 H10 Z" fill="var(--acc-ink)"/></svg></span><span><b>Yıldırım Oto</b><small>KONYA · 1998'DEN BERİ</small></span></a>
+    <nav class="main" aria-label="Ana menü"><a href="#stok">Stok</a><a href="#kredi">Kredi hesapla</a><a href="#takas">Takas</a><a href="#iletisim">İletişim</a></nav>
+    <div class="tel">0332 000 00 00<span>Her gün 09:00–20:00</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="live"><i></i><span id="liveTxt">Stok bugün güncellendi</span></span>
+        <h1>Aradığın araç <mark>bugün</mark> stokta mı? Buradan bak.</h1>
+        <p>Konya'nın en güncel ikinci el stoğu. Her araçta boya-değişen şeması, tramer bilgisi ve aylık taksit tutarı açıkça yazılı.</p>
+        <form class="search" id="search">
+          <label>Marka<select id="sMake"><option value="">Tümü</option></select></label>
+          <label>Yakıt<select id="sFuel"><option value="">Tümü</option><option>Benzin</option><option>Dizel</option><option>Hibrit</option><option>LPG</option></select></label>
+          <label>Vites<select id="sGear"><option value="">Tümü</option><option>Manuel</option><option>Otomatik</option></select></label>
+          <label class="budget"><span style="display:flex;justify-content:space-between">En fazla bütçe <output id="sBudOut"></output></span><input type="range" id="sBud" min="750000" max="2000000" step="25000" value="2000000"></label>
+          <button class="btn go" type="submit" id="sGo">Araçları göster</button>
+        </form>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="c c1" id="h1c"></div><div class="c c2" id="h2c"></div><div class="c c3" id="h3c"></div>
+        <div class="tag"><b id="heroCount"></b>araç şu an satışta</div>
+      </div>
+    </div>
+    <div class="wrap"><div class="trust"><span><b>26 yıl</b> aynı adreste</span><span><b>Her araçta</b> ekspertiz raporu</span><span><b>Takas</b> değerlemesi aynı gün</span><span><b>Noter</b> işlemleri bizden</span></div></div>
+  </div>
+
+  <section id="stok">
+    <div class="wrap">
+      <div class="sh">
+        <div><h2>Stoktaki araçlar</h2><p class="sub" id="resCount"></p></div>
+        <div class="toolbar" role="group" aria-label="Kasa tipi">
+          <button class="pill" data-b="" aria-pressed="true">Hepsi</button>
+          <button class="pill" data-b="sedan" aria-pressed="false">Sedan</button>
+          <button class="pill" data-b="hatch" aria-pressed="false">Hatchback</button>
+          <button class="pill" data-b="suv" aria-pressed="false">SUV</button>
+          <select id="sort" aria-label="Sırala"><option value="new">En yeni ilan</option><option value="pa">En ucuz</option><option value="pd">En pahalı</option><option value="km">En az km</option><option value="yr">En yeni model</option></select>
+        </div>
+      </div>
+      <div class="active-f" id="activeF" hidden></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="kredi" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div><h2>Taksitini şimdi hesapla</h2><p class="sub">Aracı seç, peşinatı ve vadeyi ayarla. Kesin teklif için bankaya birlikte başvuruyoruz.</p></div></div>
+      <div class="credit">
+        <div class="panel fg">
+          <label>Araç<select id="kCar"></select></label>
+          <label><span class="lv">Peşinat <b id="kDownOut"></b></span><input type="range" id="kDown" min="30" max="80" step="5" value="40"></label>
+          <label>Vade<div class="seg" id="kTerm"></div></label>
+          <label><span class="lv">Aylık faiz oranı (örnek) <b id="kRateOut"></b></span><input type="range" id="kRate" min="1.5" max="4.5" step="0.05" value="2.79"></label>
+        </div>
+        <div class="panel dark res">
+          <div style="font-weight:700;opacity:.75">Aylık taksit</div>
+          <div class="big" id="kMonthly"></div>
+          <dl><dt>Araç fiyatı</dt><dd id="kPrice"></dd><dt>Peşinat</dt><dd id="kDownAmt"></dd><dt>Kredi tutarı</dt><dd id="kLoan"></dd><dt>Toplam geri ödeme</dt><dd id="kTotal"></dd></dl>
+          <button class="btn" id="kAsk" style="width:100%">Bu taksitle ön onay iste</button>
+          <div class="wa-prev" id="kPrev" hidden></div>
+          <p class="fine">Hesaplama bilgi amaçlıdır. Kredi tutarı ve vade üst sınırı, aracın fiyatına göre BDDK düzenlemelerine tabidir. Faiz oranı bankaya göre değişir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="takas" style="padding-top:0">
+    <div class="wrap trade">
+      <div>
+        <h2>Aracını getir, farkı öde.</h2>
+        <p class="sub">Takas teklifini fotoğraflarla uzaktan veriyoruz. Beğenirsen aracını getir, ekspertizde teyit edelim.</p>
+        <ul class="steps"><li><b>1</b><span>Formu doldur, aracının bilgilerini gönder.</span></li><li><b>2</b><span>2 saat içinde WhatsApp'tan ön teklif al.</span></li><li><b>3</b><span>Showroom'da ekspertiz yapılsın, fark netleşsin.</span></li></ul>
+      </div>
+      <form class="panel form" id="tForm" novalidate>
+        <label>Marka / model<input id="tModel" value="Renault Clio 1.5 dCi"></label>
+        <label>Model yılı<select id="tYear"></select></label>
+        <label>Kilometre<input id="tKm" inputmode="numeric" value="112000"></label>
+        <label>Tramer kaydı<select id="tTr"><option>Yok</option><option>Var</option><option>Bilmiyorum</option></select></label>
+        <label class="full">Almak istediğin araç<select id="tWant"></select></label>
+        <label>Ad soyad<input id="tName" autocomplete="name" value="Mehmet Kaya"></label>
+        <label>Telefon<input id="tPhone" inputmode="tel" autocomplete="tel" value="0544 000 00 00"></label>
+        <div class="full"><button class="btn" type="submit" style="width:100%">Takas teklifi iste</button></div>
+        <div class="done" id="tDone" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="iletisim">
+  <div class="wrap">
+    <div><b>Yıldırım Oto</b><br>Horozluhan Mah. Oto Galericiler Sitesi, 00. Blok No: 0<br>Selçuklu / Konya</div>
+    <div><b>Telefon</b><br>0332 000 00 00<br>WhatsApp: 0544 000 00 00</div>
+    <div><b>Çalışma saatleri</b><br>Her gün 09:00–20:00<br><span style="font-size:12px">Demo site · otowebsite.com.tr</span></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="sheet" id="sheet"></div></div>
+
+<script>document.documentElement.lang="tr";</script>
+<script>/* ===== Vitrin ortak araçlar: araç çizimi, ekspertiz şeması, biçimlendirme ===== */
+const V = (() => {
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  function shade(hex, amt) {
+    const n = parseInt(hex.slice(1), 16);
+    let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    if (amt >= 0) { r += (255 - r) * amt; g += (255 - g) * amt; b += (255 - b) * amt; }
+    else { r *= 1 + amt; g *= 1 + amt; b *= 1 + amt; }
+    return '#' + [r, g, b].map(x => clamp(Math.round(x), 0, 255).toString(16).padStart(2, '0')).join('');
+  }
+  // Yan profil gövde tanımları (ön taraf sağda). w: [arka tekerlek x, ön tekerlek x], wy: tekerlek merkezi y
+  const BODIES = {
+    sedan: { w: [95, 310], wy: 128, wr: 22,
+      body: 'M28,126 L26,108 Q27,96 38,92 L92,86 Q112,70 138,60 Q175,52 218,55 Q246,58 282,82 L346,90 Q370,94 374,108 L372,126 L337,126 A27,27 0 0 0 283,126 L122,126 A27,27 0 0 0 68,126 Z',
+      glass: 'M104,86 Q124,70 142,63 Q176,57 214,59 Q238,62 266,84 Z', pillars: [188], line: 'M40,104 Q200,98 366,104',
+      head: 'M352,94 L370,99 L368,104 L350,101 Z', tail: 'M28,98 L40,95 L40,103 L27,105 Z' },
+    hatch: { w: [105, 300], wy: 128, wr: 22,
+      body: 'M36,126 L34,104 Q36,90 46,86 Q54,66 70,58 Q110,52 200,54 Q232,58 268,82 L336,90 Q360,94 364,108 L362,126 L327,126 A27,27 0 0 0 273,126 L132,126 A27,27 0 0 0 78,126 Z',
+      glass: 'M70,82 Q80,64 96,60 Q140,56 196,58 Q226,62 254,82 Z', pillars: [168], line: 'M46,104 Q200,98 356,104',
+      head: 'M342,94 L360,99 L358,104 L340,101 Z', tail: 'M36,90 L48,88 L46,100 L35,102 Z' },
+    suv: { w: [96, 310], wy: 124, wr: 24,
+      body: 'M24,122 L22,92 Q24,74 38,70 Q50,50 70,46 Q150,40 222,44 Q250,48 282,72 L346,80 Q370,84 374,100 L374,122 L338,122 A28,28 0 0 0 282,122 L124,122 A28,28 0 0 0 68,122 Z',
+      glass: 'M54,68 Q64,52 80,50 Q150,46 218,48 Q244,52 270,72 Z', pillars: [132, 200], line: 'M30,98 Q200,92 368,98',
+      head: 'M350,84 L370,89 L369,95 L348,92 Z', tail: 'M22,76 L36,73 L36,86 L22,88 Z' },
+    coupe: { w: [95, 311], wy: 126, wr: 22,
+      body: 'M30,124 L28,110 Q30,98 42,95 L80,92 Q120,64 160,58 Q200,54 228,60 Q256,66 290,86 L350,94 Q372,98 376,110 L374,124 L338,124 A27,27 0 0 0 284,124 L122,124 A27,27 0 0 0 68,124 Z',
+      glass: 'M104,90 Q134,68 162,63 Q198,60 222,64 Q244,70 270,86 Z', pillars: [], line: 'M42,106 Q200,100 368,106',
+      head: 'M354,98 L372,103 L370,108 L352,105 Z', tail: 'M30,100 L44,98 L44,105 L29,107 Z' },
+    van: { w: [85, 319], wy: 128, wr: 22,
+      body: 'M20,126 L18,40 Q18,30 30,30 L270,30 Q286,30 296,44 L330,82 L368,94 Q380,98 380,112 L380,126 L346,126 A27,27 0 0 0 292,126 L112,126 A27,27 0 0 0 58,126 Z',
+      glass: 'M274,40 Q284,40 292,50 L318,82 L274,82 Z', pillars: [], line: 'M20,100 L376,100',
+      head: 'M364,96 L378,101 L378,107 L362,104 Z', tail: 'M18,44 L26,44 L26,70 L18,70 Z', extra: 'M262,36 L262,122' },
+    pickup: { w: [101, 319], wy: 126, wr: 24,
+      body: 'M22,124 L20,84 L166,84 L168,50 Q170,42 180,42 L250,42 Q262,42 272,54 L296,80 L356,88 Q378,92 380,106 L380,124 L346,124 A28,28 0 0 0 290,124 L130,124 A28,28 0 0 0 72,124 Z',
+      glass: 'M178,50 L248,50 Q256,50 264,58 L284,80 L178,80 Z', pillars: [226], line: 'M22,100 L374,100',
+      head: 'M360,92 L378,97 L378,103 L358,100 Z', tail: 'M20,88 L28,88 L28,100 L20,100 Z', extra: 'M166,84 L166,122' },
+    mpv: { w: [91, 317], wy: 128, wr: 22,
+      body: 'M24,126 L22,48 Q22,36 36,36 L236,36 Q256,36 270,54 L300,86 L358,94 Q376,98 378,110 L378,126 L344,126 A27,27 0 0 0 290,126 L118,126 A27,27 0 0 0 64,126 Z',
+      glass: 'M40,46 L232,46 Q248,46 258,58 L282,84 L40,84 Z', pillars: [120, 196], line: 'M24,102 L372,102',
+      head: 'M354,96 L376,101 L376,107 L352,104 Z', tail: 'M22,52 L30,52 L30,78 L22,78 Z' }
+  };
+  let uid = 0;
+  function wheel(cx, cy, r, rim) {
+    let s = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#0b0c0e"/>`;
+    s += `<circle cx="${cx}" cy="${cy}" r="${r * 0.66}" fill="${rim}"/>`;
+    for (let i = 0; i < 5; i++) {
+      const a = (i * 72 - 90) * Math.PI / 180;
+      s += `<line x1="${cx}" y1="${cy}" x2="${(cx + Math.cos(a) * r * 0.62).toFixed(1)}" y2="${(cy + Math.sin(a) * r * 0.62).toFixed(1)}" stroke="#1a1c20" stroke-width="${(r * 0.16).toFixed(1)}" stroke-linecap="round"/>`;
+    }
+    s += `<circle cx="${cx}" cy="${cy}" r="${r * 0.18}" fill="#2a2d33"/>`;
+    return s;
+  }
+  // opts: {type, color, glass, rim, floor:'dark'|'light', flip}
+  function car(o) {
+    const b = BODIES[o.type] || BODIES.sedan, id = 'c' + (++uid), c = o.color || '#7a8190';
+    const dark = o.floor === 'dark';
+    const glassTop = o.glass || (dark ? '#3a4452' : '#2c3440');
+    const tf = o.flip ? 'transform="translate(400,0) scale(-1,1)"' : '';
+    let s = `<svg viewBox="0 0 400 165" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${o.label || 'Araç'}" preserveAspectRatio="xMidYMid meet">`;
+    s += `<defs><linearGradient id="${id}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(c, .38)}"/><stop offset=".42" stop-color="${c}"/><stop offset="1" stop-color="${shade(c, -.5)}"/></linearGradient>`;
+    s += `<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${shade(glassTop, .25)}"/><stop offset=".55" stop-color="${glassTop}"/><stop offset="1" stop-color="${shade(glassTop, -.55)}"/></linearGradient>`;
+    s += `<radialGradient id="${id}s" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity="${dark ? .75 : .38}"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>`;
+    s += `<linearGradient id="${id}r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9dde3"/><stop offset="1" stop-color="#6d737c"/></linearGradient></defs>`;
+    s += `<ellipse cx="200" cy="151" rx="190" ry="9" fill="url(#${id}s)"/>`;
+    s += `<g ${tf}>`;
+    s += `<path d="${b.body}" fill="url(#${id}b)"/>`;
+    s += `<path d="${b.line}" fill="none" stroke="${shade(c, .55)}" stroke-opacity=".45" stroke-width="1.2"/>`;
+    if (b.extra) s += `<path d="${b.extra}" stroke="${shade(c, -.45)}" stroke-width="1.4" fill="none"/>`;
+    s += `<path d="${b.glass}" fill="url(#${id}g)"/>`;
+    b.pillars.forEach(x => { s += `<rect x="${x - 3}" y="30" width="6" height="60" fill="${shade(c, -.35)}" clip-path="none" style="clip-path:path('${b.glass}')"/>`; });
+    s += `<path d="${b.head}" fill="#f4f1e6" opacity=".95"/><path d="${b.tail}" fill="#c3202c" opacity=".92"/>`;
+    s += wheel(b.w[0], b.wy, b.wr, `url(#${id}r)`) + wheel(b.w[1], b.wy, b.wr, `url(#${id}r)`);
+    s += `</g></svg>`;
+    return s;
+  }
+  // Ekspertiz (üstten görünüm). parts: {parcaKodu: 'o'|'l'|'b'|'d'}
+  const PARTS = [
+    ['on_tampon', 'Ön tampon', 'M44,22 Q100,8 156,22 L160,44 L40,44 Z'],
+    ['kaput', 'Motor kaputu', 'M56,48 L144,48 L148,116 L52,116 Z'],
+    ['sol_on_camurluk', 'Sol ön çamurluk', 'M36,48 L50,48 L48,128 L32,128 Q30,80 36,48 Z'],
+    ['sag_on_camurluk', 'Sağ ön çamurluk', 'M150,48 L164,48 Q170,80 168,128 L152,128 Z'],
+    ['sol_on_kapi', 'Sol ön kapı', 'M32,132 L50,132 L50,206 L30,206 Z'],
+    ['sag_on_kapi', 'Sağ ön kapı', 'M150,132 L168,132 L170,206 L150,206 Z'],
+    ['sol_arka_kapi', 'Sol arka kapı', 'M30,210 L50,210 L50,280 L31,280 Z'],
+    ['sag_arka_kapi', 'Sağ arka kapı', 'M150,210 L170,210 L169,280 L150,280 Z'],
+    ['tavan', 'Tavan', 'M58,162 L142,162 L142,272 L58,272 Z'],
+    ['sol_arka_camurluk', 'Sol arka çamurluk', 'M31,284 L50,284 L50,346 L36,346 Q30,320 31,284 Z'],
+    ['sag_arka_camurluk', 'Sağ arka çamurluk', 'M150,284 L169,284 Q170,320 164,346 L150,346 Z'],
+    ['bagaj', 'Bagaj kapağı', 'M54,302 L146,302 L146,346 L54,346 Z'],
+    ['arka_tampon', 'Arka tampon', 'M40,350 L160,350 L156,370 Q100,382 44,370 Z']
+  ];
+  const STATUS = { o: 'Orijinal', l: 'Lokal boyalı', b: 'Boyalı', d: 'Değişen' };
+  function ekspertiz(parts, pal) {
+    pal = Object.assign({ o: 'var(--ek-o)', l: 'var(--ek-l)', b: 'var(--ek-b)', d: 'var(--ek-d)', line: 'var(--ek-line)', glass: 'var(--ek-glass)' }, pal || {});
+    let s = `<svg viewBox="0 0 200 390" class="ek-svg" role="img" aria-label="Boya ve değişen parça şeması">`;
+    s += `<path d="M100,8 Q164,10 170,60 L172,330 Q168,384 100,384 Q32,384 28,330 L30,60 Q36,10 100,8 Z" fill="none" stroke="${pal.line}" stroke-width="1.5"/>`;
+    s += `<path d="M56,120 L144,120 L140,158 L60,158 Z" fill="${pal.glass}"/><path d="M60,276 L140,276 L144,298 L56,298 Z" fill="${pal.glass}"/>`;
+    PARTS.forEach(([k, name, d]) => {
+      const st = parts[k] || 'o';
+      s += `<path d="${d}" fill="${pal[st]}" stroke="${pal.line}" stroke-width="1"><title>${name}: ${STATUS[st]}</title></path>`;
+    });
+    s += `</svg>`;
+    return s;
+  }
+  function ekList(parts) {
+    const changed = PARTS.filter(([k]) => parts[k] && parts[k] !== 'o');
+    if (!changed.length) return '<p class="ek-clean">Tüm parçalar orijinal.</p>';
+    return '<ul class="ek-list">' + changed.map(([k, n]) => `<li><i class="ek-dot ek-${parts[k]}"></i>${n}<span>${STATUS[parts[k]]}</span></li>`).join('') + '</ul>';
+  }
+  const tl = n => new Intl.NumberFormat('tr-TR').format(Math.round(n)) + ' TL';
+  const km = n => new Intl.NumberFormat('tr-TR').format(n) + ' km';
+  function monthly(principal, ratePct, months) { // aylık faiz %
+    const r = ratePct / 100; if (!r) return principal / months;
+    return principal * r / (1 - Math.pow(1 + r, -months));
+  }
+  function waText(galeri, c) {
+    return `Merhaba ${galeri}, web sitenizdeki ${c.no} numaralı ${c.year} ${c.make} ${c.model} (${tl(c.price)}) hakkında bilgi almak istiyorum. Araç hâlâ satışta mı?`;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m])); }
+  return { car, ekspertiz, ekList, tl, km, monthly, waText, esc, shade, STATUS };
+})();
+</script>
+<script>
+const GALERI='Yıldırım Oto';
+/* Gerçek fotoğraf için araca img:'foto.jpg' ekleyin. Gerçek sitede bu liste Google E-Tablo'dan okunur. */
+const CARS=[
+ {no:'Y-2311',make:'Fiat',model:'Egea 1.4 Fire Urban',year:2021,km:78000,fuel:'Benzin',gear:'Manuel',hp:95,type:'sedan',hex:'#c9ccd1',color:'Gri',price:845000,tramer:0,parts:{sol_arka_kapi:'l'},added:12},
+ {no:'Y-2309',make:'Renault',model:'Clio 1.0 TCe Touch',year:2022,km:41000,fuel:'Benzin',gear:'Otomatik',hp:90,type:'hatch',hex:'#b3202c',color:'Kırmızı',price:1015000,tramer:0,parts:{},added:11,isNew:true},
+ {no:'Y-2306',make:'Toyota',model:'Corolla 1.5 Dream',year:2022,km:36500,fuel:'Benzin',gear:'Otomatik',hp:125,type:'sedan',hex:'#f1f1ee',color:'Beyaz',price:1285000,tramer:0,parts:{},added:10,isNew:true},
+ {no:'Y-2302',make:'Hyundai',model:'i20 1.4 MPI Jump',year:2021,km:62000,fuel:'Benzin',gear:'Otomatik',hp:100,type:'hatch',hex:'#2f5d8c',color:'Mavi',price:925000,tramer:14500,parts:{on_tampon:'b',kaput:'l'},added:9},
+ {no:'Y-2298',make:'Volkswagen',model:'Passat 1.5 TSI Business',year:2020,km:98000,fuel:'Benzin',gear:'Otomatik',hp:150,type:'sedan',hex:'#2d3136',color:'Siyah',price:1390000,tramer:21300,parts:{sag_on_kapi:'b',sag_arka_kapi:'b'},added:8},
+ {no:'Y-2295',make:'Dacia',model:'Duster 1.3 TCe Prestige',year:2022,km:38000,fuel:'Benzin',gear:'Manuel',hp:130,type:'suv',hex:'#8a6a3f',color:'Kum beji',price:1160000,tramer:0,parts:{},added:7},
+ {no:'Y-2290',make:'Peugeot',model:'3008 1.5 BlueHDi GT',year:2021,km:71000,fuel:'Dizel',gear:'Otomatik',hp:130,type:'suv',hex:'#565d66',color:'Platin gri',price:1690000,tramer:0,parts:{bagaj:'l'},added:6},
+ {no:'Y-2287',make:'Ford',model:'Focus 1.5 Titanium',year:2020,km:88000,fuel:'Benzin',gear:'Otomatik',hp:123,type:'hatch',hex:'#7b8793',color:'Gri',price:985000,tramer:32800,parts:{sol_on_camurluk:'d',sol_on_kapi:'b'},added:5},
+ {no:'Y-2281',make:'Honda',model:'Civic 1.5 VTEC Eco Elegance',year:2021,km:64000,fuel:'LPG',gear:'Otomatik',hp:125,type:'sedan',hex:'#e9e7e2',color:'Beyaz',price:1345000,tramer:0,parts:{},added:4},
+ {no:'Y-2277',make:'Renault',model:'Megane 1.3 TCe Joy',year:2022,km:45000,fuel:'Benzin',gear:'Otomatik',hp:140,type:'sedan',hex:'#1f3552',color:'Lacivert',price:1075000,tramer:0,parts:{},added:3},
+ {no:'Y-2270',make:'Toyota',model:'C-HR 1.8 Hybrid Flame',year:2021,km:52000,fuel:'Hibrit',gear:'Otomatik',hp:122,type:'suv',hex:'#9b2030',color:'Kırmızı',price:1480000,tramer:0,parts:{},added:2},
+ {no:'Y-2266',make:'Opel',model:'Corsa 1.2 Edition',year:2021,km:53000,fuel:'Benzin',gear:'Manuel',hp:75,type:'hatch',hex:'#e2b534',color:'Sarı',price:895000,tramer:7200,parts:{arka_tampon:'b'},added:1}
+];
+const $=s=>document.querySelector(s);
+const pic=c=>c.img?`<img src="${c.img}" alt="${V.esc(c.make+' '+c.model)}">`:V.car({type:c.type,color:c.hex,floor:'light',label:c.make+' '+c.model});
+const DEF={down:40,term:36,rate:2.79};
+const fromMonthly=c=>V.monthly(c.price*(1-DEF.down/100),DEF.rate,DEF.term);
+
+/* hero */
+$('#h1c').innerHTML=pic(CARS[6]);$('#h2c').innerHTML=pic(CARS[1]);$('#h3c').innerHTML=pic(CARS[2]);
+$('#heroCount').textContent=CARS.length;
+const now=new Date();$('#liveTxt').textContent=`Stok bugün ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}'de güncellendi`;
+[...new Set(CARS.map(c=>c.make))].sort((a,b)=>a.localeCompare(b,'tr')).forEach(m=>$('#sMake').insertAdjacentHTML('beforeend',`<option>${m}</option>`));
+
+/* filtre */
+const F={make:'',fuel:'',gear:'',bud:2000000,body:''};let sort='new';
+function match(c){return(!F.make||c.make===F.make)&&(!F.fuel||c.fuel===F.fuel)&&(!F.gear||c.gear===F.gear)&&c.price<=F.bud&&(!F.body||c.type===F.body)}
+function readSearch(){F.make=$('#sMake').value;F.fuel=$('#sFuel').value;F.gear=$('#sGear').value;F.bud=+$('#sBud').value;$('#sBudOut').textContent=F.bud>=2000000?'Sınırsız':V.tl(F.bud);const n=CARS.filter(match).length;$('#sGo').textContent=`${n} aracı göster`;}
+['sMake','sFuel','sGear','sBud'].forEach(id=>$('#'+id).addEventListener('input',()=>{readSearch();render()}));
+$('#search').onsubmit=e=>{e.preventDefault();readSearch();render();document.getElementById('stok').scrollIntoView()};
+document.querySelectorAll('.pill[data-b]').forEach(b=>b.onclick=()=>{F.body=b.dataset.b;document.querySelectorAll('.pill[data-b]').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
+$('#sort').onchange=e=>{sort=e.target.value;render()};
+function render(){
+  let L=CARS.filter(match);
+  L.sort((a,b)=>sort==='pa'?a.price-b.price:sort==='pd'?b.price-a.price:sort==='km'?a.km-b.km:sort==='yr'?b.year-a.year:b.added-a.added);
+  $('#resCount').textContent=`${L.length} araç listeleniyor · tümü ekspertizli`;
+  const act=[F.make,F.fuel,F.gear,F.bud<2000000?'≤ '+V.tl(F.bud):''].filter(Boolean);
+  $('#activeF').hidden=!act.length;$('#activeF').innerHTML=`Filtre: ${act.map(V.esc).join(' · ')} <button id="clr">Temizle</button>`;
+  if(act.length)$('#clr').onclick=()=>{$('#sMake').value=$('#sFuel').value=$('#sGear').value='';$('#sBud').value=2000000;readSearch();render()};
+  $('#grid').innerHTML=L.length?L.map(c=>{const clean=!c.tramer&&!Object.keys(c.parts).length;return`
+   <button class="card" data-no="${c.no}" aria-label="${V.esc(c.make+' '+c.model)} detayları">
+    <div class="pic">${pic(c)}<div class="tags">${c.isNew?'<span class="t new">Yeni geldi</span>':''}${clean?'<span class="t ok">Hatasız</span>':!c.tramer?'<span class="t ok">Tramersiz</span>':''}</div></div>
+    <div class="in"><h3>${V.esc(c.make)} ${V.esc(c.model)}<small>İlan no ${c.no}</small></h3>
+     <div class="chips"><span>${c.year}</span><span>${V.km(c.km)}</span><span>${c.fuel}</span><span>${c.gear}</span></div>
+     <div class="pr"><b>${V.tl(c.price)}</b><small>Aylık<br><b>${V.tl(fromMonthly(c))}</b>'den</small></div></div>
+   </button>`}).join(''):'<div class="none">Bu kriterlere uyan araç şu an stokta yok. Filtreyi genişlet ya da <b>WhatsApp\'tan aradığın aracı yaz</b>, gelince haber verelim.</div>';
+}
+$('#grid').onclick=e=>{const c=e.target.closest('.card');if(c)openCar(c.dataset.no)};
+readSearch();render();
+
+/* detay */
+let lastF=null;
+function openCar(no){const c=CARS.find(x=>x.no===no);lastF=document.activeElement;
+ $('#sheet').innerHTML=`<button class="x" id="mX" aria-label="Kapat">×</button>
+  <div class="top">${pic(c)}</div>
+  <div class="cols"><div>
+   <div style="color:var(--mute);font-weight:700;font-size:13px">İlan no ${c.no}</div>
+   <h3 id="mTitle">${V.esc(c.make)} ${V.esc(c.model)}</h3>
+   <div style="font-family:var(--disp);font-weight:800;font-size:30px;color:var(--acc)">${V.tl(c.price)}</div>
+   <div class="spec"><div><small>Yıl</small><b>${c.year}</b></div><div><small>Kilometre</small><b>${V.km(c.km)}</b></div><div><small>Yakıt</small><b>${c.fuel}</b></div><div><small>Vites</small><b>${c.gear}</b></div><div><small>Motor gücü</small><b>${c.hp} hp</b></div><div><small>Renk</small><b>${c.color}</b></div></div>
+   <div class="mini">%${DEF.down} peşinat, ${DEF.term} ay vade ile aylık <b>${V.tl(fromMonthly(c))}</b>. <a href="#kredi" id="mCalc">Kendin hesapla</a></div>
+   <div class="acts"><button class="btn wa" id="mWa">WhatsApp'tan sor</button><a class="btn sec" href="#takas" id="mTrade">Takasla al</a></div>
+   <div class="wa-prev" id="mPrev" hidden><small>WhatsApp mesajın hazır (demo)</small>${V.esc(V.waText(GALERI,c))}</div>
+  </div><div>
+   <div class="ek">${V.ekspertiz(c.parts)}<div><h4>Boya / değişen</h4>${V.ekList(c.parts)}
+    <div class="legend"><span><i class="ek-dot ek-o"></i>Orijinal</span><span><i class="ek-dot ek-l"></i>Lokal</span><span><i class="ek-dot ek-b"></i>Boyalı</span><span><i class="ek-dot ek-d"></i>Değişen</span></div>
+    <div class="tr">Tramer: ${c.tramer?V.tl(c.tramer):'Kayıt yok'}</div></div></div>
+   <p style="color:var(--mute);font-size:13px">Ekspertiz raporunun tamamı galeride. İstersen kendi seçtiğin ekspertize de götürebilirsin.</p>
+  </div></div>`;
+ $('#modal').hidden=false;document.body.style.overflow='hidden';$('#mX').focus();
+ $('#mX').onclick=close;$('#mWa').onclick=()=>{$('#mPrev').hidden=false};
+ $('#mCalc').onclick=()=>{$('#kCar').value=c.no;calc();close()};
+ $('#mTrade').onclick=()=>{$('#tWant').value=c.no;close()};
+}
+function close(){$('#modal').hidden=true;document.body.style.overflow='';lastF&&lastF.focus()}
+$('#modal').onclick=e=>{if(e.target.id==='modal')close()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#modal').hidden)close()});
+
+/* kredi */
+const opts=CARS.map(c=>`<option value="${c.no}">${c.make} ${c.model} · ${V.tl(c.price)}</option>`).join('');
+$('#kCar').innerHTML=opts;$('#kCar').value='Y-2306';
+let term=36;
+$('#kTerm').innerHTML=[12,24,36,48].map(t=>`<button type="button" class="pill" aria-pressed="${t===term}" data-t="${t}">${t} ay</button>`).join('');
+$('#kTerm').onclick=e=>{const b=e.target.closest('button');if(!b)return;term=+b.dataset.t;[...$('#kTerm').children].forEach(x=>x.setAttribute('aria-pressed',x===b));calc()};
+function calc(){const c=CARS.find(x=>x.no===$('#kCar').value),d=+$('#kDown').value,r=+$('#kRate').value;
+ const down=c.price*d/100,loan=c.price-down,m=V.monthly(loan,r,term);
+ $('#kDownOut').textContent=`%${d} · ${V.tl(down)}`;$('#kRateOut').textContent='%'+r.toFixed(2).replace('.',',');
+ $('#kMonthly').textContent=V.tl(m);$('#kPrice').textContent=V.tl(c.price);$('#kDownAmt').textContent=V.tl(down);$('#kLoan').textContent=V.tl(loan);$('#kTotal').textContent=V.tl(m*term+down);
+ $('#kPrev').hidden=true;}
+['kCar','kDown','kRate'].forEach(id=>$('#'+id).addEventListener('input',calc));calc();
+$('#kAsk').onclick=()=>{const c=CARS.find(x=>x.no===$('#kCar').value);const p=$('#kPrev');p.hidden=false;p.innerHTML=`<small>WhatsApp mesajın hazır (demo)</small>Merhaba, ${c.no} numaralı ${V.esc(c.make+' '+c.model)} için %${$('#kDown').value} peşinat ve ${term} ay vade ile kredi ön onayı almak istiyorum. Tahmini taksit: ${$('#kMonthly').textContent}.`};
+
+/* takas */
+const y=new Date().getFullYear();$('#tYear').innerHTML=Array.from({length:20},(_,i)=>`<option${i===7?' selected':''}>${y-i}</option>`).join('');
+$('#tWant').innerHTML='<option value="">Henüz karar vermedim</option>'+opts;
+$('#tForm').onsubmit=e=>{e.preventDefault();const d=$('#tDone');d.hidden=false;
+ if(!$('#tName').value.trim()||!$('#tPhone').value.trim()){d.textContent='Teklifi iletebilmemiz için ad soyad ve telefon gerekli.';return}
+ d.textContent=`Demo: Talebin alındı. ${$('#tYear').value} ${$('#tModel').value} için ön teklif 2 saat içinde ${$('#tPhone').value} numarasına WhatsApp'tan gönderilir. Gerçek sitede bu form galeriye anında bildirim düşer.`;};
+</script>
+</body></html>

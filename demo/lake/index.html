@@ -1,0 +1,593 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>LAKE Detailing & PPF · Örnek site · otowebsite.com.tr</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0"><title>LAKE Detailing & PPF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b0d10; --s1:#121519; --s2:#181c21; --line:#23282f; --line2:#2f353d;
+  --tx:#eceae4; --mute:#a1a7b0; --dim:#7c838d;
+  --acc:#b8e0e6; --acc-ink:#07181b; --ok:#8fd6a6; --full:#3a2f33;
+  --film:linear-gradient(100deg,#b8e0e6 0%,#d9c8f0 35%,#f2d9c4 65%,#b8e0e6 100%);
+  --disp:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.demo-bar{background:var(--s2);color:var(--mute);font-size:12px;text-align:center;padding:7px 16px;border-bottom:1px solid var(--line)}
+.demo-bar a{color:var(--acc);font-weight:600}
+.lbl{font-family:var(--mono);font-size:12px;letter-spacing:.08em;line-height:1.5;text-transform:uppercase;color:var(--mute)}
+.lbl b{color:var(--acc);font-weight:500}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.logo b{font-family:var(--disp);font-weight:500;font-size:22px;letter-spacing:.32em}
+.logo span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+nav.main{display:flex;gap:24px;font-size:14px;font-weight:500}
+nav.main a{text-decoration:none;color:var(--mute)}
+nav.main a:hover{color:var(--tx)}
+@media (max-width:900px){nav.main{display:none}}
+@media (max-width:560px){.logo span{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--acc);background:var(--acc);color:var(--acc-ink);font:600 14px var(--body);letter-spacing:.02em;padding:12px 20px;border-radius:999px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--acc)}
+.btn.ghost{background:transparent;color:var(--tx);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc)}
+.btn.wa{background:#1fa855;border-color:#1fa855;color:#fff}
+
+/* hero */
+.hero{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+#paint{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,13,16,.05) 0%,rgba(11,13,16,.2) 30%,rgba(11,13,16,.78) 58%,rgba(11,13,16,.94) 100%);pointer-events:none}
+.hero .wrap{position:relative;width:100%;padding-block:clamp(90px,14vh,160px) clamp(28px,5vw,52px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end}
+@media (max-width:820px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+h1{font-family:var(--disp);font-weight:400;font-size:clamp(42px,7vw,100px);line-height:1.04;letter-spacing:-.025em;margin:16px 0 22px;padding-bottom:.06em;text-wrap:balance}
+h1 em{font-style:normal;background:var(--film);-webkit-background-clip:text;background-clip:text;color:transparent}
+.heropill{display:inline-block;background:rgba(11,13,16,.72);backdrop-filter:blur(8px);border:1px solid var(--line2);border-radius:99px;padding:6px 12px;color:#c9ccd1}
+.hero p{max-width:44ch;color:#c9ccd1;font-size:18px;margin:0 0 26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.swatches{background:rgba(18,21,25,.72);backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:18px;padding:14px 16px;display:grid;gap:10px;min-width:240px}
+.sw-row{display:flex;gap:8px}
+.sw{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;box-shadow:inset 0 -6px 10px rgba(0,0,0,.45),inset 0 4px 8px rgba(255,255,255,.25)}
+.sw[aria-pressed="true"]{border-color:var(--tx)}
+.sw-name{font-family:var(--mono);font-size:12px;color:var(--tx)}
+.hint{font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--mute)}
+.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.specs div{padding:22px clamp(14px,2.4vw,28px);border-right:1px solid var(--line)}
+.specs div:last-child{border-right:0}
+.specs b{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.01em;line-height:1.2;margin-bottom:4px}
+.specs span{font-size:14px;color:var(--mute)}
+@media (max-width:760px){.specs{grid-template-columns:repeat(2,minmax(0,1fr))}.specs div:nth-child(2){border-right:0}.specs div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+section{padding-block:clamp(64px,9vw,120px)}
+h2{font-family:var(--disp);font-weight:400;font-size:clamp(30px,4.4vw,56px);line-height:1.1;letter-spacing:-.02em;margin:14px 0 16px;text-wrap:balance}
+.lede{color:var(--mute);font-size:18px;max-width:56ch;margin:0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+
+/* before/after */
+.ba{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/8;background:#000;user-select:none;touch-action:pan-y;cursor:ew-resize}
+@media (max-width:640px){.ba{aspect-ratio:4/3}}
+.ba canvas,.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba .after-img{clip-path:inset(0 0 0 var(--cut,50%))}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--cut,50%);width:2px;background:var(--tx);transform:translateX(-1px);pointer-events:none}
+.ba .handle i{position:absolute;top:50%;left:50%;width:48px;height:48px;border-radius:50%;background:var(--tx);color:var(--bg);transform:translate(-50%,-50%);display:grid;place-items:center;font-style:normal;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.ba .tagl,.ba .tagr{position:absolute;top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:rgba(11,13,16,.7);backdrop-filter:blur(6px);padding:7px 11px;border-radius:99px;pointer-events:none}
+.ba .tagl{left:16px}.ba .tagr{right:16px;color:var(--acc)}
+.ba .s{display:none}
+@media (max-width:640px){.ba .l{display:none}.ba .s{display:inline}.ba .tagr{top:auto;bottom:16px}}
+.ba-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:14px;font-size:14px;color:var(--mute)}
+.ba-meta b{color:var(--tx);font-weight:600}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+@media (max-width:900px){.svc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:560px){.svc{grid-template-columns:minmax(0,1fr)}}
+.svc article{background:var(--s1);padding:26px 24px 24px;display:flex;flex-direction:column;gap:12px}
+.svc h3{font-family:var(--disp);font-weight:400;font-size:20px;line-height:1.25;letter-spacing:0;margin:0}
+.svc p{margin:0;color:var(--mute);font-size:15px}
+.svc .meta{margin-top:auto;display:flex;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px dashed var(--line2);font-family:var(--mono);font-size:13px;color:var(--mute);flex-wrap:wrap}
+.svc .meta b{color:var(--tx);font-weight:500}
+.svc .ic{width:40px;height:40px;border-radius:12px;background:var(--s2);border:1px solid var(--line2);display:grid;place-items:center}
+
+/* configurator */
+.cfg{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.cfg{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--s1);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,28px)}
+.step{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.step h4{margin:0 0 12px;font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.opt{border:1px solid var(--line2);background:var(--s2);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:2px;transition:border-color .15s,background .15s}
+.opt b{font-weight:600;font-size:15px}
+.opt small{color:var(--mute);font-size:13px}
+.opt[aria-pressed="true"]{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 10%,var(--s2))}
+.opt[aria-pressed="true"] small{color:var(--acc)}
+.cls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.cls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cls .opt{align-items:center;text-align:center}
+.cls svg{width:100%;height:30px;margin-bottom:4px}
+.cls .opt path{fill:none;stroke:var(--mute);stroke-width:2}
+.cls .opt[aria-pressed="true"] path{stroke:var(--acc)}
+.quote{position:sticky;top:90px}
+.quote .price{font-family:var(--disp);font-weight:400;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.01em;line-height:1.2;margin:10px 0 6px}
+.quote .price span{white-space:nowrap}
+.quote .price small{font-family:var(--body);font-size:14px;color:var(--mute);letter-spacing:0}
+.quote dl{display:grid;grid-template-columns:auto 1fr;margin:20px 0;border-top:1px solid var(--line)}
+.quote dt,.quote dd{margin:0;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.quote dt{color:var(--mute)}
+.quote dd{text-align:right;font-family:var(--mono);font-size:13px}
+.quote .note{font-size:13px;color:var(--mute);margin:14px 0 0}
+.filmbar{height:4px;border-radius:4px;background:var(--film);margin-top:8px}
+
+/* booking */
+.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:20px;align-items:start}
+@media (max-width:900px){.book{grid-template-columns:minmax(0,1fr)}}
+.bsum{display:grid;gap:12px}
+.bsum .row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.bsum .row span{color:var(--mute)}
+.bsum .row b{font-weight:600;text-align:right}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+@media (max-width:640px){.days{display:flex;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);scroll-snap-type:x mandatory;padding-bottom:6px;margin-inline:-4px;padding-inline:4px}.days .day{flex:0 0 70px;scroll-snap-align:start}}
+.day{border:1px solid var(--line2);background:var(--s2);border-radius:12px;padding:8px 4px;text-align:center;cursor:pointer;display:flex;flex-direction:column;gap:1px}
+.day small{font-family:var(--mono);font-size:12px;color:var(--mute);text-transform:uppercase}
+.day b{font-size:18px;font-weight:600}
+.day em{font-style:normal;font-size:12px;color:var(--ok);font-family:var(--body);font-weight:600;white-space:nowrap}
+.day[disabled]{opacity:.45;cursor:not-allowed}
+.day[disabled] em{color:var(--mute)}
+.day[aria-pressed="true"]{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,var(--s2))}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.slot{border:1px solid var(--line2);background:var(--s2);border-radius:99px;padding:9px 16px;font-family:var(--mono);font-size:13px;cursor:pointer}
+.slot[disabled]{text-decoration:line-through;opacity:.35;cursor:not-allowed}
+.slot[aria-pressed="true"]{border-color:var(--acc);color:var(--acc)}
+.fg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:6px}
+@media (max-width:520px){.fg{grid-template-columns:minmax(0,1fr)}}
+.fg label{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--mute);font-weight:600}
+.fg .full{grid-column:1/-1}
+input,select,textarea{font:500 15px var(--body);color:var(--tx);background:var(--s2);border:1px solid var(--line2);border-radius:12px;padding:12px 13px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:70px}
+.navrow{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.progress{display:flex;gap:6px;margin-bottom:22px}
+.progress i{flex:1;height:3px;border-radius:3px;background:var(--line2)}
+.progress i.on{background:var(--acc)}
+.err{color:#ff9d8a;font-size:13px;margin-top:10px}
+.done{border:1px solid var(--acc);border-radius:18px;padding:20px;background:color-mix(in srgb,var(--acc) 6%,var(--s1))}
+.done h4{font-family:var(--disp);font-weight:400;font-size:24px;margin:0 0 8px}
+.bubble{margin-top:14px;background:#dcf8c6;color:#111;border-radius:18px 18px 4px 18px;padding:14px 16px;font-size:14px;line-height:1.45}
+.bubble small{display:block;color:#137a3c;font-weight:700;font-size:12px;margin-bottom:4px}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.works{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:520px){.works{grid-template-columns:minmax(0,1fr)}}
+.work{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--s1)}
+.work .ph{aspect-ratio:4/3;position:relative}
+.work .ph canvas,.work .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.work .ph .chip{position:absolute;left:12px;top:12px;right:12px;width:max-content;max-width:calc(100% - 24px);font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;background:rgba(11,13,16,.75);padding:6px 10px;border-radius:99px}
+.work .in{padding:14px 16px}
+.work b{display:block;font-weight:600}
+.work span{font-size:14px;color:var(--mute)}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 24px;border-top:1px solid var(--line2)}
+
+.proc>div{padding:22px 0 18px}
+.proc .t{font-family:var(--mono);font-size:13px;color:var(--acc)}
+.proc b{display:block;font-family:var(--disp);font-weight:400;font-size:18px;line-height:1.25;margin:8px 0 6px;overflow-wrap:anywhere}
+.proc p{margin:0;color:var(--mute);font-size:15px;max-width:34ch}
+@media (max-width:700px){.proc>div{border-bottom:1px solid var(--line)}}
+
+/* warranty */
+.war{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;align-items:start}
+@media (max-width:860px){.war{grid-template-columns:minmax(0,1fr)}}
+.wform{display:flex;gap:8px;margin-top:20px}
+.wform input{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.card{border-radius:22px;padding:24px;background:linear-gradient(135deg,#171b21,#101318);border:1px solid var(--line2);position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:var(--film);opacity:.07;pointer-events:none}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.card .ok{font-family:var(--mono);font-size:12px;color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 40%,transparent);padding:5px 9px;border-radius:99px}
+.card .plate{font-family:var(--mono);font-size:26px;letter-spacing:.1em;margin:14px 0 4px}
+.card dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 0}
+.card dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.card dd{margin:4px 0 0;font-weight:600}
+.tl{margin-top:20px;display:grid;gap:8px}
+.tl div{display:flex;gap:10px;align-items:center;font-size:14px}
+.tl i{width:10px;height:10px;border-radius:50%;background:var(--ok);flex:none}
+.tl i.next{background:transparent;border:2px solid var(--acc)}
+.tl span{color:var(--mute);font-family:var(--mono);font-size:12px;margin-left:auto;text-align:right}
+
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:17px}
+.faq summary::after{content:"+";color:var(--acc);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--mute);margin:10px 0 0;max-width:70ch}
+
+footer{border-top:1px solid var(--line);padding-block:40px;color:var(--mute);font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer b{color:var(--tx)}
+@media (max-width:760px){footer .wrap{grid-template-columns:minmax(0,1fr)}}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:none;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+@media (max-width:760px){.fab.on{display:inline-flex}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+
+<div class="demo-bar">Bu site <a href="/">otowebsite.com.tr</a> tarafından hazırlanmış bir demodur. İşletme, fiyatlar ve kayıtlar örnektir.</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><b>LAKE</b><span style="text-transform:none">DETAILING · PPF · ÜMRANİYE</span></a>
+    <nav class="main" aria-label="Ana menü"><a href="#hizmetler">Hizmetler</a><a href="#fiyat">Fiyat hesapla</a><a href="#once-sonra">Önce / sonra</a><a href="#garanti">Garanti</a></nav>
+    <a class="btn" href="#randevu">Randevu al</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <canvas id="paint" aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <div class="wrap">
+      <div>
+        <div class="lbl heropill" style="text-transform:none">DETAILING &amp; PPF STÜDYOSU · <b>2016'DAN BERİ</b></div>
+        <h1>Boyanın <em>ikinci derisi.</em></h1>
+        <p>Kendini onaran PPF, seramik kaplama ve çok aşamalı pasta-cila. Aracını kapalı ve tozdan arındırılmış kabinimizde işliyoruz.</p>
+        <div class="ctas"><a class="btn" href="#randevu">Randevu al</a><a class="btn ghost" href="#fiyat">Fiyatını hesapla</a></div>
+      </div>
+      <div class="swatches" aria-label="Boya rengi seç">
+        <div class="lbl">Yüzey önizleme</div>
+        <div class="sw-row" id="swRow"></div>
+        <div class="sw-name" id="swName"></div>
+        <div class="hint">İmleci gezdir, ışık onu takip etsin.</div>
+      </div>
+    </div>
+  </div>
+  <div class="specs">
+    <div><b>190 µm</b><span>TPU film kalınlığı</span></div>
+    <div><b>10 yıl</b><span>PPF garantisi, belgeli</span></div>
+    <div><b>1.200+</b><span>teslim edilen araç</span></div>
+    <div><b>Kapalı kabin</b><span>tozsuz, 5.600 K ışık</span></div>
+  </div>
+
+  <section id="once-sonra">
+    <div class="wrap">
+      <div class="sh"><div><div class="lbl">Önce / sonra</div><h2>Işık altında gerçek fark.</h2><p class="lede">Güneşte ya da sokak lambası altında görünen dairesel çizikler (swirl) boyada değil, vernik katmanındadır. 3 aşamalı pasta-cila bu izleri giderir, seramik kaplama ise yeniden oluşmalarını zorlaştırır.</p></div></div>
+      <div class="ba" id="ba">
+        <canvas id="baCanvas" aria-hidden="true"></canvas>
+        <div class="tagl"><span class="l">Önce · swirl izleri</span><span class="s">Önce</span></div><div class="tagr"><span class="l">Sonra · 3 aşama cila + seramik</span><span class="s">Sonra</span></div>
+        <div class="handle"><i>⇆</i></div>
+        <input type="range" id="baRange" min="0" max="100" value="50" aria-label="Önce ve sonra karşılaştırma">
+      </div>
+      <div class="ba-meta"><span><b>BMW 3 Serisi · Siyah safir</b> · pasta-cila + 5 yıl seramik</span><span>Boya kalınlığı öncesi 118 µm · sonrası 112 µm</span></div>
+    </div>
+  </section>
+
+  <section id="hizmetler" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div><div class="lbl">Hizmetler</div><h2>Ne yapıyoruz</h2></div><a class="btn ghost" href="#fiyat">Aracın için fiyat hesapla</a></div>
+      <div class="svc" id="svcGrid"></div>
+    </div>
+  </section>
+
+  <section id="fiyat" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div><div class="lbl">Fiyat hesapla</div><h2>Aracına göre net fiyat aralığı.</h2><p class="lede">Kesin fiyatı aracını gördükten sonra veriyoruz. Aşağıdaki aralık, stüdyomuzdaki son 6 ayın ortalamasına göre hesaplanır.</p></div></div>
+      <div class="cfg">
+        <div class="panel">
+          <div class="step"><h4>1 · Hizmet</h4><div class="opts" id="cfgSvc"></div></div>
+          <div class="step"><h4>2 · Araç sınıfı</h4><div class="opts cls" id="cfgCls"></div></div>
+          <div class="step" id="cfgOptStep"><h4 id="cfgOptTitle">3 · Seçenek</h4><div class="opts" id="cfgOpt"></div></div>
+        </div>
+        <div class="panel quote" aria-live="polite">
+          <div class="lbl">Tahmini fiyat</div>
+          <div class="price" id="qPrice"></div>
+          <div class="filmbar"></div>
+          <dl id="qDl"></dl>
+          <a class="btn" href="#randevu" style="width:100%">Bu paketle randevu al</a>
+          <p class="note">Fiyatlara KDV dahildir. Boya kalınlık ölçümü ve ön inceleme ücretsizdir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="randevu" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div><div class="lbl">Randevu</div><h2>Gün ve saati sen seç.</h2><p class="lede">Talebin ekibimize anında ulaşır. Randevunu aynı gün içinde WhatsApp'tan onaylıyoruz.</p></div></div>
+      <div class="book">
+        <div class="panel">
+          <div class="lbl">Seçimin</div>
+          <div class="bsum" id="bSum" style="margin-top:12px"></div>
+          <p class="note" style="font-size:12px;color:var(--dim);margin:14px 0 0">Hizmeti değiştirmek için yukarıdaki fiyat hesaplayıcıyı kullan.</p>
+        </div>
+        <div class="panel">
+          <div class="progress" id="prog"><i></i><i></i><i></i></div>
+          <div id="bStep1">
+            <div class="lbl" style="margin-bottom:12px">1 · Araç teslim günü</div>
+            <div class="days" id="days"></div>
+            <div class="lbl" style="margin-top:20px">Teslim saati</div>
+            <div class="slots" id="slots"></div>
+            <p class="hint" id="slotHint" style="margin-top:10px"></p>
+          </div>
+          <div id="bStep2" hidden>
+            <div class="lbl" style="margin-bottom:12px">2 · Araç bilgileri</div>
+            <div class="fg">
+              <label>Marka / model<input id="fCar" value="Volkswagen Golf 8" autocomplete="off"></label>
+              <label>Model yılı<select id="fYear"></select></label>
+              <label>Renk<input id="fColor" value="Pure White"></label>
+              <label>Plaka (opsiyonel)<input id="fPlate" placeholder="34 ABC 123"></label>
+              <label class="full">Not (opsiyonel)<textarea id="fNote" placeholder="Örn. kaputta taş izi var, ön paket mi tam araç mı karar veremedim."></textarea></label>
+            </div>
+          </div>
+          <div id="bStep3" hidden>
+            <div class="lbl" style="margin-bottom:12px">3 · İletişim</div>
+            <div class="fg">
+              <label>Ad soyad<input id="fName" autocomplete="name" value="Emre Kılıç"></label>
+              <label>Telefon<input id="fPhone" inputmode="tel" autocomplete="tel" placeholder="05XX XXX XX XX"></label>
+            </div>
+          </div>
+          <div id="bDone" hidden></div>
+          <div class="err" id="bErr" hidden></div>
+          <div class="navrow" id="bNav"><button class="btn ghost" id="bBack" type="button">Geri</button><button class="btn" id="bNext" type="button">Devam</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="isler" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div><div class="lbl">Son işler</div><h2>Bu hafta kabinden çıkanlar</h2></div></div>
+      <div class="works" id="works"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div><div class="lbl">Süreç · tam araç PPF</div><h2>Aracın bizdeyken ne oluyor?</h2></div></div>
+      <div class="proc">
+        <div><div class="t">1. gün · 09:00</div><b>Teslim ve ölçüm</b><p>Boya kalınlığı her panelde ölçülür, mevcut hasarlar fotoğraflanıp sana gönderilir.</p></div>
+        <div><div class="t">1. gün</div><b>Dekontaminasyon</b><p>Köpüklü yıkama, demir tozu ve zift temizliği, ardından kil bar uygulaması.</p></div>
+        <div><div class="t">2. gün</div><b>Düzeltme</b><p>Gerekirse tek aşamalı cila yapılır. Film, boyadaki izleri gizlemez; bu yüzden önce düzeltiriz.</p></div>
+        <div><div class="t">2–4. gün</div><b>Film uygulama</b><p>Film her panel için ayrı kesilir, kenarlar içe katlanır. Kapı kolu ve logo çevreleri elle uygulanır.</p></div>
+        <div><div class="t">5. gün</div><b>Kürleme ve teslim</b><p>Araç 24 saat kabinde bekletilir. Garanti belgen ve bakım kılavuzun teslimde verilir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="garanti" style="padding-top:0">
+    <div class="wrap war">
+      <div>
+        <div class="lbl">Garanti sorgula</div>
+        <h2>Belgen kaybolsa da garantin burada.</h2>
+        <p class="lede">Plakanı ya da garanti numaranı yazarak uygulama kaydını ve bakım kontrollerini görebilirsin. Aracını satarken bu sayfayı yeni sahibine de gösterebilirsin.</p>
+        <form class="wform" id="wForm"><input id="wIn" value="34 LKE 190" aria-label="Plaka ya da garanti no"><button class="btn" type="submit">Sorgula</button></form>
+        <p class="hint" style="margin-top:10px">Demo kayıt: 34 LKE 190</p>
+      </div>
+      <div id="wOut"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap faq">
+      <div class="lbl">Sık sorulanlar</div>
+      <h2 style="margin-bottom:24px">Aklına takılanlar</h2>
+      <details open><summary>PPF ile seramik kaplama arasındaki fark ne?</summary><p>PPF, boyanın üzerine yapışan ve taş ya da çizik darbelerini fiziksel olarak karşılayan şeffaf bir filmdir. Seramik ise parlaklık ve kolay temizlik sağlayan ince bir kaplamadır; taş darbesini durdurmaz. Müşterilerimizin çoğu ön bölgede PPF, aracın geri kalanında seramik kaplamayı tercih ediyor.</p></details>
+      <details><summary>Film zamanla sararır mı?</summary><p>Kullandığımız TPU filmler UV korumalıdır. Garanti süresi boyunca sararma, kabarma ve çatlamaya karşı belgeli garanti veriyoruz.</p></details>
+      <details><summary>Film söküldüğünde boyaya zarar verir mi?</summary><p>Orijinal ve sağlıklı boyada zarar vermez. Sonradan boyanmış panellerde risk bulunduğu için aracı teslim alırken boya kalınlığını ölçüp sana raporluyoruz.</p></details>
+      <details><summary>Aracı ne zaman yıkayabilirim?</summary><p>PPF'den sonra 7 gün, seramik kaplamadan sonra 14 gün otomatik yıkamadan uzak dur. Bakım kılavuzunu teslimde veriyoruz.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>LAKE Detailing &amp; PPF</b><br>Dudullu OSB, 0. Cadde No: 00, Ümraniye / İstanbul<br>Pzt–Cmt 09:00–19:00</div>
+    <div><b>İletişim</b><br>0216 000 00 00<br>WhatsApp: 0532 000 00 00</div>
+    <div><b>Takip et</b><br>@lakedetailing (örnek)<br><span style="font-size:12px">Demo site · otowebsite.com.tr</span></div>
+  </div>
+</footer>
+<a class="btn fab" href="#randevu">Randevu al</a>
+
+<script>document.documentElement.lang="tr";</script>
+<script>
+/* ====== VERİ: fotoğraflar gelince img alanlarını doldurun ====== */
+const PHOTOS={ hero:null, before:null, after:null };
+const PAINTS=[['Siyah safir',[.02,.025,.04],.35],['Portimao mavi',[.03,.12,.42],.55],['Nardo gri',[.34,.36,.37],.12],['Tornado kırmızı',[.5,.03,.03],.3],['İnci beyaz',[.78,.79,.8],.25]];
+const SVC=[
+ {k:'ppf_full',n:'Tam araç PPF',d:'Tüm boyalı yüzeyler kendini onaran şeffaf filmle kaplanır. Taş, çizik ve kuş pisliğine karşı en üst düzeyde koruma sağlar.',days:'4–5 gün',war:'10 yıl',base:85000,opt:{t:'Film yüzeyi',o:[['gloss','Parlak',0],['matte','Mat (saten)',.12]]},ic:'M4 16h16M6 16l2-6h8l2 6M8 10l1-3h6l1 3'},
+ {k:'ppf_front',n:'Ön paket PPF',d:'Tampon, kaput, çamurluklar ve aynalar kaplanır. Yolda en çok taş darbesi alan yüzeyler için idealdir.',days:'2 gün',war:'10 yıl',base:38000,opt:{t:'Film yüzeyi',o:[['gloss','Parlak',0],['matte','Mat (saten)',.12]]},ic:'M4 14h7l2-4h7M4 14v3h16v-3'},
+ {k:'ceramic',n:'Seramik kaplama',d:'Derin parlaklık, su iten bir yüzey ve kolay temizlik sağlar. Pasta-cilanın ardından uygulanır.',days:'1–2 gün',war:'3 / 5 yıl',base:14000,opt:{t:'Dayanım',o:[['3y','3 yıl',0],['5y','5 yıl',.35]]},ic:'M12 4c3 4 5 7 5 9a5 5 0 0 1-10 0c0-2 2-5 5-9z'},
+ {k:'polish',n:'Pasta-cila',d:'Swirl, hologram ve ince çizikler 3 aşamada giderilir. İşlem, boya kalınlığı ölçülerek yapılır.',days:'1 gün',war:'—',base:6500,opt:{t:'Aşama',o:[['1','Tek aşama',-.3],['3','3 aşama',0]]},ic:'M12 12m-7 0a7 7 0 1 0 14 0a7 7 0 1 0-14 0M12 12m-3 0a3 3 0 1 0 6 0'},
+ {k:'tint',n:'Cam filmi',d:'Isı ve UV yalıtımı sağlar. Ön ve yan camlarda yasal geçirgenlik oranlarına uygun film kullanılır.',days:'Yarım gün',war:'5 yıl',base:7500,opt:{t:'Film tipi',o:[['carbon','Karbon',0],['ceramic','Seramik (ısı yalıtımlı)',.6]]},ic:'M5 18l3-10h8l3 10z'},
+ {k:'interior',n:'İç detay',d:'Koltuk, tavan ve döşemelerde buharlı derin temizlik, deri bakımı ve koku giderme.',days:'1 gün',war:'—',base:4500,opt:{t:'Kapsam',o:[['std','Standart',0],['leather','Deri bakımı dahil',.3]]},ic:'M7 18V8a2 2 0 0 1 2-2h2v12M11 12h6v6'}
+];
+const CLS=[['s','Hatchback',1,'M3 22h26M5 22c0-4 1-6 4-7l4-4h7l4 4c3 1 4 3 4 7'],['m','Sedan',1.15,'M2 22h28M4 22c0-3 2-5 5-5l3-4h9l4 4c3 0 5 2 5 5'],['l','SUV',1.35,'M3 22h26M5 22v-6l3-6h14l3 6v6'],['p','Premium / Spor',1.6,'M2 22h28M4 22c0-2 2-4 6-4l5-4h6l5 4c2 0 4 2 4 4']];
+const WORKS=[
+ {t:'Porsche 911 Carrera',s:'Tam araç PPF · parlak',paint:[.34,.36,.37],flake:.12,img:null},
+ {t:'BMW M4 Competition',s:'Ön paket PPF + seramik',paint:[.03,.12,.42],flake:.55,img:null},
+ {t:'Mercedes-Benz GLE',s:'3 aşama pasta-cila + 5 yıl seramik',paint:[.02,.025,.04],flake:.35,img:null},
+ {t:'Audi RS 3',s:'Mat PPF · tam araç',paint:[.5,.03,.03],flake:.2,matte:true,img:null},
+ {t:'Tesla Model Y',s:'Tam araç PPF + cam filmi',paint:[.78,.79,.8],flake:.25,img:null},
+ {t:'Range Rover Sport',s:'Seramik kaplama · 5 yıl',paint:[.07,.09,.08],flake:.3,img:null}
+];
+const WAR={'34LKE190':{plate:'34 LKE 190',no:'LK-2025-0412',car:'BMW M4 Competition',svc:'Tam araç PPF · parlak',film:'TPU · 190 µm',date:'14 Kasım 2025',until:'Kasım 2035',checks:[['1. kontrol · 6. ay','Mayıs 2026',true],['2. kontrol · 12. ay','Kasım 2026',false]]}};
+
+const $=s=>document.querySelector(s);
+const tl=n=>new Intl.NumberFormat('tr-TR').format(Math.round(n/100)*100)+' TL';
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ====== WebGL boya yüzeyi ====== */
+const VS='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const FS=`precision highp float;
+uniform vec2 res;uniform float time;uniform vec2 light;uniform vec3 col;uniform float flake;uniform float swirl;uniform float cut;uniform float matte;uniform float mode;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+float strip(float x,float c,float w){return 1.-smoothstep(w*.55,w,abs(x-c));}
+void main(){
+ vec2 uv=gl_FragCoord.xy/res; float asp=res.x/res.y; vec2 q=vec2((uv.x-.5)*asp,uv.y-.5);
+ float lx=(light.x-.5), ly=(light.y-.5);
+ // gövde paneli: omuz çizgisi (crease) + yumuşak dikey kavis
+ float cr=.1+.07*q.x;
+ float t=smoothstep(-.02,.02,q.y-cr);
+ float nyU=(q.y-cr)*1.5+.22, nyL=(q.y-cr)*.75-.02;
+ float ny=mix(nyL,nyU,t);
+ float nx=q.x*.22+sin(q.x*1.3)*.04;
+ vec3 N=normalize(vec3(-nx,ny,1.));
+ 
+ vec3 V=vec3(0,0,1),R=reflect(-V,N);
+ // stüdyo ortamı
+ float rx=R.x+lx*.8, ry=R.y-ly*.5;
+ float sb1=strip(ry,.52,.07)*(1.-smoothstep(.55,.95,abs(rx+.05)));
+ float sb2=strip(ry,.2,.028)*(1.-smoothstep(.7,1.1,abs(rx-.1)));
+ float sb3=strip(rx,.78,.05)*(1.-smoothstep(.15,.45,abs(ry-.25)));
+ float glow=exp(-pow((ry-.52)/.22,2.))*.12+exp(-pow((ry-.2)/.15,2.))*.05;
+ float floorR=smoothstep(-.05,-.5,ry)*.05;
+ float sb4=strip(ry,-.16,.04)*(1.-smoothstep(.5,1.,abs(rx-.2)));
+ float env=sb1*1.3+sb2*1.1+sb3*.7+sb4*.55;
+ float fres=.05+.95*pow(1.-max(dot(N,V),0.),5.);
+ float gloss=1.-matte;
+ vec3 tint=mix(vec3(1.),col*1.4+.18,.35);
+ vec3 base=col*(.22+.55*smoothstep(-.6,.5,N.y+.2))*(.7+.3*(1.-length(q)*.6));
+ base+=col*glow*2.;
+ vec3 c=base+tint*(env*(.75+fres*2.)*gloss)+vec3(glow+floorR)*gloss;
+ // matte: yansımayı yay
+ c+=matte*(col*.25+vec3(.9)*(glow*2.5+env*.12));
+ // metalik pul: vurguya yakın yerde parlasın
+ float fl=step(.9965,h(floor(gl_FragCoord.xy/1.5)))*flake;
+ c+=vec3(1.,.97,.9)*fl*(glow*6.+env*.8+.05);
+ // swirl (sadece önce tarafı)
+ if(mode>.5 && uv.x<cut){
+  vec2 sp=vec2(.5+lx*.1,.64+ly*.1); vec2 d=(uv-sp)*vec2(asp,1.); float r=length(d); float a=atan(d.y,d.x);
+  float hot=exp(-r*r*18.);
+  float sc=smoothstep(.62,.9,n(vec2(r*520.,a*3.)))*smoothstep(.3,.7,n(vec2(r*60.,a*7.+2.)));
+  c+=vec3(.9,.92,1.)*(sc*exp(-r*2.6)*1.1+hot*.55);
+  c=mix(c,c*.82+.035,.6);
+ } else if(mode>.5){
+  vec2 sp=vec2(.5+lx*.1,.64+ly*.1); vec2 d=(uv-sp)*vec2(asp,1.); float r=length(d);
+  c+=vec3(1.)*exp(-r*r*700.)*2.4+vec3(.9)*exp(-r*r*40.)*.10;
+ }
+ c=c/(1.+c*.3); c=pow(c,vec3(.95));
+ gl_FragColor=vec4(c,1.);
+}`;
+function makeGL(canvas){
+ const gl=canvas.getContext('webgl',{antialias:false,preserveDrawingBuffer:true});if(!gl)return null;
+ const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o};
+ const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);gl.useProgram(pr);
+ const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+ const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+ const U={};['res','time','light','col','flake','swirl','cut','matte','mode'].forEach(k=>U[k]=gl.getUniformLocation(pr,k));
+ return {gl,U,draw(o){const dpr=Math.min(devicePixelRatio||1,o.maxDpr||1.5);const w=Math.round(canvas.clientWidth*dpr),h=Math.round(canvas.clientHeight*dpr);if(!w||!h)return;if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h}
+  gl.viewport(0,0,w,h);gl.uniform2f(U.res,w,h);gl.uniform1f(U.time,o.time||0);gl.uniform2f(U.light,o.lx,o.ly);gl.uniform3f(U.col,...o.col);gl.uniform1f(U.flake,o.flake);gl.uniform1f(U.cut,o.cut||0);gl.uniform1f(U.matte,o.matte||0);gl.uniform1f(U.mode,o.mode||0);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}};
+}
+/* hero */
+const hero=makeGL($('#paint'));let pi=0,L={x:.62,y:.62},T={x:.62,y:.62};
+$('#swRow').innerHTML=PAINTS.map((p,i)=>`<button class="sw" type="button" aria-pressed="${i===0}" aria-label="${p[0]}" data-i="${i}" style="background:rgb(${p[1].map(v=>Math.round(Math.min(1,v*1.6+.08)*255)).join(',')})"></button>`).join('');
+$('#swName').textContent=PAINTS[0][0];
+$('#swRow').onclick=e=>{const b=e.target.closest('.sw');if(!b)return;pi=+b.dataset.i;[...$('#swRow').children].forEach(x=>x.setAttribute('aria-pressed',x===b));$('#swName').textContent=PAINTS[pi][0];if(RM)frame(0)};
+const heroEl=document.querySelector('.hero');
+heroEl.addEventListener('pointermove',e=>{const r=heroEl.getBoundingClientRect();T.x=(e.clientX-r.left)/r.width;T.y=1-(e.clientY-r.top)/r.height});
+let heroVis=true;new IntersectionObserver(es=>{heroVis=es[0].isIntersecting}).observe(heroEl);
+function frame(t){
+ if(hero&&(heroVis||RM)){ if(!RM){T.x+=0;const auto=Math.sin(t/2600)*.06;L.x+=(T.x+auto-L.x)*.06;L.y+=(T.y-L.y)*.06;}
+  hero.draw({lx:L.x,ly:L.y,col:PAINTS[pi][1],flake:PAINTS[pi][2],time:t/1000});}
+ if(!RM)requestAnimationFrame(frame);
+}
+if(PHOTOS.hero){$('#paint').outerHTML=`<img src="${PHOTOS.hero}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">`}
+requestAnimationFrame(frame);
+
+/* önce/sonra */
+const baGL=makeGL($('#baCanvas'));let cut=.5;
+function drawBA(){ $('#ba').style.setProperty('--cut',(cut*100)+'%'); if(baGL)baGL.draw({lx:.56,ly:.62,col:[.02,.025,.04],flake:.35,mode:1,cut:cut,maxDpr:2}); }
+$('#baRange').addEventListener('input',e=>{cut=e.target.value/100;drawBA()});
+new ResizeObserver(drawBA).observe($('#ba'));
+if(PHOTOS.before&&PHOTOS.after){$('#baCanvas').outerHTML=`<img src="${PHOTOS.before}" alt="İşlem öncesi"><img class="after-img" src="${PHOTOS.after}" alt="İşlem sonrası">`}
+
+/* hizmetler */
+$('#svcGrid').innerHTML=SVC.map(s=>`<article><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="${s.ic}"/></svg></div><h3>${s.n}</h3><p>${s.d}</p><div class="meta"><span>Süre <b>${s.days}</b></span><span>${tl(s.base)}'den</span></div></article>`).join('');
+
+/* fiyat hesaplayıcı */
+const Q={svc:'ppf_front',cls:'m',opt:null};
+function renderCfg(){
+ const s=SVC.find(x=>x.k===Q.svc);if(!Q.opt||!s.opt.o.some(o=>o[0]===Q.opt))Q.opt=s.opt.o[0][0];
+ $('#cfgSvc').innerHTML=SVC.map(x=>`<button class="opt" type="button" data-k="${x.k}" aria-pressed="${x.k===Q.svc}"><b>${x.n}</b><small>${tl(x.base)}'den</small></button>`).join('');
+ $('#cfgCls').innerHTML=CLS.map(c=>`<button class="opt" type="button" data-c="${c[0]}" aria-pressed="${c[0]===Q.cls}"><svg viewBox="0 0 32 26"><path d="${c[3]}"/></svg><b style="font-size:13px">${c[1]}</b></button>`).join('');
+ $('#cfgOptTitle').textContent='3 · '+s.opt.t;
+ $('#cfgOpt').innerHTML=s.opt.o.map(o=>`<button class="opt" type="button" data-o="${o[0]}" aria-pressed="${o[0]===Q.opt}"><b>${o[1]}</b><small>${o[2]>0?'+%'+Math.round(o[2]*100):o[2]<0?'−%'+Math.round(-o[2]*100):'Standart'}</small></button>`).join('');
+ const c=CLS.find(x=>x[0]===Q.cls),o=s.opt.o.find(x=>x[0]===Q.opt);
+ const p=s.base*c[2]*(1+o[2]);
+ $('#qPrice').innerHTML=`<span>${tl(p*.92).replace(' TL','')} –</span> <span>${tl(p*1.08)}</span>`;
+ $('#qDl').innerHTML=`<dt>Hizmet</dt><dd>${s.n}</dd><dt>Araç</dt><dd>${c[1]}</dd><dt>${s.opt.t}</dt><dd>${o[1]}</dd><dt>Süre</dt><dd>${s.days}</dd><dt>Garanti</dt><dd>${s.war}</dd>`;
+ Q.price=`${tl(p*.92)} – ${tl(p*1.08)}`;Q.name=s.n;Q.clsName=c[1];Q.optName=o[1];Q.days=s.days;Q.long=/gün/.test(s.days)&&parseInt(s.days)>=2;
+ renderSum();renderSlots();
+}
+$('#cfgSvc').onclick=e=>{const b=e.target.closest('[data-k]');if(b){Q.svc=b.dataset.k;renderCfg()}};
+$('#cfgCls').onclick=e=>{const b=e.target.closest('[data-c]');if(b){Q.cls=b.dataset.c;renderCfg()}};
+$('#cfgOpt').onclick=e=>{const b=e.target.closest('[data-o]');if(b){Q.opt=b.dataset.o;renderCfg()}};
+
+/* randevu */
+const DN=['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'];
+const today=new Date();today.setHours(0,0,0,0);
+const DAYS=[];for(let i=1;DAYS.length<14;i++){const d=new Date(today);d.setDate(d.getDate()+i);DAYS.push(d)}
+const seed=d=>{let x=d.getDate()*31+d.getMonth()*7;return k=>((x*9301+k*49297)%233280)/233280};
+const ALL_SLOTS=['09:00','10:30','13:00','14:30','16:00','17:30'];
+function slotsFor(d){ if(d.getDay()===0)return []; const r=seed(d); const list=Q.long?['09:00','10:00']:ALL_SLOTS; return list.map((s,i)=>({s,full:r(i+1)<(Q.long?.35:.4)})) }
+const B={step:1,day:null,slot:null};
+function renderDays(){
+ $('#days').innerHTML=DAYS.map((d,i)=>{const sl=slotsFor(d);const free=sl.filter(x=>!x.full).length;const dis=!free;
+  return `<button class="day" type="button" data-i="${i}" ${dis?'disabled':''} aria-pressed="${B.day===i}"><small>${DN[d.getDay()]}</small><b>${d.getDate()}</b><em>${d.getDay()===0?'Kapalı':free?free+' boş':'Dolu'}</em></button>`}).join('');
+}
+function renderSlots(){
+ renderDays();
+ if(B.day===null||!slotsFor(DAYS[B.day]).some(x=>!x.full)){B.day=DAYS.findIndex(d=>slotsFor(d).some(x=>!x.full));B.slot=null;renderDays()}
+ const sl=slotsFor(DAYS[B.day]);
+ if(B.slot&&!sl.some(x=>x.s===B.slot&&!x.full))B.slot=null;
+ $('#slots').innerHTML=sl.map(x=>`<button class="slot" type="button" ${x.full?'disabled':''} aria-pressed="${x.s===B.slot}">${x.s}</button>`).join('');
+ $('#slotHint').textContent=Q.long?`${Q.name} ${Q.days} sürdüğü için araçları yalnızca sabah teslim alıyoruz.`:'Üstü çizili saatler dolu.';
+ renderSum();
+}
+$('#days').onclick=e=>{const b=e.target.closest('.day');if(!b||b.disabled)return;B.day=+b.dataset.i;B.slot=null;renderSlots()};
+$('#slots').onclick=e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;B.slot=b.textContent;renderSlots();$('#bErr').hidden=true};
+const fmtDay=d=>d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',weekday:'long'});
+function renderSum(){
+ $('#bSum').innerHTML=`<div class="row"><span>Hizmet</span><b>${esc(Q.name||'')}</b></div><div class="row"><span>Araç sınıfı</span><b>${esc(Q.clsName||'')} · ${esc(Q.optName||'')}</b></div><div class="row"><span>Tahmini fiyat</span><b>${Q.price||''}</b></div><div class="row"><span>Süre</span><b>${Q.days||''}</b></div><div class="row"><span>Teslim</span><b>${B.day!==null?fmtDay(DAYS[B.day]):'—'}${B.slot?' · '+B.slot:''}</b></div>`;
+}
+$('#fYear').innerHTML=Array.from({length:16},(_,i)=>`<option ${i===2?'selected':''}>${today.getFullYear()-i}</option>`).join('');
+function show(){['bStep1','bStep2','bStep3'].forEach((id,i)=>$('#'+id).hidden=B.step!==i+1);[...$('#prog').children].forEach((x,i)=>x.classList.toggle('on',i<B.step));$('#bBack').style.visibility=B.step>1?'visible':'hidden';$('#bNext').textContent=B.step===3?'Randevu talebini gönder':'Devam'}
+$('#bBack').onclick=()=>{B.step--;show()};
+$('#bNext').onclick=()=>{const er=$('#bErr');er.hidden=true;
+ if(B.step===1&&!B.slot){er.hidden=false;er.textContent='Devam etmek için bir teslim saati seç.';return}
+ if(B.step===2&&!$('#fCar').value.trim()){er.hidden=false;er.textContent='Aracının marka ve modelini yaz.';return}
+ if(B.step===3){if(!$('#fName').value.trim()||$('#fPhone').value.replace(/\D/g,'').length<10){er.hidden=false;er.textContent='Onay mesajı gönderebilmemiz için adını ve geçerli bir telefon numarası yaz.';return}
+  const msg=`Merhaba LAKE, randevu talebi:\n${Q.name} · ${Q.optName} · ${Q.clsName}\nAraç: ${$('#fYear').value} ${$('#fCar').value}, ${$('#fColor').value}${$('#fPlate').value?' · '+$('#fPlate').value.toUpperCase():''}\nTeslim: ${fmtDay(DAYS[B.day])} ${B.slot}\nAd: ${$('#fName').value}\n${$('#fNote').value?'Not: '+$('#fNote').value:''}`;
+  ['bStep1','bStep2','bStep3'].forEach(id=>$('#'+id).hidden=true);$('#bNav').hidden=true;[...$('#prog').children].forEach(x=>x.classList.add('on'));
+  $('#bDone').hidden=false;$('#bDone').innerHTML=`<div class="done"><div class="lbl"><b>Talep alındı · demo</b></div><h4>${fmtDay(DAYS[B.day])}, ${B.slot}</h4><p style="color:var(--mute);margin:0">Gerçek sitede bu talep anında stüdyonun WhatsApp'ına ve takvimine düşer; onay mesajı ${esc($('#fPhone').value)} numarasına gönderilir.</p><div class="bubble"><small>Stüdyoya giden mesaj</small>${esc(msg).replace(/\n/g,'<br>')}</div><button class="btn ghost" type="button" id="bReset" style="margin-top:16px">Yeni randevu</button></div>`;
+  $('#bReset').onclick=()=>{B.step=1;B.slot=null;$('#bDone').hidden=true;$('#bNav').hidden=false;renderSlots();show()};return}
+ B.step++;show()};
+renderCfg();show();
+
+/* son işler */
+$('#works').innerHTML=WORKS.map((w,i)=>`<div class="work"><div class="ph">${w.img?`<img src="${w.img}" alt="${esc(w.t)}" loading="lazy">`:`<canvas data-w="${i}"></canvas>`}<span class="chip">${esc(w.s.split(' · ')[0])}</span></div><div class="in"><b>${esc(w.t)}</b><span>${esc(w.s)}</span></div></div>`).join('');
+const wcv=document.createElement('canvas');const wgl=makeGL(wcv);
+document.querySelectorAll('.work canvas').forEach((c,k)=>{const w=WORKS[+c.dataset.w];c.width=600;c.height=450;
+ if(!wgl)return;wcv.style.width='600px';wcv.style.height='450px';document.body.appendChild(wcv);wcv.style.position='absolute';wcv.style.left='-9999px';
+ wgl.draw({lx:.3+((k*37)%50)/100,ly:.55+((k*13)%20)/100,col:w.paint,flake:w.flake,matte:w.matte?1:0,maxDpr:1});
+ c.getContext('2d').drawImage(wcv,0,0,600,450);});
+wcv.remove();
+
+/* garanti */
+function war(q){const k=q.replace(/\s/g,'').toUpperCase();const w=WAR[k]||Object.values(WAR).find(x=>x.no===k);
+ if(!w){$('#wOut').innerHTML=`<div class="card"><div class="lbl">Kayıt bulunamadı</div><p style="color:var(--mute);margin:10px 0 0">"${esc(q)}" için bir uygulama kaydı yok. Plakayı boşluklu ya da boşluksuz yazabilirsin. Emin değilsen WhatsApp'tan garanti numaranı sor.</p></div>`;return}
+ $('#wOut').innerHTML=`<div class="card"><div class="top"><span class="lbl">Garanti no ${w.no}</span><span class="ok">● Aktif</span></div><div class="plate">${w.plate}</div><div style="color:var(--mute)">${w.car}</div>
+ <dl><div><dt>Uygulama</dt><dd>${w.svc}</dd></div><div><dt>Film</dt><dd>${w.film}</dd></div><div><dt>Uygulama tarihi</dt><dd>${w.date}</dd></div><div><dt>Garanti bitişi</dt><dd>${w.until}</dd></div></dl>
+ <div class="tl">${w.checks.map(c=>`<div><i class="${c[2]?'':'next'}"></i>${c[0]}<span>${c[1]}${c[2]?' ✓':' · planlandı'}</span></div>`).join('')}</div></div>`}
+$('#wForm').onsubmit=e=>{e.preventDefault();war($('#wIn').value)};war('34 LKE 190');
+const fab=document.querySelector('.fab');let heroIn=true,bookIn=false;const upd=()=>fab.classList.toggle('on',!heroIn&&!bookIn);
+new IntersectionObserver(e=>{heroIn=e[0].isIntersecting;upd()}).observe(document.querySelector('.hero'));
+new IntersectionObserver(e=>{bookIn=e[0].isIntersecting;upd()}).observe(document.getElementById('randevu'));
+</script>
+</body></html>

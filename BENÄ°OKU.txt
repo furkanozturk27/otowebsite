@@ -1,0 +1,14 @@
+otowebsite.com.tr — yayına alma
+
+Bu klasörü olduğu gibi app.netlify.com/drop adresine sürükle,
+ardından Domain management bölümünden otowebsite.com.tr alan adını ekle.
+
+İletişim bilgileri girildi:
+  WhatsApp / telefon : 0551 451 86 62
+  E-posta            : otowebsite@gmail.com
+
+Sonradan eklenecekler (index.html en alttaki CONFIG):
+  launchLeft    : lansman kontenjanı (şu an 10). Her satışta 1 düşür; 0 olunca kampanya kendiliğinden kalkar.
+  metaPixelId   : Meta Etkinlik Yöneticisi'ndeki Pixel ID
+  legalName     : vergi levhasındaki ad soyad (KVKK)
+  legalAddress  : işletme adresi

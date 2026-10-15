@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>otowebsite.com.tr · Detailing ve PPF stüdyoları için web sitesi</title>
+<meta name="description" content="Detailing ve PPF stüdyoları için randevu alan web sitesi. Önce/sonra, fiyat hesaplama, online randevu ve WhatsApp entegrasyonu. Ücretsiz demo, 7 günde yayında.">
+<link rel="canonical" href="https://otowebsite.com.tr/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://otowebsite.com.tr/">
+<meta property="og:title" content="otowebsite.com.tr · Detailing ve PPF stüdyoları için web sitesi">
+<meta property="og:description" content="Randevu, fiyat hesaplama ve önce/sonra dahil. Stüdyona özel ücretsiz demo, 24 saatte hazır.">
+<meta property="og:image" content="https://otowebsite.com.tr/img/lake_desk.webp">
+<meta name="theme-color" content="#06080b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201080%201080%22%3E%3Crect%20width%3D%221080%22%20height%3D%221080%22%20rx%3D%22200%22%20fill%3D%22%231F3FD1%22/%3E%3Crect%20x%3D%22236%22%20y%3D%22286%22%20width%3D%22608%22%20height%3D%22480%22%20rx%3D%2264%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2256%22/%3E%3Cline%20x1%3D%22236%22%20y1%3D%22398%22%20x2%3D%22844%22%20y2%3D%22398%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2244%22/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0}
+:root{
+  color-scheme:dark;
+  --bg:#06080b; --s1:#0c0f14; --s2:#12161d; --s3:#181d26;
+  --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --tx:#f2f3f5; --mute:#a0a8b6; --dim:#747d8c;
+  --co:#1f3fd1; --co2:#5b74ff; --y:#ffd23f; --y-ink:#1d1700; --ok:#46d38a;
+  --disp:"Archivo","Arial Black",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Martian Mono",ui-monospace,Menlo,monospace;
+  --r:22px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--y);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.x{font-family:var(--disp);font-stretch:118%;font-weight:800;letter-spacing:-.025em}
+.lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.lbl b{color:var(--y);font-weight:500}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- header ---------- */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:19px;letter-spacing:-.01em;white-space:nowrap}
+.brand svg{width:34px;height:34px;border-radius:9px;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.brand .bt span{color:var(--co2)}
+nav.main{display:flex;gap:30px;font-size:15px;font-weight:500}
+nav.main a{text-decoration:none;color:var(--mute);transition:color .2s}
+nav.main a:hover{color:var(--tx)}
+.hbtns{display:flex;gap:10px;align-items:center}
+@media (max-width:960px){nav.main{display:none}}
+@media (max-width:560px){.hbtns .ghost{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;background:var(--tx);color:var(--bg);font:600 15px var(--body);padding:13px 22px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px rgba(255,255,255,.35)}
+.btn.y{background:var(--y);color:var(--y-ink)}
+.btn.y:hover{box-shadow:0 12px 34px -10px rgba(255,210,63,.55)}
+.btn.ghost{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+.btn.wa{background:#1fa855;color:#fff}
+.btn .ic{width:18px;height:18px}
+@media (max-width:400px){header .btn{padding:11px 16px;font-size:14px}}
+@media (max-width:420px){header .brand .bt span{display:none}header .brand{font-size:17px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:50%;top:-420px;width:1400px;height:900px;margin-left:-700px;background:radial-gradient(closest-side,rgba(31,63,209,.55),rgba(31,63,209,0));pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 20%,#000,transparent 75%);opacity:.6;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(56px,9vw,110px) clamp(40px,6vw,80px)}
+.hero-top{max-width:900px;margin:0 auto;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line2);background:rgba(255,255,255,.03);border-radius:99px;padding:7px 14px 7px 8px;font-size:14px;color:var(--mute)}
+.pill i{font-style:normal;background:var(--y);color:var(--y-ink);font-weight:700;font-size:12px;padding:3px 9px;border-radius:99px}
+h1{font-size:clamp(40px,7vw,92px);line-height:1.02;margin:22px 0 22px;text-wrap:balance}
+h1 .soft{color:var(--mute)}
+h1 .mark{position:relative;white-space:nowrap}
+h1 .mark::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.12em;background:var(--y);border-radius:2px;transform-origin:0 50%;animation:draw 1s .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes draw{from{transform:scaleX(0)}}
+.hero-top p{font-size:clamp(17px,1.6vw,20px);color:var(--mute);max-width:60ch;margin:0 auto 32px}
+.hero-top p b{color:var(--tx);font-weight:600}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:30px;font-size:14px;color:var(--mute)}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+
+/* showcase */
+.show{position:relative;margin:clamp(48px,7vw,80px) auto 0;max-width:1120px}
+.browser{position:relative;border-radius:18px;overflow:hidden;background:#0a0c10;box-shadow:0 0 0 1px var(--line2),0 60px 120px -40px rgba(0,0,0,.9),0 0 120px -30px rgba(31,63,209,.5)}
+.bbar{display:flex;align-items:center;gap:12px;height:44px;padding:0 14px;background:#11141a;border-bottom:1px solid var(--line)}
+.dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%;background:#2a2f39}
+.url{flex:1;max-width:420px;margin:0 auto;height:28px;border-radius:8px;background:#0a0c10;display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden}
+.url svg{width:12px;height:12px;flex:none}
+.bview{position:relative;display:block;aspect-ratio:16/10;background:#0a0c10}
+.bview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transform:scale(1.02);transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.bview img.on{opacity:1;transform:none}
+.bview .open{position:absolute;left:16px;bottom:16px;z-index:2}
+.phonef{position:absolute;right:-3%;bottom:-8%;width:22%;min-width:150px;aspect-ratio:390/844;border-radius:34px;background:#050608;padding:8px;box-shadow:0 0 0 1px var(--line2),0 40px 80px -20px rgba(0,0,0,.9);z-index:3}
+.phonef .ps{position:relative;width:100%;height:100%;border-radius:27px;overflow:hidden;background:#0a0c10}
+.phonef img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .7s}
+.phonef img.on{opacity:1}
+.phonef .nt{position:absolute;top:12px;left:50%;width:32%;height:16px;margin-left:-16%;border-radius:10px;background:#050608;z-index:2}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:clamp(40px,6vw,64px)}
+.tab{position:relative;overflow:hidden;border:1px solid var(--line2);background:rgba(255,255,255,.02);border-radius:99px;padding:10px 18px;cursor:pointer;font-size:14px;font-weight:500;color:var(--mute);display:flex;gap:8px;align-items:center}
+.tab small{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.tabs::-webkit-scrollbar{display:none}
+@media (max-width:640px){.tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}.tab{flex:none}}
+.tab[aria-selected="true"]{color:var(--tx);border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05)}
+.tab .bar{position:absolute;left:0;bottom:0;height:2px;background:var(--y);width:0}
+.tab[aria-selected="true"] .bar{animation:fill var(--dur,6s) linear forwards}
+@keyframes fill{to{width:100%}}
+@media (max-width:640px){.phonef{right:-2%;bottom:-12%;width:30%;min-width:110px;border-radius:24px;padding:6px}.phonef .ps{border-radius:19px}.bview .open{bottom:12px;padding:10px 14px;font-size:13px}}
+
+/* marquee */
+.marq{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--s1)}
+.marq .track{display:flex;gap:44px;width:max-content;animation:mq 38s linear infinite}
+.marq span{font-family:var(--disp);font-stretch:118%;font-weight:700;font-size:clamp(18px,2vw,24px);color:var(--dim);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marq span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--co2)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding-block:clamp(72px,10vw,130px);scroll-margin-top:60px}
+.sh{max-width:760px;margin-bottom:clamp(36px,5vw,56px)}
+.sh.c{margin-inline:auto;text-align:center}
+h2{font-size:clamp(32px,4.8vw,60px);line-height:1.04;margin:14px 0 16px;text-wrap:balance}
+.lede{font-size:clamp(17px,1.5vw,19px);color:var(--mute);margin:0;max-width:62ch}
+.sh.c .lede{margin-inline:auto}
+
+/* demos */
+.feat-demo{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(18px,2.4vw,28px);border-radius:28px;background:linear-gradient(180deg,var(--s2),var(--s1));box-shadow:inset 0 0 0 1px var(--line);position:relative;overflow:hidden}
+.feat-demo::before{content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;background:radial-gradient(closest-side,rgba(184,224,230,.14),transparent);pointer-events:none}
+@media (max-width:900px){.feat-demo{grid-template-columns:minmax(0,1fr)}}
+.scroller{position:relative;border-radius:16px;overflow:hidden;background:#0a0c10;box-shadow:0 0 0 1px var(--line2),0 30px 60px -30px rgba(0,0,0,.8);display:block;text-decoration:none}
+.scroller .bbar{height:36px}
+.scroller .vp{position:relative;aspect-ratio:16/11;overflow:hidden}
+.scroller .vp img{position:absolute;left:0;top:0;width:100%;height:auto;transform:translateY(0);transition:transform 1.4s cubic-bezier(.3,.7,.2,1)}
+.scroller:hover .vp img,.scroller:focus-visible .vp img{transform:translateY(calc(-1 * var(--dist,0px)));transition:transform var(--t,8s) cubic-bezier(.45,.05,.4,1)}
+.scroller .hint{position:absolute;right:12px;bottom:12px;font-family:var(--mono);font-size:12px;background:rgba(6,8,11,.78);backdrop-filter:blur(6px);padding:7px 11px;border-radius:99px;color:var(--tx);transition:opacity .3s}
+.scroller:hover .hint{opacity:0}
+@media (hover:none){.scroller .vp img{animation:autos var(--t,10s) ease-in-out 1s infinite alternate}.scroller .hint{display:none}}
+@keyframes autos{to{transform:translateY(calc(-1 * var(--dist,0px)))}}
+.demo-info .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.chip{font-size:13px;font-weight:500;border:1px solid var(--line2);border-radius:99px;padding:6px 12px;color:var(--mute)}
+.demo-info h3{font-size:clamp(26px,3vw,38px);line-height:1.08;margin:12px 0 12px}
+.demo-info p{color:var(--mute);margin:0}
+.demo-info ul{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px}
+.demo-info li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.demo-info li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:6px;background:var(--y) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4L19 7' fill='none' stroke='%231d1700' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.demo-info .acts{display:flex;flex-wrap:wrap;gap:10px}
+.demos3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+@media (max-width:960px){.demos3{grid-template-columns:minmax(0,1fr)}}
+.dcard{border-radius:24px;padding:14px 14px 20px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:16px;position:relative}
+.dcard .scroller .vp{aspect-ratio:16/12}
+.dcard .meta{padding:0 6px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.dcard h3{font-size:21px;margin:6px 0 4px;font-stretch:112%}
+.dcard p{margin:0;color:var(--mute);font-size:15px}
+.dcard .go{font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;color:var(--tx);border-bottom:1px solid var(--line2);padding-bottom:2px}
+.dcard .go:hover{border-color:var(--y)}
+.demos-note{margin-top:20px;font-size:14px;color:var(--dim);text-align:center}
+.spot{--mx:50%;--my:50%}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(400px circle at var(--mx) var(--my),rgba(255,255,255,.06),transparent 45%);opacity:0;transition:opacity .3s}
+.spot:hover::after{opacity:1}
+
+/* features */
+.fgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:960px){.fgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:620px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+.f{position:relative;border-radius:var(--r);padding:26px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:10px;min-height:230px}
+.f .ico{width:46px;height:46px;border-radius:13px;background:var(--s3);box-shadow:inset 0 0 0 1px var(--line2);display:grid;place-items:center;margin-bottom:8px}
+.f .ico svg{width:22px;height:22px}
+.f h3{font-family:var(--disp);font-stretch:112%;font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0;line-height:1.25}
+.f p{margin:0;color:var(--mute);font-size:15.5px}
+.f.big{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:center}
+@media (max-width:620px){.f.big{grid-template-columns:minmax(0,1fr)}}
+.wa-mock{background:#0b141a;border-radius:18px;padding:16px;display:grid;gap:10px;box-shadow:inset 0 0 0 1px var(--line)}
+.wa-mock .hd{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.wa-mock .hd i{width:30px;height:30px;border-radius:50%;background:#1fa855;display:grid;place-items:center}
+.wa-mock .m{justify-self:end;max-width:92%;background:#005c4b;border-radius:14px 14px 4px 14px;padding:10px 12px;font-size:14px;line-height:1.45}
+.wa-mock .m small{display:block;text-align:right;font-size:12px;color:#9fd8c8;margin-top:4px}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+@media (max-width:960px){.sectors{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:480px){.sectors{grid-template-columns:minmax(0,1fr)}}
+.sec{background:var(--s1);padding:22px}
+.sec b{display:block;font-family:var(--disp);font-stretch:112%;font-weight:700;font-size:18px;margin-bottom:6px}
+.sec span{color:var(--mute);font-size:14.5px}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative}
+@media (max-width:900px){.proc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:520px){.proc{grid-template-columns:minmax(0,1fr)}}
+.step{border-top:1px solid var(--line2);padding-top:22px;position:relative}
+.step::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--y)}
+.step .d{font-family:var(--mono);font-size:12px;color:var(--y)}
+.step h3{font-family:var(--disp);font-stretch:112%;font-weight:700;font-size:21px;margin:10px 0 8px}
+.step p{margin:0;color:var(--mute);font-size:15.5px}
+
+/* pricing */
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+@media (max-width:960px){.prices{grid-template-columns:minmax(0,1fr)}}
+.plan{position:relative;border-radius:26px;padding:30px 28px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:16px}
+.plan.hot{background:linear-gradient(180deg,#1a2a8a 0%,#101a52 45%,var(--s1) 100%);box-shadow:inset 0 0 0 1px rgba(91,116,255,.5),0 40px 90px -40px rgba(31,63,209,.8)}
+.plan .flag{position:absolute;top:-12px;left:26px;background:var(--y);color:var(--y-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px}
+.plan h3{font-family:var(--disp);font-stretch:112%;font-weight:700;font-size:22px;margin:0}
+.plan .who{margin:0;color:var(--mute);font-size:15px}
+.plan .amt{font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:clamp(36px,3.6vw,46px);letter-spacing:-.03em;line-height:1}
+.plan .amt small{font-family:var(--body);font-size:14px;font-weight:500;color:var(--mute);letter-spacing:0;margin-left:4px}
+.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:15.5px}
+.plan li{display:flex;gap:10px}
+.plan li::before{content:"";flex:none;width:16px;height:16px;margin-top:5px;border-radius:50%;background:rgba(255,255,255,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4L19 7' fill='none' stroke='%23ffd23f' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.plan .btn{margin-top:auto}
+
+/* compare */
+.cmpw{overflow-x:auto;border-radius:var(--r);box-shadow:inset 0 0 0 1px var(--line);background:var(--s1)}
+.cmp{width:100%;border-collapse:collapse;min-width:720px;font-size:15px}
+.cmp th,.cmp td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp tr:last-child td{border-bottom:0}
+.cmp thead th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+.cmp thead th.us{color:var(--y)}
+.cmp td:first-child{color:var(--mute);width:28%}
+.cmp td.us{background:rgba(255,210,63,.05);color:var(--tx);font-weight:600}
+.cmp .no{color:var(--dim)}
+
+/* faq */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
+@media (max-width:860px){.faq{grid-template-columns:minmax(0,1fr)}}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font-weight:600;font-size:17.5px;line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:22px;height:22px;margin-top:2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='%23ffd23f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;color:var(--mute);max-width:64ch}
+
+/* contact */
+.contact{border-radius:32px;padding:clamp(24px,5vw,64px);background:radial-gradient(900px 500px at 0% 0%,rgba(31,63,209,.45),transparent 60%),var(--s1);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px)}
+@media (max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}}
+.ways{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:30px}
+.way>span:nth-child(2){min-width:0;overflow-wrap:anywhere}
+.way{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.03);box-shadow:inset 0 0 0 1px var(--line);text-decoration:none}
+a.way:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.way .wi{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none;background:var(--s3)}
+.way .wi svg{width:20px;height:20px}
+.way b{display:block;font-size:15.5px;font-family:var(--body)}
+.way>span:nth-child(2)>span{font-size:14px;color:var(--mute);font-family:var(--mono)}
+.way{min-width:0}
+@media (max-width:480px){.way>span:nth-child(2)>span{font-family:var(--body);font-size:15px}}
+.way .cp{margin-left:auto;flex:none;font-family:var(--mono);font-size:12px;border:1px solid var(--line2);background:transparent;border-radius:8px;padding:6px 9px;cursor:pointer;color:var(--mute)}
+.hours{margin-top:18px;font-size:14px;color:var(--mute)}
+form.df{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-content:start}
+@media (max-width:520px){form.df{grid-template-columns:minmax(0,1fr)}}
+.df label{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:var(--mute)}
+.df .full{grid-column:1/-1}
+.df input,.df select{font:500 16px var(--body);color:var(--tx);background:rgba(0,0,0,.35);border:1px solid var(--line2);border-radius:14px;padding:14px 15px;width:100%;min-width:0}
+.df input::placeholder{color:var(--dim)}
+.df .note{font-size:13px;color:var(--dim);margin:0}
+.out{grid-column:1/-1;border-radius:18px;padding:16px;background:#0b141a;box-shadow:inset 0 0 0 1px var(--line)}
+.out .m{background:#005c4b;border-radius:14px 14px 4px 14px;padding:12px 14px;font-size:14.5px;line-height:1.5;white-space:pre-line}
+.out .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.err{grid-column:1/-1;color:#ff9d8a;font-size:14px;margin:0}
+
+footer{border-top:1px solid var(--line);padding-block:44px;color:var(--mute);font-size:14.5px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+@media (max-width:860px){footer .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:480px){footer .wrap{grid-template-columns:minmax(0,1fr)}}
+footer h4{margin:0 0 10px;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+footer a{text-decoration:none;display:block;padding:3px 0}
+footer a:hover{color:var(--tx)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:#1fa855;display:none;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.fab svg{width:28px;height:28px}
+@media (max-width:760px){.fab.on{display:grid}}
+
+.shownote{text-align:center;margin:16px 0 0;font-size:14px;color:var(--dim)}
+.shownote b{color:var(--mute);font-weight:600}
+.other{margin-top:clamp(48px,6vw,72px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.other h3{font-size:clamp(22px,2.4vw,28px);margin:8px 0 6px;font-stretch:112%}
+.other p{margin:0;color:var(--mute);font-size:15.5px}
+.about{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:start;border-radius:28px;padding:clamp(24px,4vw,48px);background:var(--s1);box-shadow:inset 0 0 0 1px var(--line)}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}}
+.who{display:flex;flex-direction:column;gap:18px}
+.av{width:100%;max-width:300px;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,#2c46d8,#0f1a52 55%,#0a0d18);display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--line2)}
+.av img{width:100%;height:100%;object-fit:cover}
+.av .mono{font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:120px;color:rgba(255,255,255,.92);letter-spacing:-.04em}
+@media (max-width:860px){.who{flex-direction:row;align-items:center}.av{width:96px;border-radius:20px}.av .mono{font-size:44px}}
+.who b{display:block;font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:22px}
+.who span{color:var(--mute);font-size:14.5px}
+.ac2{color:var(--y)}
+.promises{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+@media (max-width:760px){.promises{grid-template-columns:minmax(0,1fr)}}
+.promises div{border-top:1px solid var(--line2);padding-top:14px}
+.promises b{display:block;font-size:16px;margin-bottom:4px}
+.promises span{color:var(--mute);font-size:15px}
+.mainplan{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center;border-radius:30px;padding:clamp(26px,4vw,48px);background:linear-gradient(135deg,#1a2a8a 0%,#101a52 50%,var(--s1) 100%);box-shadow:inset 0 0 0 1px rgba(91,116,255,.45),0 50px 100px -50px rgba(31,63,209,.8)}
+@media (max-width:860px){.mainplan{grid-template-columns:minmax(0,1fr)}}
+.mainplan .flag{display:inline-block;background:var(--y);color:var(--y-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px}
+.mainplan h3{font-size:clamp(28px,3.4vw,40px);margin:16px 0 10px;font-stretch:118%}
+.mainplan .amt{font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:clamp(44px,5.4vw,68px);letter-spacing:-.03em;line-height:1}
+.mainplan .amt small{display:block;font-family:var(--body);font-size:15px;font-weight:500;color:#c9d2ff;letter-spacing:0;margin-top:8px}
+.mp-note{color:#c9d2ff;margin:16px 0 24px;font-size:15.5px}
+.mp-acts{display:flex;flex-wrap:wrap;gap:10px}
+.mp-r{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:16px}
+.mp-r li{display:flex;gap:12px}
+.mp-r li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:rgba(255,210,63,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4L19 7' fill='none' stroke='%23ffd23f' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.legal{display:flex!important;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:30px;font-size:13px;color:var(--dim)}
+.legal a{display:inline;margin-left:18px;padding:0}
+.df .note a{color:var(--mute)}
+.modal{position:fixed;inset:0;z-index:200;background:rgba(3,4,6,.78);backdrop-filter:blur(6px);display:flex;justify-content:center;align-items:flex-start;overflow-y:auto;padding:clamp(16px,5vw,60px) 16px}
+.sheet{position:relative;width:100%;max-width:760px;background:var(--s1);border-radius:24px;box-shadow:inset 0 0 0 1px var(--line2);padding:clamp(22px,4vw,44px);font-size:15.5px;color:var(--mute)}
+.sheet h2{font-size:clamp(24px,3vw,32px);color:var(--tx);margin:0 0 6px}
+.sheet h3{color:var(--tx);font-size:16px;margin:22px 0 6px}
+.sheet p,.sheet li{margin:0 0 8px}
+.sheet ul{padding-left:20px;margin:0 0 8px}
+.x-close{position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--s3);color:var(--tx);font-size:22px;cursor:pointer}
+.consent{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:150;max-width:720px;margin:0 auto;background:rgba(18,22,29,.96);backdrop-filter:blur(12px);border-radius:20px;box-shadow:inset 0 0 0 1px var(--line2),0 30px 60px -20px rgba(0,0,0,.8);padding:16px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.consent p{margin:0;flex:1 1 280px;font-size:14.5px;color:var(--mute)}
+.consent p a{color:var(--tx)}
+.consent>div{display:flex;gap:8px}
+.consent .btn{padding:10px 16px;font-size:14px}
+
+/* ---- lansman ---- */
+.launch{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:center;margin-bottom:22px;border-radius:26px;padding:clamp(22px,3vw,32px);background:radial-gradient(600px 240px at 0% 0%,rgba(255,210,63,.16),transparent 70%),#15130a;overflow:hidden}
+.launch::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--ang,0deg),rgba(255,210,63,.15),#ffd23f,rgba(255,210,63,.15) 30%,rgba(255,210,63,.15) 70%,#ffd23f,rgba(255,210,63,.15));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;z-index:-1}
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--ang:360deg}}
+@media (max-width:860px){.launch{grid-template-columns:minmax(0,1fr)}}
+.ln-tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--y)}
+.ln-tag i{width:9px;height:9px;border-radius:50%;background:var(--y);box-shadow:0 0 0 0 rgba(255,210,63,.6);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(255,210,63,0)}100%{box-shadow:0 0 0 0 rgba(255,210,63,0)}}
+.launch h3{font-size:clamp(24px,3vw,36px);line-height:1.1;margin:12px 0 10px;font-stretch:118%}
+.launch h3 span{color:var(--y)}
+.launch p{margin:0;color:#d8d2bc;font-size:16px}
+.launch s{color:#9d977f}
+.launch p b{color:#fff}
+.ln-r{display:grid;gap:12px}
+.slots{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}
+.slots i{height:12px;border-radius:4px;background:rgba(255,210,63,.18)}
+.slots i.free{background:var(--y);box-shadow:0 0 12px rgba(255,210,63,.45)}
+.ln-count{font-size:15px;color:#d8d2bc}
+.ln-count b{color:var(--y);font-family:var(--disp);font-stretch:112%;font-size:20px}
+.ln-r .btn{justify-self:start}
+.amt .was{display:block;font-size:.36em;color:#9fa9e6;text-decoration:line-through;text-decoration-thickness:2px;margin-bottom:6px;letter-spacing:0}
+/* ---- ek paketler ---- */
+.extras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+@media (max-width:960px){.extras{grid-template-columns:minmax(0,1fr)}}
+.extra{position:relative;display:grid;align-content:start;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"ic t" "ic v" "go go";gap:6px 16px;align-items:start;padding:22px;border-radius:22px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .35s}
+.extra:hover,.extra:focus-visible{transform:translateY(-4px);background:var(--s2);box-shadow:inset 0 0 0 1px rgba(255,210,63,.45),0 24px 50px -24px rgba(255,210,63,.35)}
+.ex-ic{grid-area:ic;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--s3);color:var(--y);box-shadow:inset 0 0 0 1px var(--line2);transition:transform .35s,background .35s,color .35s}
+.ex-ic svg{width:22px;height:22px}
+.extra:hover .ex-ic{transform:rotate(-8deg) scale(1.06);background:var(--y);color:var(--y-ink)}
+.ex-t{grid-area:t;display:flex;flex-direction:column;gap:3px;min-width:0}
+.ex-t em{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.ex-t b{font-family:var(--disp);font-stretch:112%;font-weight:700;font-size:19px}
+.ex-t span{font-size:14.5px;color:var(--mute)}
+.ex-v{grid-area:v;margin-top:8px;font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:26px;white-space:nowrap;display:flex;align-items:baseline;gap:8px}
+.ex-v small{font-family:var(--body);font-size:13px;font-weight:500;color:var(--mute)}
+.ex-go{grid-area:go;margin-top:10px;padding-top:12px;border-top:1px dashed var(--line2);font-size:14px;font-weight:600;color:var(--tx);display:flex;justify-content:space-between}
+.ex-go i{font-style:normal;color:var(--y);transition:transform .3s}
+.extra:hover .ex-go i{transform:translateX(6px)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+</head><body>
+<div class="noise" aria-hidden="true"></div>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="otowebsite.com.tr ana sayfa"><svg viewBox="0 0 1080 1080" aria-hidden="true"><rect width="1080" height="1080" fill="#1F3FD1"/><rect x="236" y="286" width="608" height="480" rx="64" fill="none" stroke="#fff" stroke-width="52"/><line x1="236" y1="398" x2="844" y2="398" stroke="#fff" stroke-width="42"/><circle cx="318" cy="342" r="20" fill="#FFD23F"/><g transform="translate(247,432) scale(1.45)"><path d="M30,124 L28,110 Q30,98 42,95 L80,92 Q120,64 160,58 Q200,54 228,60 Q256,66 290,86 L350,94 Q372,98 376,110 L374,124 L338,124 A27,27 0 0 0 284,124 L122,124 A27,27 0 0 0 68,124 Z" fill="#fff"/><circle cx="95" cy="126" r="21" fill="#fff"/><circle cx="311" cy="126" r="21" fill="#fff"/></g></svg><span class="bt">otowebsite<span>.com.tr</span></span></a>
+    <nav class="main" aria-label="Ana menü"><a href="#demolar">Demolar</a><a href="#ozellikler">Özellikler</a><a href="#surec">Süreç</a><a href="#fiyatlar">Fiyatlar</a><a href="#sss">SSS</a></nav>
+    <div class="hbtns"><a class="btn ghost" href="#iletisim">İletişim</a><a class="btn y" href="#iletisim">Ücretsiz demo</a></div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="pill"><i>YENİ</i>Randevu sistemi dahil · 7 günde yayında</span>
+        <h1 class="x">Detailing ve PPF stüdyoları için <span class="mark">randevu alan</span> web sitesi.</h1>
+        <p>Müşterilerin yaptığın işleri önce/sonra görüntüleriyle inceler, araçlarının fiyatını hesaplar ve randevularını kendileri alır. Her talep doğrudan <b>WhatsApp'ına</b> gelir. Önce stüdyon için ücretsiz bir demo hazırlıyoruz; beğenirsen siten <b>7 gün içinde yayında.</b></p>
+        <div class="ctas"><a class="btn y" href="#iletisim">24 saatte ücretsiz demo al</a><a class="btn ghost" href="#demolar">Demoyu incele</a></div>
+        <div class="trust"><span>Faturalı hizmet</span><span>Alan adı senin adına</span><span>Beğenmezsen ödeme yok</span></div>
+      </div>
+      <div class="show" id="show">
+        <div class="browser">
+          <div class="bbar"><div class="dots"><i></i><i></i><i></i></div><div class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="showUrl">lakedetailing.com.tr</span></div><div style="width:47px"></div></div>
+          <a class="bview" id="showView" target="_blank" rel="noopener" aria-label="Canlı demoyu aç"></a>
+        </div>
+        <div class="phonef" aria-hidden="true"><div class="ps"><div class="nt"></div><div id="showPhone"></div></div></div>
+      </div>
+      <div class="tabs" role="tablist" id="showTabs" aria-label="Ekran seç"></div>
+      <p class="shownote">Örnek site: <b>LAKE Detailing &amp; PPF</b>. Stüdyo kurgusal, site gerçekten çalışıyor.</p>
+    </div>
+  </div>
+
+  <div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+  <section id="demolar">
+    <div class="wrap">
+      <div class="sh"><div class="lbl">Canlı demo</div><h2 class="x">Tıkla, incele, telefonunda dene.</h2><p class="lede">Bu bir görsel değil, çalışan bir site: randevu alabilir, fiyat hesaplayabilir, garanti sorgulayabilirsin. Sayfanın tamamını görmek için imleci önizlemenin üzerine getir.</p></div>
+      <div class="feat-demo spot" id="featDemo"></div>
+      <div class="other"><div><div class="lbl">Diğer oto işletmeleri için</div><h3 class="x">Galeri demoları</h3><p>Aynı altyapıyla galeriler için hazırladığımız ilk örnekler.</p></div></div>
+      <div class="demos3" id="demos3"></div>
+      <p class="demos-note">Demolardaki işletmeler kurgusaldır. Senin siten kendi logon, fotoğrafların ve fiyatlarınla hazırlanır.</p>
+    </div>
+  </section>
+
+  <section id="ozellikler" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div class="lbl">Her sitede</div><h2 class="x">Sitenin güzel görünmesi yetmez. İş getirmesi gerekir.</h2><p class="lede">Oto sektöründe müşterilerin hangi soruları sorduğunu biliyoruz. Siten bu soruları, daha DM'ine gelmeden cevaplar.</p></div>
+      <div class="fgrid">
+        <div class="f big spot">
+          <div><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#46d38a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg></div>
+          <h3>Talepler WhatsApp'ına eksiksiz gelir</h3><p>Randevu, fiyat sorusu ya da teklif talebi fark etmez: müşteri formu doldurur, mesaj hizmet, araç ve tarih bilgileriyle birlikte WhatsApp'ına gelir. "Hangi araç, hangi paket?" diye sormana gerek kalmaz.</p></div>
+          <div class="wa-mock" aria-hidden="true"><div class="hd"><i><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></i>Yeni randevu talebi</div>
+            <div class="m">Merhaba, randevu talebi:<br>Tam araç PPF · Mat · SUV<br>Araç: 2024 BMW X3, Mineral beyaz<br>Teslim: 3 Ekim Cuma 09:00<small>09:14 ✓✓</small></div></div>
+        </div>
+        <div class="f spot"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Online randevu</h3><p>Müşteri boş gün ve saatlerden birini seçer. İstersen sistemi Google Takvim ya da Cal.com'a bağlarız; dolu saatler otomatik olarak kapanır.</p></div>
+        <div class="f spot"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b8e0e6" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h6"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Fiyat hesaplama</h3><p>Müşteri hizmeti, araç sınıfını ve seçenekleri seçer; tahmini fiyat aralığını anında görür. "Fiyat ne kadar?" mesajları büyük ölçüde azalır.</p></div>
+        <div class="f spot"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#5b74ff" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/><path d="M9 12l-2 0M15 12h2"/></svg></div><h3>Önce / sonra</h3><p>Kaydırmalı karşılaştırma sayesinde işinin farkı tek bakışta görülür. Detailing'de işi en iyi anlatan içerik budur.</p></div>
+        <div class="f spot"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h3>Önce telefon için tasarım</h3><p>Müşterilerin çoğu siteye Instagram'dan, yani telefondan girer. Bu yüzden her siteyi önce telefona göre tasarlıyor, sonra masaüstüne uyarlıyoruz.</p></div>
+        <div class="f spot"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#46d38a" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div><h3>Google'da görünürlük</h3><p>Google İşletme profilini kurar, sayfa başlıklarını doğru şekilde yapılandırırız. Böylece "şehir + hizmet" aramalarında görünmen için sağlam bir temel oluşur.</p></div>
+        <div class="f spot"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b8e0e6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Hızlı ve güvenli</h3><p>Sayfalar birkaç saniye içinde açılır; SSL sertifikası ve düzenli yedekleme dahildir. Müşterin beklemez, tarayıcı da "güvenli değil" uyarısı göstermez.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sektorler" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div class="lbl">Sadece <span lang="en">detailing</span> değil</div><h2 class="x">Oto sektörünün dilini konuşan siteler.</h2><p class="lede">Aynı altyapıyı diğer oto işletmelerine de uyarlıyoruz. Sektörün listede yoksa yaz, konuşalım.</p></div>
+      <div class="sectors">
+        <div class="sec"><b>Detailing &amp; PPF</b><span>Paket fiyatları, önce/sonra, randevu, garanti sorgulama</span></div>
+        <div class="sec"><b>Seramik &amp; cam filmi</b><span>Araç sınıfına göre fiyat, uygulama süresi, bakım rehberi</span></div>
+        <div class="sec"><b>Oto servis</b><span>Online randevu, hizmet fiyat listesi, marka uzmanlığı sayfaları</span></div>
+        <div class="sec"><b>Galeri</b><span>Vitrin sitesi, öne çıkan araçlar, ekspertiz şeması, kredi hesaplama</span></div>
+        <div class="sec"><b>Oto kiralama</b><span>Araç filosu, tarih seçimi, günlük ve aylık fiyatlar</span></div>
+        <div class="sec"><b>Lastik &amp; jant</b><span>Ebata göre ürün listesi, "stokta var mı?" butonu, lastik saklama</span></div>
+        <div class="sec"><b>Ekspertiz</b><span>Paket karşılaştırma, randevu, rapor sorgulama</span></div>
+        <div class="sec"><b>Yıkama &amp; bakım</b><span>Yıkama paketleri, abonelik ve kampanya duyuruları</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="surec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div class="lbl">Süreç</div><h2 class="x">Demodan yayına 7 gün.</h2><p class="lede">Önce görür, sonra karar verirsin. Kaporayı ancak demoyu beğenirsen ödersin.</p></div>
+      <div class="proc">
+        <div class="step"><div class="d">24 SAAT</div><h3>Ücretsiz demo</h3><p>İşletmenin adını ve Instagram hesabını kullanarak sana özel bir demo hazırlarız. Beğenmezsen hiçbir ücret ödemezsin.</p></div>
+        <div class="step"><div class="d">1. GÜN</div><h3>Onay ve kapora</h3><p>Paketini seçersin, %50 kaporayla işe başlarız. Tüm işlerimiz faturalıdır.</p></div>
+        <div class="step"><div class="d">2–5. GÜN</div><h3>İçerik ve düzenleme</h3><p>Logonu, fotoğraflarını, fiyatlarını ve adresini siteye yerleştiririz. 2 revizyon hakkın var.</p></div>
+        <div class="step"><div class="d">7. GÜN</div><h3>Yayın</h3><p>Alan adını bağlar, Google İşletme profilini ayarlarız. Kalan %50'yi teslimde ödersin.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="biz" style="padding-top:0">
+    <div class="wrap">
+      <div class="about">
+        <div class="who">
+          <div class="av" id="avatar"></div>
+          <div><b id="fName"></b><span>otowebsite.com.tr kurucusu</span></div>
+        </div>
+        <div>
+          <div class="lbl">Karşında kim var</div>
+          <h2 class="x">Siteni bir ajans değil, <span class="ac2">ben</span> yapıyorum.</h2>
+          <p class="lede" id="aboutText"></p>
+          <div class="promises">
+            <div><b>Tek muhatap</b><span>Demodan yayına kadar WhatsApp'ta muhatabın benim. Araya çağrı merkezi ya da proje yöneticisi girmez.</span></div>
+            <div><b>Sektörü bilirim</b><span>PPF ile seramik kaplamanın farkını ya da müşterilerinin DM'de neler sorduğunu bana anlatmana gerek yok.</span></div>
+            <div><b>Önce görürsün</b><span>Stüdyon için önce bir demo hazırlarım. Beğenmezsen hiçbir şey ödemezsin.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fiyatlar" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div class="lbl">Fiyatlar</div><h2 class="x">Net fiyat. Sürpriz yok.</h2><p class="lede">Detailing stüdyoları için tek paket. Fiyatlara KDV dahil değildir.</p></div>
+      <div class="launch" id="launch">
+        <div class="ln-l">
+          <div class="ln-tag"><i></i>Lansman kampanyası</div>
+          <h3 class="x">İlk 10 işletmeye kurulumda <span>%25 indirim.</span></h3>
+          <p>Randevu Sitesi <s>19.900 TL</s> yerine <b id="lnPrice">14.925 TL</b> +KDV. Kontenjan dolduğunda kampanya sona erer.</p>
+        </div>
+        <div class="ln-r">
+          <div class="slots" id="slotBar" aria-hidden="true"></div>
+          <div class="ln-count" id="lnCount"></div>
+          <a class="btn y" href="#iletisim" data-plan="Randevu Sitesi (lansman)">Kontenjanımı ayır →</a>
+        </div>
+      </div>
+      <div class="mainplan spot">
+        <div class="mp-l">
+          <span class="flag">Detailing ve PPF için</span>
+          <h3 class="x">Randevu Sitesi</h3>
+          <div class="amt"><span class="was" id="mpWas">19.900 TL</span><span id="mpNow">19.900 TL</span><small>+KDV · tek seferlik</small></div>
+          <p class="mp-note">İlk yılın barındırma, alan adı ve SSL ücreti dahildir. Aylık abonelik yoktur.</p>
+          <div class="mp-acts"><a class="btn y" href="#iletisim" data-plan="Randevu Sitesi">Ücretsiz demo iste</a><a class="btn ghost" href="__DEMO__" target="_blank" rel="noopener" data-demo="lake">Örneği gör ↗</a></div>
+        </div>
+        <ul class="mp-r">
+          <li>Adım adım randevu, talepler doğrudan WhatsApp'ına</li>
+          <li>Araç sınıfına göre fiyat hesaplayıcı</li>
+          <li>Kaydırmalı önce / sonra karşılaştırma</li>
+          <li>Plakayla garanti sorgulama</li>
+          <li>Hizmetler, paketler, süreç ve SSS sayfaları</li>
+          <li>Telefona göre tasarım ve hızlı açılış</li>
+          <li>Google İşletme profili kurulumu</li>
+          <li>2 revizyon hakkı, yayından sonraki 30 gün içinde ücretsiz küçük değişiklikler</li>
+        </ul>
+      </div>
+      <div class="extras">
+        <a class="extra spot" href="#iletisim" data-plan="Tanıtım sitesi">
+          <span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+          <span class="ex-t"><em>Daha basit mi?</em><b>Tanıtım sitesi</b><span>Tek sayfa: hizmetler, fiyat listesi, WhatsApp ve harita.</span></span>
+          <span class="ex-v">9.900 TL<small>+KDV</small></span>
+          <span class="ex-go">Bu paketi sor <i>→</i></span>
+        </a>
+        <a class="extra spot" href="#iletisim" data-plan="Pro">
+          <span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span>
+          <span class="ex-t"><em>Daha kapsamlı mı?</em><b>Pro</b><span>Takvim entegrasyonu, çoklu şube ve şehir bazlı SEO sayfaları.</span></span>
+          <span class="ex-v">34.900 TL<small>+KDV</small></span>
+          <span class="ex-go">Bu paketi sor <i>→</i></span>
+        </a>
+        <a class="extra spot" href="#sss" data-faq="3">
+          <span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
+          <span class="ex-t"><em>Sonraki yıllar</em><b>Barındırma ve bakım</b><span>Alan adı, SSL ve barındırma. Değişiklikler 750 TL'den başlar.</span></span>
+          <span class="ex-v">3.900 TL<small>/ yıl</small></span>
+          <span class="ex-go">Detayları gör <i>→</i></span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><div class="lbl">Karşılaştır</div><h2 class="x">Neden otowebsite?</h2></div>
+      <div class="cmpw"><table class="cmp">
+        <thead><tr><th></th><th class="us"><span lang="en">otowebsite.com.tr</span></th><th>Hazır site kurucular</th><th>Genel ajanslar</th></tr></thead>
+        <tbody>
+          <tr><td>Siteyi kim kurar?</td><td class="us">Biz kurarız, sen onaylarsın</td><td>Sen kurarsın</td><td>Ajans kurar</td></tr>
+          <tr><td>Oto sektörüne özel bölümler</td><td class="us">Hazır gelir: randevu, fiyat hesaplama, önce/sonra</td><td class="no">Eklentilerle ve sınırlı</td><td class="no">Genellikle sıfırdan ve ek ücretle</td></tr>
+          <tr><td>Karar vermeden önce</td><td class="us">İşletmene özel ücretsiz demo</td><td class="no">Şablon önizleme</td><td class="no">Teklif ve toplantı</td></tr>
+          <tr><td>Süre</td><td class="us">7 gün</td><td>Ayırabileceğin zamana bağlı</td><td>Genellikle birkaç hafta</td></tr>
+          <tr><td>Ödeme</td><td class="us">Tek seferlik + yıllık barındırma</td><td>Aylık abonelik</td><td>Projeye göre</td></tr>
+          <tr><td>Alan adı kimin?</td><td class="us">Senin adına kayıtlı</td><td>Senin</td><td>Değişir</td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <section id="sss" style="padding-top:0">
+    <div class="wrap faq">
+      <div><div class="lbl">Sık sorulanlar</div><h2 class="x">Aklına takılanlar.</h2><p class="lede">Sorunun cevabını burada bulamadıysan WhatsApp'tan yaz, aynı gün dönüş yapalım.</p><p style="margin-top:22px"><a class="btn ghost" href="#iletisim">Soru sor</a></p></div>
+      <div>
+        <details open><summary>Ücretsiz demo gerçekten ücretsiz mi?</summary><p>Evet. İşletmenin adını ve Instagram hesabını kullanarak 24 saat içinde bir demo hazırlarız. Beğenmezsen hiçbir ücret ödemezsin ve hiçbir yükümlülük altına girmezsin.</p></details>
+        <details><summary>Fotoğrafları kim sağlıyor?</summary><p>Sitende senin yaptığın işlerin fotoğrafları kullanılır, çünkü müşteri hazır görseller değil, senin işini görmek ister. Çoğu zaman Instagram'daki fotoğrafların yeterli olur. Eksik kalan kareler olursa hangi fotoğrafların gerektiğini sana tek tek yazarız.</p></details>
+        <details><summary>Sonradan değişiklik yapmak istersem?</summary><p>Yayından sonraki ilk 30 gün içinde küçük değişiklikler ücretsizdir. Sonrasında fiyat, metin ya da fotoğraf güncellemeleri iş başına 750 TL'den başlar. Aylık zorunlu bir ödeme yoktur.</p></details>
+        <details><summary>Alan adı ve site kimin olacak?</summary><p>İkisi de senin. Alan adı senin adına kaydedilir. Bizimle çalışmayı bıraksan bile site dosyalarını ve alan adını sana teslim ederiz.</p></details>
+        <details><summary>Randevular nereye gelir?</summary><p>Randevu Sitesi paketinde talepler WhatsApp'ına gelir, sen de onaylarsın. Pro pakette sistemi Google Takvim ya da Cal.com'a bağlarız; dolu saatler otomatik olarak kapanır ve müşteriye hatırlatma mesajı gider.</p></details>
+        <details><summary>Google'da ilk sırada çıkar mıyım?</summary><p>Hiç kimse sıralama garantisi veremez; garanti verenlere karşı dikkatli ol. Biz Google İşletme profilini, sayfa başlıklarını ve site hızını doğru şekilde kurarız. Böylece işletme adınla ve "şehir + hizmet" aramalarında görünmen için gereken temeli atmış oluruz.</p></details>
+        <details><summary>Fatura kesiyor musunuz?</summary><p>Evet, tüm işlerimiz faturalıdır. Ödemenin %50'si başlangıçta, kalan %50'si teslimde alınır.</p></details>
+        <details><summary>Başka şehirdeyim, çalışabilir miyiz?</summary><p>Evet. Süreç tamamen uzaktan ilerler: demo linkini gönderir, WhatsApp'tan görüşür, onayını alırız. Türkiye'nin her yerinden işletmelerle çalışıyoruz.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <div class="lbl">İletişim</div>
+          <h2 class="x">İşletmene özel ücretsiz demo.</h2>
+          <p class="lede">Formu doldur ya da bize doğrudan yaz. Demo linkini 24 saat içinde gönderelim.</p>
+          <div class="ways" id="ways"></div>
+          <p class="hours" id="hours"></p>
+        </div>
+        <form class="df" id="df" novalidate>
+          <label>İşletme adı<input id="fBiz" autocomplete="organization" placeholder="Örn. Parlak Detailing"></label>
+          <label>Sektör<select id="fSec"><option>Detailing / PPF</option><option>Seramik / cam filmi</option><option>Oto servis</option><option>Galeri</option><option>Oto kiralama</option><option>Lastik / jant</option><option>Ekspertiz</option><option>Yıkama</option><option>Diğer</option></select></label>
+          <label>Şehir<input id="fCity" autocomplete="address-level2" placeholder="Örn. İstanbul"></label>
+          <label>Telefon<input id="fPhone" inputmode="tel" autocomplete="tel" placeholder="05XX XXX XX XX"></label>
+          <label>Instagram hesabın (varsa)<input id="fIg" placeholder="@isletmen"></label>
+          <label>İlgilendiğin paket<select id="fPkg"><option>Randevu Sitesi</option><option>Randevu Sitesi (lansman)</option><option>Tanıtım sitesi</option><option>Pro</option><option>Henüz karar vermedim</option></select></label>
+          <div class="full"><button class="btn y" type="submit" style="width:100%">Demo talebi oluştur</button></div>
+          <p class="note full">Bilgilerin yalnızca demo hazırlamak ve seninle iletişime geçmek için kullanılır. <a href="#" data-kvkk>Aydınlatma metni</a></p>
+          <p class="err" id="fErr" hidden></p>
+          <div class="out" id="fOut" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="#" style="display:flex;padding:0;margin-bottom:12px"><svg viewBox="0 0 1080 1080" aria-hidden="true"><rect width="1080" height="1080" fill="#1F3FD1"/><rect x="236" y="286" width="608" height="480" rx="64" fill="none" stroke="#fff" stroke-width="52"/><line x1="236" y1="398" x2="844" y2="398" stroke="#fff" stroke-width="42"/><g transform="translate(247,432) scale(1.45)"><path d="M30,124 L28,110 Q30,98 42,95 L80,92 Q120,64 160,58 Q200,54 228,60 Q256,66 290,86 L350,94 Q372,98 376,110 L374,124 L338,124 A27,27 0 0 0 284,124 L122,124 A27,27 0 0 0 68,124 Z" fill="#fff"/></g></svg><span class="bt">otowebsite<span>.com.tr</span></span></a>Oto işletmelerine özel web siteleri.<br>Faturalı hizmet · Türkiye geneli</div>
+    <div><h4>Site</h4><a href="#demolar">Demolar</a><a href="#ozellikler">Özellikler</a><a href="#fiyatlar">Fiyatlar</a><a href="#sss">SSS</a></div>
+    <div><h4>Demolar</h4><div id="fDemos"></div></div>
+    <div><h4>İletişim</h4><div id="fContact"></div></div>
+  </div>
+  <div class="wrap legal"><span>© <span id="yr"></span> otowebsite.com.tr</span><span><a href="#" data-kvkk>KVKK aydınlatma metni</a><a href="#" id="cookieLink">Çerez tercihleri</a></span></div>
+</footer>
+<div class="modal" id="kvkk" hidden role="dialog" aria-modal="true" aria-labelledby="kvkkT"><div class="sheet"><button class="x-close" type="button" id="kvkkX" aria-label="Kapat">×</button><div id="kvkkBody"></div></div></div>
+<div class="consent" id="consent" hidden role="region" aria-label="Çerez tercihi"><p>Onay verirsen, reklamlarımızın işe yarayıp yaramadığını ölçmek için Meta ve Google çerezlerini kullanırız. <a href="#" data-kvkk>Ayrıntılar</a></p><div><button class="btn ghost" type="button" id="cNo">Sadece gerekli</button><button class="btn y" type="button" id="cYes">Kabul et</button></div></div>
+<a class="fab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp'tan yaz"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2z"/></svg></a>
+
+<script>document.documentElement.lang="tr";</script>
+<script>
+/* ============ AYARLAR — yayına almadan önce doldur ============ */
+const CONFIG={
+  whatsapp:'905514518662',          // 90 ile başlayan, boşluksuz
+  phoneText:'0551 451 86 62',
+  email:'otowebsite@gmail.com',
+  instagram:'otowebsite.tr',
+  city:'İstanbul',
+  hours:'Hafta içi 09:00–19:00 · Cumartesi 10:00–16:00',
+  launchLeft:10,                   // lansman kontenjanı: satış oldukça düşür (0 olunca kampanya kalkar)
+  founderName:'Furkan',
+  founderPhoto:null,               // ör. 'img/furkan.webp' — fotoğraf eklersen harf yerine görünür
+  metaPixelId:'',                  // Meta Business'tan Pixel ID (yalnız rakamlar)
+  ga4Id:'',                        // isteğe bağlı: 'G-XXXXXXX'
+  legalName:'[Ad Soyad — şahıs işletmesi]',   // KVKK veri sorumlusu (vergi levhasındaki ad)
+  legalAddress:'[İşletme adresi]'
+};
+/* Demo linkleri — kendi alan adında yayınlayınca bunları değiştir */
+const DEMOS=[
+ {id:'lake',name:'LAKE Detailing & PPF',sector:'Detailing & PPF',city:'İstanbul',url:'/demo/lake/',domain:'lakedetailing.com.tr',
+  desc:'Kapalı kabinde çalışan premium bir detailing stüdyosu için tasarlandı. Açılış ekranındaki boya yüzeyinde müşteri, kendi aracının rengini seçebiliyor.',
+  bullets:['Adım adım randevu: gün, saat, araç ve iletişim bilgisi','Araç sınıfına göre PPF ve seramik fiyatı','Kaydırmalı önce / sonra karşılaştırma','Plakayla garanti sorgulama'],tags:['Randevu','Fiyat hesaplama','Önce/sonra','Garanti']},
+ {id:'kuzey',name:'Kuzey Premium',sector:'Premium galeri',city:'İstanbul',url:'/demo/kuzey/',domain:'kuzeypremium.com.tr',desc:'Karanlık showroom havası, öne çıkan araç vitrini ve randevu akışı.'},
+ {id:'yildirim',name:'Yıldırım Oto',sector:'Aile galerisi',city:'Konya',url:'/demo/yildirim/',domain:'yildirimoto.com.tr',desc:'Bütçeye göre arama, her ilanda aylık taksit ve takas formu.'},
+ {id:'ergin',name:'Ergin Ticari',sector:'Ticari araç',city:'Bursa',url:'/demo/ergin/',domain:'ergin-ticari.com.tr',desc:'Yük hacmine göre araç bulucu ve filo teklif formu.'}
+];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const waReady=!/X/.test(CONFIG.whatsapp);
+const waLink=t=>`https://wa.me/${CONFIG.whatsapp}${t?'?text='+encodeURIComponent(t):''}`;
+
+/* ---- hero vitrin: LAKE ekranları ---- */
+const SCREENS=[
+ {k:'lake',label:'Açılış',sub:'canlı boya yüzeyi',hash:''},
+ {k:'lake_ba',label:'Önce / sonra',sub:'kaydırmalı',hash:'#once-sonra'},
+ {k:'lake_cfg',label:'Fiyat hesaplama',sub:'araca göre',hash:'#fiyat'},
+ {k:'lake_book',label:'Randevu',sub:'gün ve saat',hash:'#randevu'}
+];
+const LAKE=DEMOS[0];
+$('#showView').innerHTML=SCREENS.map((d,i)=>`<img src="img/${d.k}_desk.webp" alt="LAKE demo sitesi: ${esc(d.label)} ekranı" ${i?'loading="lazy"':''} class="${i?'':'on'}">`).join('')+`<span class="btn open">Canlı demoyu aç ↗</span>`;
+$('#showPhone').innerHTML=SCREENS.map((d,i)=>`<img src="img/${d.k}_mob.webp" alt="" class="${i?'':'on'}" ${i?'loading="lazy"':''}>`).join('');
+$('#showTabs').innerHTML=SCREENS.map((d,i)=>`<button class="tab" role="tab" aria-selected="${i===0}" data-i="${i}">${esc(d.label)}<small>${esc(d.sub)}</small><span class="bar"></span></button>`).join('');
+let si=0,timer=null;const DUR=5000;
+function showDemo(i){si=i;const d=SCREENS[i];
+ [...$('#showView').querySelectorAll('img')].forEach((im,k)=>im.classList.toggle('on',k===i));
+ [...$('#showPhone').querySelectorAll('img')].forEach((im,k)=>im.classList.toggle('on',k===i));
+ [...$('#showTabs').children].forEach((b,k)=>{b.setAttribute('aria-selected',k===i);const bar=b.querySelector('.bar');bar.style.animation='none';void bar.offsetWidth;bar.style.animation=''});
+ $('#showUrl').textContent=LAKE.domain+(d.hash?'/'+d.hash:'');$('#showView').href=LAKE.url+d.hash;$('#showView').setAttribute('aria-label','LAKE canlı demosunu aç: '+d.label);}
+function auto(){clearInterval(timer);if(RM)return;timer=setInterval(()=>showDemo((si+1)%SCREENS.length),DUR)}
+$('#showTabs').style.setProperty('--dur',DUR/1000+'s');
+$('#showTabs').onclick=e=>{const b=e.target.closest('.tab');if(!b)return;showDemo(+b.dataset.i);auto()};
+showDemo(0);auto();
+$('#show').addEventListener('mouseenter',()=>clearInterval(timer));$('#show').addEventListener('mouseleave',auto);
+
+/* ---- marquee ---- */
+const SEC=['Detailing','PPF','Seramik kaplama','Cam filmi','Oto servis','Galeri','Oto kiralama','Lastik & jant','Ekspertiz','Oto yıkama'];
+$('#marq').innerHTML=[...SEC,...SEC].map(s=>`<span>${s}</span>`).join('');
+
+/* ---- demolar ---- */
+const scroller=(d,ratio)=>`<a class="scroller" href="${d.url}" target="_blank" rel="noopener" aria-label="${esc(d.name)} canlı demosunu aç"><div class="bbar"><div class="dots"><i></i><i></i><i></i></div><div class="url" style="height:24px;font-size:11px">${d.domain}</div><div style="width:40px"></div></div><div class="vp"><img src="img/${d.id}_full.webp" alt="${esc(d.name)} demo sitesinin tam sayfa görünümü" loading="lazy"></div><span class="hint">Tamamını görmek için üzerine gel</span></a>`;
+const F=DEMOS[0];
+$('#featDemo').innerHTML=`${scroller(F)}<div class="demo-info"><div class="lbl"><b>Öne çıkan</b> · <span lang="en">${esc(F.sector)}</span> · ${esc(F.city)}</div><h3 class="x">${esc(F.name)}</h3><p>${esc(F.desc)}</p><ul>${F.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul><div class="acts"><a class="btn y" href="${F.url}" target="_blank" rel="noopener">Canlı demoyu aç ↗</a><a class="btn ghost" href="#iletisim" data-want="${esc(F.sector)}">Stüdyom için istiyorum</a></div></div>`;
+$('#demos3').innerHTML=DEMOS.slice(1).map(d=>`<div class="dcard spot">${scroller(d)}<div class="meta"><div><div class="lbl">${esc(d.sector)} · ${esc(d.city)}</div><h3 class="x">${esc(d.name)}</h3><p>${esc(d.desc)}</p></div></div><div class="meta" style="justify-content:flex-start"><a class="go" href="${d.url}" target="_blank" rel="noopener">Canlı demoyu aç ↗</a></div></div>`).join('');
+function measure(){document.querySelectorAll('.scroller').forEach(s=>{const vp=s.querySelector('.vp'),im=s.querySelector('img');const go=()=>{const dist=Math.max(0,im.getBoundingClientRect().height-vp.getBoundingClientRect().height);s.style.setProperty('--dist',dist+'px');s.style.setProperty('--t',Math.max(4,Math.min(14,dist/260))+'s')};if(im.complete)go();else im.addEventListener('load',go,{once:true})})}
+measure();addEventListener('resize',measure);
+document.querySelectorAll('[data-want]').forEach(a=>a.addEventListener('click',()=>{const s=$('#fSec');[...s.options].forEach(o=>{if(o.text.startsWith('Detailing'))s.value=o.text})}));
+
+/* ---- spot hover ---- */
+document.addEventListener('pointermove',e=>{const el=e.target.closest&&e.target.closest('.spot');if(!el)return;const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')});
+
+/* ---- iletişim ---- */
+const IC={wa:'<svg viewBox="0 0 24 24"><path fill="#46d38a" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20z"/></svg>',tel:'<svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',mail:'<svg viewBox="0 0 24 24" fill="none" stroke="#b8e0e6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',ig:'<svg viewBox="0 0 24 24" fill="none" stroke="#5b74ff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#5b74ff"/></svg>'};
+const ways=[
+ {ic:'wa',t:'WhatsApp',v:CONFIG.phoneText,href:waReady?waLink('Merhaba, ücretsiz demo hakkında bilgi almak istiyorum.'):null,copy:CONFIG.phoneText},
+ {ic:'tel',t:'Telefon',v:CONFIG.phoneText,copy:CONFIG.phoneText},
+ {ic:'mail',t:'E-posta',v:CONFIG.email,copy:CONFIG.email},
+ {ic:'ig',t:'Instagram',v:'@'+CONFIG.instagram,href:'https://instagram.com/'+CONFIG.instagram}
+];
+$('#ways').innerHTML=ways.map((w,i)=>{const inner=`<span class="wi">${IC[w.ic]}</span><span><b>${w.t}</b><span>${esc(w.v)}</span></span>${w.copy?`<button type="button" class="cp" data-c="${esc(w.copy)}">Kopyala</button>`:''}`;return w.href?`<a class="way" href="${w.href}" target="_blank" rel="noopener">${inner}</a>`:`<div class="way">${inner}</div>`}).join('');
+$('#ways').addEventListener('click',async e=>{const b=e.target.closest('.cp');if(!b)return;e.preventDefault();e.stopPropagation();try{await navigator.clipboard.writeText(b.dataset.c);b.textContent='Kopyalandı'}catch(err){const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seçildi'}setTimeout(()=>b.textContent='Kopyala',1800)});
+$('#hours').textContent=`${CONFIG.hours}. ${CONFIG.city} merkezliyiz, Türkiye'nin her yerine uzaktan hizmet veriyoruz.`;
+$('#fContact').innerHTML=`<span style="display:block;padding:3px 0">${esc(CONFIG.phoneText)}</span><span style="display:block;padding:3px 0">${esc(CONFIG.email)}</span><a href="https://instagram.com/${CONFIG.instagram}" target="_blank" rel="noopener">@${esc(CONFIG.instagram)}</a>`;
+$('#fDemos').innerHTML=DEMOS.map(d=>`<a href="${d.url}" target="_blank" rel="noopener">${esc(d.name)}</a>`).join('');
+if(waReady){$('#fab').href=waLink('Merhaba, ücretsiz demo hakkında bilgi almak istiyorum.');const heroEl=$('.hero');new IntersectionObserver(es=>$('#fab').classList.toggle('on',!es[0].isIntersecting)).observe(heroEl)}
+$('#df').onsubmit=e=>{e.preventDefault();const er=$('#fErr'),out=$('#fOut');er.hidden=true;
+ const biz=$('#fBiz').value.trim(),city=$('#fCity').value.trim(),ph=$('#fPhone').value.trim();
+ if(!biz||!city){er.hidden=false;er.textContent='Demoyu hazırlayabilmemiz için işletme adını ve şehri yaz.';out.hidden=true;return}
+ const msg=`Merhaba, ücretsiz demo istiyorum.\nİşletme: ${biz}\nSektör: ${$('#fSec').value}\nPaket: ${$('#fPkg').value}\nŞehir: ${city}${ph?'\nTelefon: '+ph:''}${$('#fIg').value.trim()?'\nInstagram: '+$('#fIg').value.trim():''}`;
+ out.hidden=false;out.innerHTML=`<div class="lbl" style="margin-bottom:10px">Mesajın hazır</div><div class="m">${esc(msg)}</div><div class="acts">${waReady?`<a class="btn wa" href="${waLink(msg)}" target="_blank" rel="noopener">WhatsApp'ta gönder ↗</a>`:''}<button type="button" class="btn ghost" id="cpMsg">Mesajı kopyala</button></div>${waReady?'':`<p class="note" style="margin-top:10px">Mesajı kopyalayıp ${esc(CONFIG.phoneText)} numarasına WhatsApp'tan gönder.</p>`}`;
+ $('#cpMsg').onclick=async ev=>{try{await navigator.clipboard.writeText(msg);ev.target.textContent='Kopyalandı'}catch(x){const r=document.createRange();r.selectNodeContents(out.querySelector('.m'));const s=getSelection();s.removeAllRanges();s.addRange(r);ev.target.textContent='Seçildi, kopyala'}};
+};
+$('#yr').textContent=new Date().getFullYear();
+
+
+/* ---- lansman ve paket seçimi ---- */
+(function(){const left=Math.max(0,Math.min(10,CONFIG.launchLeft|0));const base=19900;const now=Math.round(base*.75);
+ const fmt=n=>new Intl.NumberFormat('tr-TR').format(n)+' TL';
+ if(left>0){$('#slotBar').innerHTML=Array.from({length:10},(_,i)=>`<i class="${i<left?'free':''}"></i>`).join('');
+  $('#lnCount').innerHTML=left===10?'<b>10</b> kontenjanın tamamı açık':`10 kontenjandan <b>${left}</b> tanesi kaldı`;
+  $('#lnPrice').textContent=fmt(now);$('#mpNow').textContent=fmt(now);}
+ else{$('#launch').hidden=true;$('#mpWas').hidden=true;[...$('#fPkg').options].forEach(o=>{if(o.text.includes('lansman'))o.remove()})}
+ document.addEventListener('click',e=>{const a=e.target.closest('[data-plan]');if(a){const v=a.dataset.plan;const sel=$('#fPkg');[...sel.options].forEach(o=>{if(o.text===v)sel.value=v});}
+  const f=e.target.closest('[data-faq]');if(f){const d=document.querySelectorAll('#sss details')[+f.dataset.faq-1];if(d)d.open=true}});
+})();
+/* ---- hakkında ---- */
+$('#fName').textContent=CONFIG.founderName;
+$('#avatar').innerHTML=CONFIG.founderPhoto?`<img src="${CONFIG.founderPhoto}" alt="${esc(CONFIG.founderName)}">`:`<span class="mono">${esc(CONFIG.founderName.charAt(0))}</span>`;
+$('#aboutText').textContent=`Merhaba, ben ${CONFIG.founderName}. Otomobil tutkunuyum ve oto sektörünü yıllardır yakından takip ediyorum. otowebsite.com.tr'yi, oto işletmelerinin Instagram'da gösterdiği emeği gerçek müşteriye dönüştüren siteler yapmak için kurdum. Sitenin tasarımından yayına alınmasına kadar her aşamayla bizzat ben ilgilenirim.`;
+document.querySelectorAll('[data-demo]').forEach(a=>a.href=DEMOS.find(d=>d.id===a.dataset.demo).url);
+
+/* ---- ölçüm: onay olmadan hiçbir şey yüklenmez ---- */
+const TRACK=!!(CONFIG.metaPixelId||CONFIG.ga4Id);
+const store={get(){try{return localStorage.getItem('ow_consent')}catch(e){return null}},set(v){try{localStorage.setItem('ow_consent',v)}catch(e){}}};
+let loaded=false;
+function loadTrackers(){if(loaded)return;loaded=true;
+ if(CONFIG.metaPixelId){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',CONFIG.metaPixelId);fbq('track','PageView')}
+ if(CONFIG.ga4Id){const g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+CONFIG.ga4Id;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',CONFIG.ga4Id)}}
+function track(ev,params){try{if(window.fbq)fbq('track',ev,params||{});if(window.gtag)gtag('event',{Lead:'generate_lead',Contact:'contact',ViewContent:'view_item'}[ev]||ev,params||{})}catch(e){}}
+function showConsent(){if(TRACK)$('#consent').hidden=false}
+if(TRACK){const c=store.get();if(c==='yes')loadTrackers();else if(c!=='no')showConsent()}
+$('#cYes').onclick=()=>{store.set('yes');$('#consent').hidden=true;loadTrackers()};
+$('#cNo').onclick=()=>{store.set('no');$('#consent').hidden=true};
+$('#cookieLink').onclick=e=>{e.preventDefault();if(TRACK)showConsent();else openKvkk()};
+document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const h=a.getAttribute('href')||'';
+ if(h.includes('wa.me'))track('Contact',{method:'whatsapp'});
+ else if(DEMOS.some(d=>h.startsWith(d.url))){const d=DEMOS.find(d=>h.startsWith(d.url));track('ViewContent',{content_name:d.name})}});
+$('#df').addEventListener('submit',()=>{if(!$('#fErr').hidden)return;track('Lead',{content_category:$('#fSec').value})});
+
+/* ---- KVKK ---- */
+function kvkkHTML(){const c=CONFIG;return `<h2 class="x" id="kvkkT">KVKK aydınlatma metni</h2><p>Son güncelleme: ${new Date().getFullYear()}</p>
+<h3>Veri sorumlusu</h3><p>${esc(c.legalName)} (otowebsite.com.tr), ${esc(c.legalAddress)}. İletişim: ${esc(c.email)}</p>
+<h3>Hangi verileri işliyoruz?</h3><ul><li>Demo talep formu: işletme adı, sektör, şehir, telefon numarası ve Instagram hesabı.</li><li>WhatsApp, telefon ya da e-posta ile bize yazdığında paylaştığın bilgiler.</li><li>Onay verirsen: sitenin kullanımına dair çerez verileri (Meta Pixel, Google Analytics).</li></ul>
+<h3>Ne amaçla?</h3><p>Talep ettiğin demoyu hazırlamak, seninle iletişim kurmak, teklif vermek ve sözleşme süreçlerini yürütmek. Çerezler ise yalnızca onay vermen hâlinde, reklamlarımızın performansını ölçmek için kullanılır.</p>
+<h3>Hukuki sebep</h3><p>KVKK madde 5/2-c (bir sözleşmenin kurulması veya ifasıyla doğrudan ilgili olması) ve 5/2-f (meşru menfaat). Çerezler ve bunlarla yapılan yurt dışına aktarım için açık rızan (madde 5/1 ve 9).</p>
+<h3>Kimlere aktarılır?</h3><p>Verilerin satılmaz. İletişim WhatsApp üzerinden sürdüğünde Meta'nın altyapısı kullanılır. Onay verdiğin çerez verileri Meta Platforms ve Google tarafından işlenir. Yasal yükümlülük hâlinde yetkili kamu kurumlarıyla paylaşılabilir.</p>
+<h3>Saklama süresi</h3><p>Demo talebi sonuçsuz kalırsa verilerin en geç 1 yıl içinde silinir. Müşteri olursan, yasal saklama süreleri boyunca (ör. faturalar için vergi mevzuatı) saklanır.</p>
+<h3>Hakların</h3><p>KVKK madde 11 kapsamında verilerinin işlenip işlenmediğini öğrenme, düzeltilmesini ya da silinmesini isteme, itiraz etme ve zararın giderilmesini talep etme hakların var. Başvurunu ${esc(c.email)} adresine gönderebilirsin; başvurun en geç 30 gün içinde yanıtlanır.</p>
+<h3>Çerezler</h3><p>Bu sitede zorunlu çerez kullanılmaz. Ölçüm çerezleri yalnızca "Kabul et" seçeneğini seçersen yüklenir. Tercihini sayfanın altındaki "Çerez tercihleri" bağlantısından her zaman değiştirebilirsin.</p>`}
+let lastF=null;
+function openKvkk(){lastF=document.activeElement;$('#kvkkBody').innerHTML=kvkkHTML();$('#kvkk').hidden=false;document.body.style.overflow='hidden';$('#kvkkX').focus()}
+function closeKvkk(){$('#kvkk').hidden=true;document.body.style.overflow='';lastF&&lastF.focus()}
+document.addEventListener('click',e=>{const k=e.target.closest('[data-kvkk]');if(k){e.preventDefault();openKvkk()}});
+$('#kvkkX').onclick=closeKvkk;$('#kvkk').onclick=e=>{if(e.target.id==='kvkk')closeKvkk()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#kvkk').hidden)closeKvkk()});
+
+</script>
+
+</body></html>

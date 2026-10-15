@@ -1,0 +1,6 @@
+﻿User-agent: *
+Disallow: /demo/
+Disallow: /candetailing/
+Disallow: /xtremeauto/
+Sitemap: https://otowebsite.com.tr/sitemap.xml
+
