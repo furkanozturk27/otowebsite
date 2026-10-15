@@ -679,3 +679,20 @@ footer .fb p{margin:16px 0 0;max-width:340px}
  .cert{background:#141312!important;color:#F5F3EE!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;border:2px solid #C9962C!important;max-width:680px;margin:20px auto!important}
 }
 
+
+/* live-audit fixes */
+#nl-badge-frame,#nl-hud-frame{display:none!important}
+.whint button{min-height:36px;padding:6px 12px}
+@media (max-width:600px){
+ .brand span{font-size:9px;letter-spacing:.14em}
+ .tbl{overflow:visible;border:0;border-radius:0}
+ .tbl table{min-width:0;font-size:15px}
+ .tbl thead{display:none}
+ .tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+ .tbl tr{border:1px solid var(--line);border-radius:14px;background:var(--card2);padding:12px 14px;margin:0 0 10px}
+ .tbl tr:last-child{margin-bottom:0}
+ .tbl td{border:0;padding:6px 0;display:grid;grid-template-columns:38% 1fr;gap:10px}
+ .tbl td:first-child{display:block;font-size:16.5px;padding:0 0 8px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+ .tbl td[data-l]::before{content:attr(data-l);color:var(--dim);font-size:13px;font-weight:600}
+ .tbl td:first-child::before{content:none}
+}
